@@ -1,9 +1,7 @@
-<header class="w-full lg:max-w-4xl max-w-[335px] text-sm mb-6 not-has-[nav]:hidden">
-    <nav class="flex items-center justify-between bg-light gap-4">
+<header class="w-full flex items-center justify-between lg:max-w-6xl max-w-[335px] text-sm mb-6 not-has-[nav]:hidden">
+    <a href="/">flightflaremart</a>
+<nav class="flex items-center justify-between bg-light gap-4">
         @if (Route::has('login'))
-        <ul>
-
-        </ul>
         @auth
         <span class="inline-block px-5 py-1.5 text-[#1b1b18] dark:text-[#EDEDEC]">
             Hello, {{ Auth::user()->name }}

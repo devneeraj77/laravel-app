@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Admin;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 
@@ -12,6 +11,10 @@ class AdminController extends Controller
 {
     public function showLoginForm()
     {
+        // If already logged in, go to dashboard
+        if (Session::has('admin_id')) {
+            return redirect()->route('admin.dashboard');
+        }
         return view('admin.login');
     }
 
@@ -35,9 +38,11 @@ class AdminController extends Controller
 
     public function dashboard()
     {
+        // Prevent unauthorized access
         if (!Session::has('admin_id')) {
             return redirect()->route('admin.login')->with('error', 'Please login first');
         }
+
         return view('admin.dashboard');
     }
 
@@ -45,5 +50,16 @@ class AdminController extends Controller
     {
         Session::flush();
         return redirect()->route('admin.login')->with('success', 'Logged out successfully');
+    }
+
+    public function adminHome()
+    {
+        // If admin logged in, redirect to dashboard
+        if (Session::has('admin_id')) {
+            return redirect()->route('admin.dashboard');
+        }
+
+        // Else redirect to login
+        return redirect()->route('admin.login');
     }
 }
