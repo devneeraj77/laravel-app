@@ -6,7 +6,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-50 min-h-screen flex flex-col items-center justify-center">
-    <!-- @include('layouts.header') -->
+   
 
     <div class="w-full max-w-sm bg-white p-6 shadow rounded-lg">
         <h2 class="text-xl font-semibold text-center mb-4">Login</h2>
