@@ -4,12 +4,26 @@
     {
       "src": "public/index.php",
       "use": "@vercel/php"
+    },
+    {
+      "src": "vite.config.*",
+      "use": "@vercel/static-build",
+      "config": { "distDir": "public/build" }
     }
   ],
   "routes": [
     {
+      "src": "/build/(.*)",
+      "dest": "/public/build/$1"
+    },
+    {
       "src": "/(.*)",
-      "dest": "public/index.php"
+      "dest": "/public/index.php"
     }
-  ]
+  ],
+  "env": {
+    "APP_ENV": "production",
+    "APP_DEBUG": "false",
+    "APP_URL": "https://your-vercel-app-url.vercel.app"
+  }
 }
