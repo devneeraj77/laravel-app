@@ -4,10 +4,15 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserAuthController;
 use Illuminate\Support\Facades\Session;
+use App\Http\Controllers\SerpApiController;
 
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/serpapi', [SerpApiController::class, 'index']);
+
+Route::view('/privacy-policy', 'privacy-policy')->name('privacy');
+Route::view('/terms', 'terms')->name('terms');
 
 // Redirect /admin to appropriate location
 Route::get('/admin', function () {

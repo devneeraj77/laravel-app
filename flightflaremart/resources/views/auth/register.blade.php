@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+@include('layouts.htmlcore')
 <head>
     <meta charset="UTF-8">
     <title>User Register - FlightFlareMart</title>
@@ -7,7 +7,6 @@
 </head>
 <body class="bg-gray-50 min-h-screen flex flex-col items-center justify-center">
     @include('layouts.header')
-
     <div class="w-full max-w-sm bg-white p-6 shadow rounded-lg">
         <h2 class="text-xl font-semibold text-center mb-4">Register</h2>
 

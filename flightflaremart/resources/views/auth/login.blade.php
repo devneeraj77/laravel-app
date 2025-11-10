@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+@include('layouts.htmlcore')
 <head>
     <meta charset="UTF-8">
     <title>User Login - FlightFlareMart</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+      @include('layouts.head')
 </head>
-<body class="bg-gray-50 min-h-screen flex flex-col items-center justify-center">
+<body class="bg-primary min-h-screen flex flex-col items-center justify-center">
    
 
     <div class="w-full max-w-sm bg-white p-6 shadow rounded-lg">

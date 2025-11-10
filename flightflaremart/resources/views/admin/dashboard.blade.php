@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+@include('layouts.htmlcore')
 <head>
     <meta charset="UTF-8">
     <title>Admin Dashboard - FlightFlareMart</title>

@@ -1,9 +1,9 @@
-<header class="w-full backdrop-blur-sm bg-secondary dark:bg-dark-primary text-accent dark:text-dark-light fixed top-0 left-0 z-50">
+<header class="w-full backdrop-blur-sm  dark:bg-dark-primary text-secondary dark:text-dark-light  top-0 left-0 z-50">
   <nav class="max-w-7xl  mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
 
     <!-- Logo -->
     <div class="flex items-center space-x-2">
-      <span class="text-base sm:text-2xl font-bold text-accent italic dark:text-dark-accent">Flightfaremart</span>
+      <span class="text-base sm:text-2xl font-bold text-secondary italic dark:text-primary">Flight<span class="text-accent dark:text-secondary">faremart</span></span>
     </div>
 
     <div class="flex ">
@@ -24,13 +24,23 @@
           </label>
         </div>
         <!-- Desktop Menu -->
-        <div class="hidden md:flex space-x-4 text-sm px-3 font-medium">
-          <a href="#" class="hover:text-accent transition">Home</a>
-          <a href="#" class="hover:text-accent transition">Services</a>
-          <a href="#" class="hover:text-accent transition">Works</a>
-          <a href="#" class="hover:text-accent transition">Contact</a>
+        <div class="hidden md:flex space-x-4 text-sm px-3 text-accent  font-medium">
+          <a href="#" aria-current="page"  class="px-1 py-2 text-sm  font-medium text-accent bg-trans hover:bg-white/5 hover:text-secondary dark:text-primary ">Home</a>
+          <a href="#" class="px-1 py-2 text-sm font-medium text-accent hover:bg-white/5 hover:text-secondary dark:text-secondary">Services</a>
+          <a href="#" class="px-1 py-2 text-sm font-medium text-accent hover:bg-white/5 hover:text-secondary dark:text-secondary">blog</a>
+          <a href="#" class="px-1 py-2 text-sm font-medium text-accent hover:bg-white/5 hover:text-secondary dark:text-secondary">Contact</a>
         </div>
-        
+        <!-- Auth / Menu Links -->
+        @auth
+        <span class="inline-block text-[#1b1b18] dark:text-[#EDEDEC]">
+          Hello, {{ Auth::user()->name }}
+        </span>
+        <a href="{{ route('logout') }}"
+          class="inline-block px-4 py-1.5 border border-transparent hover:border-[#19140035] dark:hover:border-[#3E3E3A] text-[#1b1b18] dark:text-[#EDEDEC] rounded-sm text-sm leading-normal">
+          Logout
+        </a>
+        @else
+        @endauth
       </div>
 
       <!-- Mobile Menu Button -->

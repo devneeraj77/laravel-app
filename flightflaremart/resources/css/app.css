@@ -10,6 +10,8 @@
   --color-primary: #f9f9f9;
   --color-secondary: #CAD593;
   --color-accent: #2A3C24;
+  --color-dark:  #18191b;
+  --font-display: "Playfair Display", serif; 
   --color-trans: oklab(28.945999999999998% -0.0325 0.04359 / 0.212);
 }
 
@@ -27,7 +29,10 @@ body{
   /* background: #24301036; */
   margin: 0;
   padding: 0;
+  /* font-family: "Playfair Display", serif; */
 }
+
+
 
 /* From Uiverse.io by Bodyhc */ 
 .checkbox-wrapper-35 .switch {

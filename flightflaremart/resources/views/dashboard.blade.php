@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+@include('layouts.htmlcore')
 <head>
     <meta charset="UTF-8">
     <title>User Dashboard - FlightFlareMart</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+      @include('layouts.head')
 </head>
 <body class="bg-gray-50 min-h-screen flex flex-col items-center justify-start py-10">
     @include('layouts.header')
