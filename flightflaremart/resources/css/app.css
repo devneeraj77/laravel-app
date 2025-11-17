@@ -9,6 +9,8 @@
 @plugin "daisyui" {
     themes: false;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 @plugin "daisyui/theme" {
     name: "mytheme";
     default: true; /* set as default */
@@ -16,14 +18,14 @@
     color-scheme: light; /* color of browser-provided UI */
 
     /* Base colors */
-    --color-base-100: oklch(98% 0.02 240);
-    --color-base-200: oklch(95% 0.03 240);
-    --color-base-300: oklch(92% 0.04 240);
+    --color-base-100: #f9f9f9;
+    --color-base-200: oklab(91.696% -0.01535 0.02446);
+    --color-base-300: oklab(96.856% -0.0104 0.01601);
     --color-base-content: oklch(20% 0.05 240);
 
     /* Primary palette */
     --color-primary: #f9f9f9;
-    --color-primary-content: oklch(98% 0.01 240);
+    --color-primary-content: #353535;
 
     --color-secondary: #cad593;
     --color-secondary-content: oklch(98% 0.01 200);
@@ -48,8 +50,8 @@
     --color-error-content: oklch(98% 0.01 30);
 
     /* Additional tokens */
-    --color-dark: #18191b;
-    --color-trans: oklab(28.945999999999998% -0.0325 0.04359 / 0.212);
+    --color-dark: oklab(20.366% -0.02323 0.03059);
+    --color-trans: oklab(98.177% -0.02579 0.03704);
 
     /* Typography */
     --font-display: "Playfair Display", serif;
@@ -81,7 +83,7 @@
 } */
 
 :root {
-    --acme-canvas-color: oklch(0.967 0.003 264.542);
+    --acme-canvas-color: oklab(91.696% -0.01535 0.02446);
 }
 [data-theme="dark"] {
     --acme-canvas-color: oklch(0.21 0.034 264.665);
@@ -89,6 +91,10 @@
 @theme inline {
     --color-canvas: var(--acme-canvas-color);
 }
+
+/* *{
+    border: green solid 
+} */
 
 body {
     /* background: #24301036; */

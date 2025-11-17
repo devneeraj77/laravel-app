@@ -4,10 +4,20 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserAuthController;
 use Illuminate\Support\Facades\Session;
+use App\Http\Controllers\FlightController;
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Route to show the form
+Route::get('/flights', function () {
+    return view('flights.index');
+});
+
+// Route to handle the search (POST request)
+Route::post('/flights/search', [FlightController::class, 'search'])->name('flights.search');
+
 
 Route::view('/privacy-policy', 'privacy-policy')->name('privacy');
 Route::view('/terms', 'terms')->name('terms');

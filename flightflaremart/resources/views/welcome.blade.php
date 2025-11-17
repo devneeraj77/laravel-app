@@ -16,122 +16,183 @@
   <!-- <script src="https://cdn.tailwindcss.com"></script> -->
 </head>
 
-<body class=" text-dark antialiased bg-primary dark:bg-black dark:text-secondary text-[#1b1b18] flex px-2  items-center lg:justify-center min-h-screen flex-col">
+<body class=" antialiased bg-primary font-display dark:bg-black dark:text-secondary  px-2 ">
   @include('layouts.navmanu')
   <main>
-    <section class="min-h-screen">
-      <div class="min-h-screen md:flex flex-1 mx-3 ">
-        <div class="relative isolate px-6 lg:px-8 ">
-          <div aria-hidden="true" class="absolute border inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80">
-            <div style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)" class="relative left-[calc(50%-11rem)] aspect-1155/678 w-144.5 -translate-x-1/2 rotate-30 bg-linear-to-tr from-secondary to-secondary opacity-30 sm:left-[calc(50%-30rem)] sm:w-288.75"></div>
+    <section class="flex mx-auto max-w-6xl min-h-96 flex-col max-md:gap-20 md:flex-row pb-20 items-center justify-between md:mt-5 ">
+      <div class="flex  flex-col items-center md:items-start">
+        <div class="flex flex-wrap items-center justify-center p-1.5 rounded-full border border-slate-600 text-black text-xs">
+          <div class="flex items-center">
+            <img class="size-7 rounded-full border-3 border-white"
+              src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=50" alt="userImage1">
+            <img class="size-7 rounded-full border-3 border-white -translate-x-2"
+              src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=50" alt="userImage2">
+            <img class="size-7 rounded-full border-3 border-white -translate-x-4"
+              src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=50&h=50&auto=format&fit=crop"
+              alt="userImage3">
           </div>
-          <div class="mx-auto  max-w-2xl py-4 sm:py-6 lg:py-10">
-            <div class="hidden sm:mb-8 sm:flex sm:justify-center">
-              <div class="relative rounded-full px-3 py-1 text-sm/6 text-gray-400 ring-1 ring-seconadary hover:ring-scondary/10">
-                Announcing our next round of funding. <a href="#" class="font-semibold text-accent dark:text-secondary"><span aria-hidden="true" class="absolute inset-0"></span>Read more <span aria-hidden="true">&rarr;</span></a>
+          <p class="-translate-x-2">Join community of 1m+ founders </p>
+        </div>
+        <h1 class="text-center text-accent dark:text-secondary md:text-left text-5xl leading-[68px] md:text-6xl md:leading-[84px] font-medium max-w-xl ">
+          Find Your Perfect Flight, Guaranteed Lowest Fare.
+        </h1>
+        <p class="text-center md:text-left dark:text-slate-50 text-sm  max-w-lg mt-2">
+          Unlock smarter workflows with AI tools designed to boost productivity, simplify tasks and help you do more with less effort.
+        </p>
+        <div class="flex items-center gap-4 mt-8 text-sm">
+          <button class="bg-accent hover:bg-accent/20 text-primary active:scale-95 rounded-md px-7 h-11">
+            Get started
+          </button>
+          <button class="flex items-center gap-2 border border-slate-600 active:scale-95 hover:bg-white/10 transition text-black rounded-md px-6 h-11">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-video-icon lucide-video">
+              <path d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5" />
+              <rect x="2" y="6" width="14" height="12" rx="2" />
+            </svg>
+            <span>Watch demo</span>
+          </button>
+        </div>
+      </div>
+      <!-- <img src="https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/hero/hero-section-showcase-3.png" alt="hero" class="max-w-xs sm:max-w-sm lg:max-w-md transition-all duration-300"> -->
+      <div class="w-full sm:max-w-sm lg:max-w-md transition-all duration-300 px-4">
+        <x-flight-search-form />
+
+      </div>
+    </section>
+    <!-- section 2 -->
+    <section class="py-5  mx-auto max-w-7xl">
+      <p class="mx-auto px-5 md:px-4 max-w-6xl text-xl ">Trip on</p>
+      <h2 class="text-4xl  md:text-6xl mx-auto max-w-6xl px-5 md:px-3">Popular Flight Deals Right Now</h2>
+      <div class="flex-1 md:flex my-6 bg-trans items-center">
+        <div class="basis-4/3">
+          <div class="container mx-auto px-4 md:py-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+              <!-- Large item -->
+              <div class="md:col-span-2 md:row-span-2 relative overflow-hidden rounded-2xl shadow-lg group">
+                <img src="https://images.unsplash.com/photo-1485871981521-5b1fd3805eee?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Nature" class="w-full h-full object-cover object-center transition duration-500 group-hover:scale-105">
+                <div
+                  class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-50 transition-opacity duration-300">
+                  <div class="absolute bottom-0 left-0 right-0 p-4">
+                    <h3 class="text-2xl font-bold text-white">New York</h3>
+                    <p class="text-white">Discover the beauty of the natural world</p>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div class="text-center">
-              <h1 class="text-4xl font-semibold tracking-tight text-balance text-accent dark:text-primary sm:text-6xl">Find Your Perfect <span class="dark:text-secondary">Flight, Guaranteed Lowest Fare.</span></h1>
-              <p class="mt-8 text-lg  font-medium text-pretty text-gray-500 sm:text-xl/8">Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat.</p>
-              <div class="mt-10 flex items-center justify-center gap-x-6">
 
-                <!-- From Uiverse.io by mahiatlinux -->
-                <div class="flex justify-center items-center gap-12 h-full">
-                  <div
-                    class="bg-gradient-to-b from-trans to-transparent p-[4px] rounded-[16px]">
-                    <!-- <button
-                      class="group p-[4px] rounded-[12px] bg-gradient-to-b from-trans to-trans shadow-[0_2px_4px_rgba(0,0,0,0.7)] hover:shadow-[0_4px_8px_rgba(0,0,0,0.6)] active:shadow-[0_0px_1px_rgba(0,0,0,0.8)] active:scale-[0.995] transition-all duration-200">
-                      <div
-                        class="bg-gradient-to-b from-accent to-accent rounded-[8px] px-3 py-2">
-                        <div class="flex gap-2 items-center">
-                          <span class="font-semibold text-white">Get Started</span>
-                        </div>
-                      </div>
-                    </button> -->
+              <!-- Two small items -->
+              <div class="relative overflow-hidden rounded-2xl shadow-lg group">
+                <img src="https://images.unsplash.com/photo-1618259278412-2819cbdea4dc?q=80&w=821&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Food" class="w-full h-48 object-cover object-center transition duration-500 group-hover:scale-105 object-center transition duration-500 group-hover:scale-105">
+                <div
+                  class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-50 transition-opacity duration-300">
+                  <div class="absolute bottom-0 left-0 right-0 p-4">
+                    <h4 class="text-xl font-bold text-white">Germany</h4>
+                  </div>
+                </div>
+              </div>
+              <div class="relative overflow-hidden rounded-2xl shadow-lg group">
+                <img src="https://images.unsplash.com/photo-1547448415-e9f5b28e570d?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Technology" class="w-full h-48 object-cover object-center transition duration-500 group-hover:scale-105">
+                <div
+                  class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-50 transition-opacity duration-300">
+                  <div class="absolute bottom-0 left-0 right-0 p-4">
+                    <h4 class="text-xl font-bold text-white">Moscow</h4>
+                  </div>
+                </div>
+              </div>
 
+              <!-- Three medium items -->
+              <div class="relative overflow-hidden rounded-2xl shadow-lg group">
+                <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?q=80&w=820&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Travel" class="w-full h-48 object-cover object-center transition duration-500 group-hover:scale-105">
+                <div
+                  class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-50 transition-opacity duration-300">
+                  <div class="absolute bottom-0 left-0 right-0 p-4">
+                    <h4 class="text-xl font-bold text-white">France</h4>
+                  </div>
+                </div>
+              </div>
+              <div class="relative overflow-hidden rounded-2xl shadow-lg group">
+                <img src="https://images.unsplash.com/photo-1488747279002-c8523379faaa?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Art" class="w-full h-48 object-cover object-center transition duration-500 group-hover:scale-105">
+                <div
+                  class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-50 transition-opacity duration-300">
+                  <div class="absolute bottom-0 left-0 right-0 p-4">
+                    <h4 class="text-xl font-bold text-white">London(UK)</h4>
+                  </div>
+                </div>
+              </div>
+
+              <!-- bottom cards -->
+              <div class="relative overflow-hidden rounded-2xl shadow-lg group">
+                <img src="https://plus.unsplash.com/premium_photo-1697730336238-5d1d342127e8?q=80&w=945&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Sport" class="w-full h-48 object-cover object-center transition duration-500 group-hover:scale-105">
+                <div
+                  class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-50 transition-opacity duration-300">
+                  <div class="absolute bottom-0 left-0 right-0 p-4">
+                    <h4 class="text-xl font-bold text-white">Mexico</h4>
+                  </div>
+                </div>
+              </div>
+              <div class="relative overflow-hidden rounded-2xl shadow-lg group">
+                <img src="https://images.unsplash.com/photo-1520175480921-4edfa2983e0f?q=80&w=1467&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Sport" class="w-full h-48 object-cover object-center transition duration-500 group-hover:scale-105">
+                <div
+                  class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-50 transition-opacity duration-300">
+                  <div class="absolute bottom-0 left-0 right-0 p-4">
+                    <h4 class="text-xl font-bold text-white">Italy</h4>
+                  </div>
+                </div>
+              </div>
+              <div class="relative overflow-hidden rounded-2xl shadow-lg group">
+                <img src="https://plus.unsplash.com/premium_photo-1661962958462-9e52fda9954d?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Sport" class="w-full h-48 object-cover object-center transition duration-500 group-hover:scale-105">
+                <div
+                  class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-50 transition-opacity duration-300">
+                  <div class="absolute bottom-0 left-0 right-0 p-4">
+                    <h4 class="text-xl font-bold text-white">Thailand</h4>
+                  </div>
+                </div>
+              </div>
+              <div class="relative overflow-hidden rounded-2xl shadow-lg group">
+                <img src="https://images.unsplash.com/photo-1624138784614-87fd1b6528f8?q=80&w=1033&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Sport" class="w-full h-48 object-cover object-center transition duration-500 group-hover:scale-105">
+                <div
+                  class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-50 transition-opacity duration-300">
+                  <div class="absolute bottom-0 left-0 right-0 p-4">
+                    <h4 class="text-xl font-bold text-white">Australia</h4>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="text-dark min-w-90  min-h-60 md:h-72 lg:h-96  lg:px-8 mx-4 md:mx-6">
-          <x-flight-search-form />
-
+        <div class="basis-2/3 h-min-60 p-3 w-full mt-3 md:mt-6 ">
+          <h3 class="text-2xl text-accent dark:text-secondary sm:text-3xl px-3  font-semibold">Lorem ipsum dolor sit.</h3>
+          <p class="py-2 px-3 dark:text-base-300">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam aliquid consequatur eum. Laudantium, quaerat quibusdam suscipit voluptatem consequuntur esse consequatur?</p>
+          <p class="py-2 px-3 dark:text-base-300">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia perspiciatis eaque, harum ex doloremque sed.</p>
+          <a href="#" class="text-base underline p-3 my-2 pt-5">Find more</a>
+          <div class="flex justify-start p-8 items-end h-64 mx-3 my-4 dark:bg-secondary rounded-3xl mt-6 md:mt-10 bg-base-300">
+            <a href="#" class="flex gap-2 content-center items-center text-dark dark:text-accent">Grab Now
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-8">
+                <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 0 0 1.06 0l7.22-7.22v5.69a.75.75 0 0 0 1.5 0v-7.5a.75.75 0 0 0-.75-.75h-7.5a.75.75 0 0 0 0 1.5h5.69l-7.22 7.22a.75.75 0 0 0 0 1.06Z" clip-rule="evenodd" />
+              </svg>
+            </a>
+          </div>
         </div>
       </div>
     </section>
-    <section class=" min-h-screen bg-trans text-center">
-      <span class="mx-auto ">Trip on</span>
-      <h2 class="text-6xl">Popular Flight Deals Right Now</h2>
-      <div class="border min-h-60">
-        <div class="border flex ">
+    <section class="min-h-screen">
+      <p class="mx-auto px-5 md:px-3 max-w-6xl">Trust & Social Proof Section</p>
+      <h2 class="text-2xl md:text-6xl mx-auto max-w-6xl px-5 md:px-3">Join Thousands of Happy Travelers</h2>
 
-          <div class="border flex gap-2">
-            <div>
-              <div class="card bg-base-100 image-full w-96 shadow-sm">
-                <figure>
-                  <img
-                    src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                    alt="Shoes" />
-                </figure>
-                <div class="card-body">
-                  <h2 class="card-title">Card Title</h2>
-                  <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-                  <div class="card-actions justify-end">
-                    <button class="btn btn-primary">Buy Now</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div>
-              <div class="card bg-base-100 image-full w-96 shadow-sm">
-                <figure>
-                  <img
-                    src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                    alt="Shoes" />
-                </figure>
-                <div class="card-body">
-                  <h2 class="card-title">Card Title</h2>
-                  <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-                  <div class="card-actions justify-end">
-                    <button class="btn btn-primary">Buy Now</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div>
-            <div class="stats shadow mt-10">
-              <div class="stat place-items-center">
-                <div class="stat-title">Customer</div>
-                <div class="stat-value">3K</div>
-                <div class="stat-desc">From January 1st to February 1st</div>
-              </div>
+    </section>
+    <section class="min-h-screen">
+      <h2 class="text-2xl md:text-6xl mx-auto max-w-6xl px-5 md:px-3">Where Will You Explore Next?</h2>
 
-              <div class="stat place-items-center">
-                <div class="stat-title">Flights</div>
-                <div class="stat-value text-secondary ">4,200</div>
-                <div class="stat-desc text-secondary">↗︎ 40 (2%)</div>
-              </div>
+    </section>
+    <section class="min-h-screen">
+      <p class="mx-auto px-5 md:px-3 max-w-6xl">Trust & Social Proof Section</p>
+      <h2 class="text-2xl md:text-6xl mx-auto max-w-6xl px-5 md:px-3">The FlightFareMart Difference</h2>
 
-              <div class="stat place-items-center">
-                <div class="stat-title"></div>
-                <div class="stat-value">1,200</div>
-                <div class="stat-desc">↘︎ 90 (14%)</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    </section>
+    <section class="min-h-screen">
+      <h2 class="text-2xl md:text-6xl mx-auto max-w-6xl px-5 md:px-3">Never Miss a Takeoff</h2>
 
     </section>
   </main>
-
-
   @include('layouts.footer')
-
 </body>
 
 </html>

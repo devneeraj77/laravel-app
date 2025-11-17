@@ -2,12 +2,12 @@
   <hr class="text-secondary">
   <!-- Bottom light section -->
   <div class="bg-secondary dark:bg-trans z-10 text-accent dark:text-light py-10">
-    <div class="max-w-7xl mx-auto grid md:grid-cols-5 gap-8 px-6">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-5 gap-8  px-6">
 
       <!-- Logo + Social -->
       <div class="col-span-2">
         <h2 class="text-2xl font-semibold mb-4">flightfaremart</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat nostrum magnam reprehenderit.</p>
+        <p class="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat nostrum magnam reprehenderit.</p>
       </div>
 
       <div>
@@ -49,7 +49,7 @@
         <ul class="flex mt-3 space-x-4">
           <li>
             <a href="#" class=" hover:text-secondary transition">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="icon icon-tabler icons-tabler-filled icon-tabler-brand-facebook">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="text-accent dark:text-secondary icon icon-tabler icons-tabler-filled icon-tabler-brand-facebook">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                 <path d="M18 2a1 1 0 0 1 .993 .883l.007 .117v4a1 1 0 0 1 -.883 .993l-.117 .007h-3v1h3a1 1 0 0 1 .991 1.131l-.02 .112l-1 4a1 1 0 0 1 -.858 .75l-.113 .007h-2v6a1 1 0 0 1 -.883 .993l-.117 .007h-4a1 1 0 0 1 -.993 -.883l-.007 -.117v-6h-2a1 1 0 0 1 -.993 -.883l-.007 -.117v-4a1 1 0 0 1 .883 -.993l.117 -.007h2v-1a6 6 0 0 1 5.775 -5.996l.225 -.004h3z" />
               </svg>
@@ -117,19 +117,12 @@
       <div>
         <h3 class="text-lg font-semibold text-black dark:text-primary mb-4">Subscribe now</h3>
         <p class="text-sm opacity-90 mb-3">Sign up if you want to get notifications</p>
-        <!-- From Uiverse.io by danilppzz -->
-        <div class="flex h-[34px] text-[14px] text-white/60">
-          <input
-            class="input w-[200px]  bg-trans text-black dark:text-secondary px-3 py-1  border border-white/10 focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-accent transition-all duration-150 ease-in-out"
-            name="text"
-            type="text"
-            placeholder="Email" />
-          <button
-
-            class="bg-accent px-3 py-1 hover:pointer  border-y border-r border-r-white/10 border-y-white/10 hover:bg-zinc-800/40 transition-all duration-150 easy-in-out">
-            Send
-          </button>
-        </div>
+        <div class="flex items-center text-sm border border-slate-300 rounded-md h-[54px] max-w-md focus-within:border-indigo-600 mt-6">
+                <input type="email" placeholder="Enter your email" class="rounded-md h-full px-4 w-full outline-none">
+                <button class="px-8 h-[46px] mr-1 flex items-center justify-center text-white rounded-md bg-accent hover:bg-indigo-700 transition">
+                    Subscribe
+                </button>
+            </div>
 
       </div>
     </div>
