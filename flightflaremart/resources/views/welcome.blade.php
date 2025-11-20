@@ -37,10 +37,10 @@
             </div>
             <p class="-translate-x-2 text-slate-500 ">Grab of 100k+ countries deals </p>
           </div>
-          <h1 class="text-center mt-4 md:text-left text-4xl leading-[48px] md:text-5xl md:leading-[74px] font-medium max-w-xl text-accent">
+          <h1 class="text-center mt-4 md:text-left text-4xl leading-[48px] md:text-5xl md:leading-[74px] font-medium max-w-xl text-accent dark:text-secondary">
             Find Your Perfect Flight, Guaranteed Lowest Fare.
           </h1>
-          <p class="text-center md:text-left text-sm text-slate-600 max-w-lg mt-2">
+          <p class="text-center text-accent md:text-left text-base dark:text-base-300 max-w-lg mt-2">
             Quickly discover the best deals from hundreds of <strong>1,200+ airlines and travel providers.</strong> Your exciting journey begins right here!
           </p>
           <!-- <div class="flex items-center gap-4 mt-8 text-sm">
@@ -177,15 +177,15 @@
         </div>
       </div>
     </section>
-    <section class="bg-white  py-12 md:py-20 px-4 sm:px-6 lg:px-8">
+    <section class="bg-base-200 dark:bg-black  py-12 md:py-20 px-4 sm:px-6 lg:px-8">
       <h2 class="text-4xl md:text-6xl  mx-auto max-w-6xl px-5 md:px-3 ">Where Will You Explore Next?</h2>
-      <p class="mx-auto px-5 md:px-4 max-w-6xl text-base md:text-base my-2 ">This section engages users who are browsing rather than searching for a specific flight, helping convert passive interest into active search.</p>
+      <p class="mx-auto px-5 md:px-4 max-w-6xl text-accent dark:text-base-300 md:text-base my-2 ">This section engages users who are browsing rather than searching for a specific flight, helping convert passive interest into active search.</p>
       <div class="max-w-6xl mx-auto">
-        <div class=" flex  py-8 mb-12 md:mb-16">
-          <p class="mt-4 text-xl  text-gray-500 dark:text-secondary max-w-3xl mx-auto">
-            Discover destinations that inspire adventure, relaxation, and unforgettable memories. Whether you're planning a spontaneous weekend getaway or mapping out your next big international journey, <strong class="text-accent font-normal">FlightFareMart</strong> brings you the best flight deals and travel offers in real time.
+        <div class=" md:flex  py-8 mb-12 md:mb-16">
+          <p class="mt-4 text-xl  text-gray-500 dark:text-gray-500 max-w-3xl mx-auto">
+            Discover destinations that inspire adventure, relaxation, and unforgettable memories. Whether you're planning a spontaneous weekend getaway or mapping out your next big international journey, <strong class="text-accent dark:text-secondary font-normal">FlightFareMart</strong> brings you the best flight deals and travel offers in real time.
           </p>
-          <p class="mt-2 text-base bg-base-300 text-gray-500 max-w-4xl mx-auto">
+          <p class="mt-2 p-2  bg-base-300 dark:bg-accent/20 rounded-lg text-gray-500 max-w-4xl mx-auto">
             From sun-soaked beaches to buzzing city skylines, our curated destinations help you find the perfect trip at the perfect price.
           </p>
         </div>
@@ -238,9 +238,8 @@
 
             </div>
             @endforeach
-
           </div>
-          <p class="text-gray-700 text-lg leading-relaxed max-w-4xl mx-auto text-center mb-10">
+          <p class="text-base-200 text-lg leading-relaxed max-w-4xl mx-auto text-center md:mb-10">
             Explore some of the world’s most iconic destinations with unbeatable fares and exclusive seasonal offers.
             Whether you're dreaming of Miami’s sun-soaked beaches, London’s historic charm, Dubai’s modern wonders,
             or Singapore’s vibrant city life, FlightFareMart brings you closer to your next adventure with curated deals
@@ -251,50 +250,50 @@
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-12">
 
-          <div class="bg-base-200 p-5 rounded-3xl">
-            <h3 class="text-3xl font-bold text-accent  mb-6 border-b-2 border-secondary pb-2">
+          <div class="bg-base-200 dark:bg-base-300/20 p-5 rounded-3xl">
+            <h3 class="text-3xl font-bold text-accent dark:text-secondary  mb-6 border-b-2 border-secondary  pb-2">
               Travel Your Way
             </h3>
-            <p class="text-lg text-accent dark:text-secondary mb-6">Not sure where to go? Let us inspire your next journey. Choose from travel styles designed for every type of explorer:</p>
+            <p class="text-lg text-accent dark:text-base-200 mb-6">Not sure where to go? Let us inspire your next journey. Choose from travel styles designed for every type of explorer:</p>
 
             <div class="space-y-4">
               <div class="p-4 bg-muted rounded-lg border border-secondary bg-muted-100 transition duration-300">
                 <p class="text-xl font-semibold ">#WeekendTrips</p>
-                <p class="text-accent dark:text-secondary">Quick getaways at wallet-friendly prices.</p>
+                <p class="text-accent dark:text-base-200">Quick getaways at wallet-friendly prices.</p>
               </div>
               <div class="p-4 bg-muted rounded-lg border border-secondary bg-muted-100 transition duration-300">
                 <p class="text-xl font-semibold text-muted">#FamilyVacation</p>
-                <p class="text-accent dark:text-secondary">Comfort-filled journeys for the whole family.</p>
+                <p class="text-accent dark:text-base-200">Comfort-filled journeys for the whole family.</p>
               </div>
               <div class="p-4 bg-muted rounded-lg border border-secondary bg-muted-100 transition duration-300">
                 <p class="text-xl font-semibold text-muted">#AdventureTravel</p>
-                <p class="text-accent dark:text-secondary">Explore mountains, beaches, and hidden gems worldwide.</p>
+                <p class="text-accent dark:text-base-200">Explore mountains, beaches, and hidden gems worldwide.</p>
               </div>
               <div class="p-4 bg-muted rounded-lg border border-secondary bg-muted-100 transition duration-300">
                 <p class="text-xl font-semibold text-muted">#DirectFlights</p>
-                <p class="text-accent dark:text-secondary">Nonstop options for smooth, simple travel.</p>
+                <p class="text-accent dark:text-base-200">Nonstop options for smooth, simple travel.</p>
               </div>
             </div>
           </div>
 
-          <div class="bg-base-200 p-5 rounded-3xl">
-            <h3 class="text-3xl font-bold text-accent  mb-6 border-b-2 border-red-300 pb-2">
+          <div class="bg-base-200 dark:bg-base-300/20 p-5 rounded-3xl">
+            <h3 class="text-3xl font-bold text-accent dark:text-secondary  mb-6 border-b-2 border-secondary  pb-2">
               Limited-Time Deals
             </h3>
-            <p class="text-lg text-accent dark:text-secondary mb-6">Looking for the best time to book? It’s right now.</p>
+            <p class="text-lg text-accent dark:text-base-200 mb-6">Looking for the best time to book? It’s right now.</p>
 
             <div class="space-y-4">
-              <div class="p-4 bg-muted-50 rounded-lg border border-red-200 hover:bg-muted transition duration-300">
+              <div class="p-4 bg-muted-50 rounded-lg border border-secondary hover:bg-muted transition duration-300">
                 <p class="text-xl font-semibold text-muted">Flash Sale</p>
-                <p class="text-accent dark:text-secondary">Save up to <strong class="text-red-800">40%</strong> on select international routes this week.</p>
+                <p class="text-accent dark:text-base-200">Save up to <strong class="text-accent dark:text-secondary">40%</strong> on select international routes this week.</p>
               </div>
-              <div class="p-4 bg-muted-50 rounded-lg border border-red-200 hover:bg-muted transition duration-300">
+              <div class="p-4 bg-muted-50 rounded-lg border border-secondary hover:bg-muted transition duration-300">
                 <p class="text-xl font-semibold text-muted">Last-Minute Deals</p>
-                <p class="text-accent dark:text-secondary">Perfect for spontaneous travelers on a budget.</p>
+                <p class="text-accent dark:text-base-200">Perfect for spontaneous travelers on a budget.</p>
               </div>
-              <div class="p-4 bg-muted-50 rounded-lg border border-red-200 hover:bg-muted transition duration-300">
+              <div class="p-4 bg-muted-50 rounded-lg border border-secondary hover:bg-muted transition duration-300">
                 <p class="text-xl font-semibold text-muted">Seasonal Offers</p>
-                <p class="text-accent dark:text-secondary">Summer, winter, and festival-season discounts updated daily.</p>
+                <p class="text-accent dark:text-base-200">Summer, winter, and festival-season discounts updated daily.</p>
               </div>
             </div>
           </div>
@@ -304,10 +303,10 @@
           <h3 class="text-3xl font-bold text-accent dark:text-secondary mb-4">
             Your Next Adventure Is Just a Click Away
           </h3>
-          <p class="text-xl text-accent dark:text-secondary max-w-4xl mx-auto mb-8">
+          <p class="text-xl text-accent dark:text-base-200 max-w-4xl mx-auto mb-8">
             With powerful search tools, transparent pricing, and real-time access to 1,200+ airlines and travel providers, <span class="badge text-accent">FlightFareMart</span> makes discovering your next destination easier than ever.
           </p>
-          <p class="text-2xl font-bold text-accent dark:text-secondary mb-6">
+          <p class="text-2xl font-bold text-accent dark:text-base-300 mb-6">
             Where will you go next?
           </p>
           <a href="#" class="inline-block px-12 py-4 text-xl font-bold text-white bg-accent rounded-lg shadow-xl secondary transition duration-300 transform hover:scale-105">
@@ -316,10 +315,10 @@
         </div>
       </div>
     </section>
-    <section class=" min-h-screen py-5 py-24 mx-2">
-      <h2 class="text-2xl md:text-6xl mx-auto max-w-6xl px-5 md:px-3">The FlightFareMart Difference</h2>
-      <p class="mx-auto px-5 md:px-4 max-w-6xl text-base md:text-base my-2 ">This section engages users who are browsing rather than searching for a specific flight, helping convert passive interest into active search.</p>
-      <div class="md:flex  mx-auto gap-6 max-w-6xl p-4">
+    <section class="min-h-screen dark:bg-black py-5 py-24 ">
+      <h2 class="text-2xl md:text-6xl mx-auto max-w-6xl dark:text-secondary text-accent px-5 md:px-3">The FlightFareMart Difference</h2>
+      <p class="mx-auto px-5 md:px-4 max-w-6xl text-base dark:text-secondary/50 my-2 pb-3">This section engages users who are browsing rather than searching for a specific flight, helping convert passive interest into active search.</p>
+      <div class="lg:flex  mx-auto gap-6 max-w-6xl p-4">
         <!-- Left side with image and overlay text -->
         <div class="basis-3/2 relative h-[500px] overflow-hidden shadow-md shadow-accent/50 rounded-xl">
           <img
@@ -331,23 +330,23 @@
             <div class="text-white absolute w-96 grid grid-row text-start md:-right-16 sm:-right-20 -right-40 bg-secondary/20 px-6 p-5 backdrop-blur-md rounded-xl text-md font-semibold text-center px-4">
               <p class="text-sm flex flex-col"> <strong class="text-2xl">$150</strong> <span class="uppercase font-normal">Unbeatable Deals, Always</span></p>
             </div>
-            <div class="bg-secondary  grid grid-row absolute   w-125 md:-right-4 sm:-right-10 -right-40 top-85 text-accent p-8 text-start backdrop-blur-sm rounded-xl text-lg font-semibold text-center px-4">
+            <div class="text-secondary  grid grid-row absolute  w-125 md:-right-4 sm:-right-10 -right-40 top-85 bg-accent  text-start backdrop-blur-sm rounded-xl text-lg font-semibold text-center p-7">
               <p class="col-span-1 text-xl md:text-2xl">Smarter Search, Better Results</p>
               <p class="text-sm">1,200+ airlines and travel providers</p>
             </div>
           </div>
         </div>
         <!-- Right side content -->
-        <div class="basis-1/2 w-full md:mt-0 mt-8 h-full flex flex-col items-center  pb-4 justify-center">
-          <div class="h-[200px] sm:h-[300px] relative rounded-lg w-full overflow-hidden bg-accent border text-secondary hover:-translate-y-0.5 transition duration-300 rounded-xl">
-            <div class="absolute -right-0 -bottom-12 rounded-xl h-[200px] w-120 sm:w-10 lg:w-60 md:w-64 bg-base-300 ">
-
+        <div class="basis-1/2  w-full lg:mt-0 mt-8 h-full flex flex-col items-center  pb-4 justify-center">
+          <div class="lg:h-[200px] sm:h-[300px] relative rounded-lg w-full overflow-hidden bg-accent text-secondary hover:-translate-y-0.5 transition duration-300 rounded-xl">
+            <div class="absolute p-2 text-accent -right-1 sm:right -bottom-12 sm:-bottom-16 rounded-xl lg:h-[200px] sm:h-[300px] overflow-hidden w-120 sm:w-140 lg:w-60 md:w-160 bg-base-300 ">
+              <p class="text-2xl">Monthly 150 trips</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, distinctio!</p>
             </div>
           </div>
-          <img alt="features showcase" class="hover:-translate-y-0.5 transition duration-300 rounded-xl" src="https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/features/image-3.png">
-          <h3 class="text-[24px]/7.5 text-slate-800 font-medium mt-6">Better design with highest revenue and profits </h3>
-          <p class="text-slate-600 mt-2">PrebuiltUI empowers you to build beautifully and scale effortlessly.</p>
-          <a href="https://prebuiltui.com" class="group flex items-center gap-2 mt-4 text-indigo-600 hover:text-indigo-700 transition">
+          <h3 class="text-[24px]/7.5  text-accent dark:text-base-300 font-medium mt-6">Better design with highest revenue and profits </h3>
+          <p class="text-accent/70 dark:text-base-200  mt-2">empowers you to build beautifully and scale effortlessly.</p>
+          <a href="https://prebuiltui.com" class="group  flex items-center gap-2 mt-4 text-accent hover:text-accent/20 transition">
             Learn more about the product
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right size-5 group-hover:translate-x-0.5 transition duration-300" aria-hidden="true">
               <path d="M7 7h10v10"></path>
@@ -357,9 +356,13 @@
         </div>
       </div>
     </section>
-    <section class="min-h-screen py-24">
-      <h2 class="text-2xl md:text-6xl mx-auto max-w-6xl px-5 md:px-3">Never Miss a Takeoff</h2>
+
+    <section class="py-16 dark:bg-black h-90  bg-base-300 text-accent w-full text-center px-2">
+      <p class="text-xl font-medium text- dark:text-base-200 ">Let’s start your trip!</p>
+      <h2 class="font-medium dark:text-base-300/80 text-4xl max-w-lg mx-auto my-4">For work inquires feel free to get in touch with team.</h2>
+      <a href="contact@prebuiltui.com" class="text-lg dark:text-secondary">contact@flightfaremart.com</a>
     </section>
+
   </main>
   @include('layouts.footer')
 </body>

@@ -49,7 +49,7 @@
     --color-error-content: oklch(98% 0.01 30);
 
     /* Additional tokens */
-    --color-dark: oklab(20.366% -0.02323 0.03059);
+    --color-dark: #353535;
     --color-trans: oklab(84.88% -0.03826 0.07836 / 0.39);
 
     /* Typography */

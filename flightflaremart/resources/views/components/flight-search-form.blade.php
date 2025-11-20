@@ -1,7 +1,7 @@
 <div x-data="flightSearchForm()" class=" m-2">
   <div class="w-full">
     <form @submit.prevent="handleSubmit" 
-          class="bg-base-200 rounded-lg shadow-xl p-4 sm:p-6 lg:p-8 space-y-6 w-full">
+          class="bg-base-200/60 dark:bg-primary/60 rounded-lg dark:text-accent backdrop-blur-sm shadow-xl p-4 sm:p-6 lg:p-8 space-y-6 w-full">
       
       <!-- Trip Details -->
       <fieldset class="grid grid-cols-1 sm:grid-cols-3 gap-3">
@@ -81,7 +81,7 @@
 
       <!-- Submit -->
       <div class="text-right">
-        <button class="btn btn-primary px-7 h-11">
+        <button class="btn btn-accent dark:btn-primary px-7 h-11">
           Get started
         </button>
       </div>
