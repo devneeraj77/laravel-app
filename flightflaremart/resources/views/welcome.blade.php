@@ -177,14 +177,6 @@
         </div>
       </div>
     </section>
-    <section class="h-fit bg-secondary text-accent py-24">
-      <p class="mx-auto px-5 md:px-4 max-w-6xl text-base md:text-xl text-center">Trust & Social Proof Section</p>
-      <h2 class="text-4xl md:text-6xl text-center  mx-auto max-w-6xl px-5 md:px-3">Join Thousands of Happy Travelers</h2>
-      <div class="mx-auto max-w-6xl">
-        <x-testimonials :testimonials="$testimonials" />
-      </div>
-    </section>
-
     <section class="bg-white  py-12 md:py-20 px-4 sm:px-6 lg:px-8">
       <h2 class="text-4xl md:text-6xl  mx-auto max-w-6xl px-5 md:px-3 ">Where Will You Explore Next?</h2>
       <p class="mx-auto px-5 md:px-4 max-w-6xl text-base md:text-base my-2 ">This section engages users who are browsing rather than searching for a specific flight, helping convert passive interest into active search.</p>
@@ -324,25 +316,49 @@
         </div>
       </div>
     </section>
-    <section class=" min-h-screen py-5 py-24 ">
+    <section class=" min-h-screen py-5 py-24 mx-2">
       <h2 class="text-2xl md:text-6xl mx-auto max-w-6xl px-5 md:px-3">The FlightFareMart Difference</h2>
       <p class="mx-auto px-5 md:px-4 max-w-6xl text-base md:text-base my-2 ">This section engages users who are browsing rather than searching for a specific flight, helping convert passive interest into active search.</p>
-      <div class="flex">
-        <div class="basis-1/2 relative overflow-hidden border ">
-          <img class=" relative" src="https://images.unsplash.com/photo-1538688423619-a81d3f23454b?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
-          <div class="absolute">
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non, architecto?</p>
+      <div class="md:flex  mx-auto gap-6 max-w-6xl p-4">
+        <!-- Left side with image and overlay text -->
+        <div class="basis-3/2 relative h-[500px] overflow-hidden shadow-md shadow-accent/50 rounded-xl">
+          <img
+            class="w-full h-full object-cover"
+            src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?q=80&w=847&auto=format&fit=crop"
+            alt="Sample Image">
+          <!-- Overlay text -->
+          <div class="absolute inset-0 flex items-center justify-center bg-black/20 ">
+            <div class="text-white absolute w-96 grid grid-row text-start md:-right-16 sm:-right-20 -right-40 bg-secondary/20 px-6 p-5 backdrop-blur-md rounded-xl text-md font-semibold text-center px-4">
+              <p class="text-sm flex flex-col"> <strong class="text-2xl">$150</strong> <span class="uppercase font-normal">Unbeatable Deals, Always</span></p>
+            </div>
+            <div class="bg-secondary  grid grid-row absolute   w-125 md:-right-4 sm:-right-10 -right-40 top-85 text-accent p-8 text-start backdrop-blur-sm rounded-xl text-lg font-semibold text-center px-4">
+              <p class="col-span-1 text-xl md:text-2xl">Smarter Search, Better Results</p>
+              <p class="text-sm">1,200+ airlines and travel providers</p>
+            </div>
           </div>
         </div>
-        <div class="basis-1/2">
-          hello
+        <!-- Right side content -->
+        <div class="basis-1/2 w-full md:mt-0 mt-8 h-full flex flex-col items-center  pb-4 justify-center">
+          <div class="h-[200px] sm:h-[300px] relative rounded-lg w-full overflow-hidden bg-accent border text-secondary hover:-translate-y-0.5 transition duration-300 rounded-xl">
+            <div class="absolute -right-0 -bottom-12 rounded-xl h-[200px] w-120 sm:w-10 lg:w-60 md:w-64 bg-base-300 ">
+
+            </div>
+          </div>
+          <img alt="features showcase" class="hover:-translate-y-0.5 transition duration-300 rounded-xl" src="https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/features/image-3.png">
+          <h3 class="text-[24px]/7.5 text-slate-800 font-medium mt-6">Better design with highest revenue and profits </h3>
+          <p class="text-slate-600 mt-2">PrebuiltUI empowers you to build beautifully and scale effortlessly.</p>
+          <a href="https://prebuiltui.com" class="group flex items-center gap-2 mt-4 text-indigo-600 hover:text-indigo-700 transition">
+            Learn more about the product
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right size-5 group-hover:translate-x-0.5 transition duration-300" aria-hidden="true">
+              <path d="M7 7h10v10"></path>
+              <path d="M7 17 17 7"></path>
+            </svg>
+          </a>
         </div>
       </div>
-      <
     </section>
     <section class="min-h-screen py-24">
       <h2 class="text-2xl md:text-6xl mx-auto max-w-6xl px-5 md:px-3">Never Miss a Takeoff</h2>
-
     </section>
   </main>
   @include('layouts.footer')

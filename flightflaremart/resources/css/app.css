@@ -10,7 +10,6 @@
     themes: false;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 @plugin "daisyui/theme" {
     name: "mytheme";
     default: true; /* set as default */
