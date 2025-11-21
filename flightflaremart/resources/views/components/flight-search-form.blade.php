@@ -1,7 +1,7 @@
 <div x-data="flightSearchForm()" class=" m-2">
   <div class="w-full">
     <form @submit.prevent="handleSubmit" 
-          class="bg-base-200/60 dark:bg-primary/60 rounded-lg dark:text-accent backdrop-blur-sm shadow-xl p-4 sm:p-6 lg:p-8 space-y-6 w-full">
+          class="bg-accent dark:bg-accent/60 rounded-lg dark:text-secondary text-base-300  backdrop-blur-sm shadow-xl p-4 sm:p-6 lg:p-8 space-y-6 w-full">
       
       <!-- Trip Details -->
       <fieldset class="grid grid-cols-1 sm:grid-cols-3 gap-3">
@@ -9,7 +9,7 @@
 
         <div class="form-control">
           <label class="label"><span class="label-text">Trip Type</span></label>
-          <select x-model="form.tripType" class="select select-bordered w-full">
+          <select x-model="form.tripType" class="select select-bordered w-full text-accent ">
             <option value="round-trip">Round trip</option>
             <option value="one-way">One way</option>
             <option value="multi-city">Multi-city</option>
@@ -18,7 +18,7 @@
 
         <div class="form-control">
           <label class="label"><span class="label-text">Passengers</span></label>
-          <select x-model="form.passengers" class="select select-bordered w-full">
+          <select x-model="form.passengers" class="select select-bordered w-full text-accent ">
             <option value="1">1 Passenger</option>
             <option value="2">2 Passengers</option>
             <option value="3">3 Passengers</option>
@@ -29,7 +29,7 @@
 
         <div class="form-control">
           <label class="label"><span class="label-text">Class</span></label>
-          <select x-model="form.class" class="select select-bordered w-full">
+          <select x-model="form.class" class="select select-bordered w-full text-accent ">
             <option value="economy">Economy</option>
             <option value="premium-economy">Premium Economy</option>
             <option value="business">Business</option>
@@ -43,7 +43,7 @@
         <div class="form-control sm:col-span-2">
           <label class="label"><span class="label-text">Origin / Destination</span></label>
           <div class="flex gap-2">
-            <select x-model="form.from" class="select select-bordered w-full">
+            <select x-model="form.from" class="select select-bordered w-full text-accent ">
               <option value="">From...</option>
               <option value="YUL">Montreal (YUL)</option>
               <option value="YYZ">Toronto (YYZ)</option>
@@ -56,7 +56,7 @@
                     class="btn btn-circle btn-primary shrink-0 self-center">
               ⇄
             </button>
-            <select x-model="form.to" class="select select-bordered w-full">
+            <select x-model="form.to" class="select select-bordered w-full text-accent ">
               <option value="">To...</option>
               <option value="YUL">Montreal (YUL)</option>
               <option value="YYZ">Toronto (YYZ)</option>
@@ -70,19 +70,19 @@
 
         <div class="form-control">
           <label class="label"><span class="label-text">Departure Date</span></label>
-          <input type="date" x-model="form.departureDate" :min="today" class="input input-bordered w-full" />
+          <input type="date" x-model="form.departureDate" :min="today" class="input input-bordered w-full text-accent " />
         </div>
 
         <div class="form-control" x-show="form.tripType === 'round-trip'">
           <label class="label"><span class="label-text">Return Date</span></label>
-          <input type="date" x-model="form.returnDate" :min="form.departureDate || today" class="input input-bordered w-full" />
+          <input type="date" x-model="form.returnDate" :min="form.departureDate || today" class="text-accent  input input-bordered w-full" />
         </div>
       </div>
 
       <!-- Submit -->
       <div class="text-right">
-        <button class="btn btn-accent dark:btn-primary px-7 h-11">
-          Get started
+        <button class="btn btn-secondary dark:btn-primary text-accent px-7 h-11">
+          Search flights
         </button>
       </div>
     </form>

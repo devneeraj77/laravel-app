@@ -35,7 +35,7 @@
                 src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=50&h=50&auto=format&fit=crop"
                 alt="userImage3">
             </div>
-            <p class="-translate-x-2 text-slate-500 ">Grab of 100k+ countries deals </p>
+            <p class="-translate-x-2 text-slate-500 ">Grab of 100+ countries deals </p>
           </div>
           <h1 class="text-center mt-4 md:text-left text-4xl leading-[48px] md:text-5xl md:leading-[74px] font-medium max-w-xl text-accent dark:text-secondary">
             Find Your Perfect Flight, Guaranteed Lowest Fare.
@@ -239,7 +239,7 @@
             </div>
             @endforeach
           </div>
-          <p class="text-base-200 text-lg leading-relaxed max-w-4xl mx-auto text-center md:mb-10">
+          <p class="dark:text-base-200 text-lg leading-relaxed max-w-4xl mx-auto text-center md:mb-10">
             Explore some of the world’s most iconic destinations with unbeatable fares and exclusive seasonal offers.
             Whether you're dreaming of Miami’s sun-soaked beaches, London’s historic charm, Dubai’s modern wonders,
             or Singapore’s vibrant city life, FlightFareMart brings you closer to your next adventure with curated deals

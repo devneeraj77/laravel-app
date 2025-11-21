@@ -8,7 +8,7 @@ export default defineConfig({
         strictPort: true,
         cors: true, // temp use only testing base allowed
         hmr: {
-            host: "192.168.1.85", // replace with your current IP
+            host: "192.168.1.44", // replace with your current IP
         },
     },
     plugins: [
