@@ -34,6 +34,9 @@ Route::post('/flights/search', [FlightController::class, 'search'])->name('fligh
 Route::view('/privacy-policy', 'privacy-policy')->name('privacy');
 Route::view('/terms', 'terms')->name('terms');
 Route::view('/about', 'about')->name('about');
+Route::view('/faqs', 'faqs')->name('faqs');
+Route::view('/blog', 'blog')->name('blog');
+
 
 
 // Redirect /admin to appropriate location
