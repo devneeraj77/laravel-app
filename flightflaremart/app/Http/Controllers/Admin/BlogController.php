@@ -42,7 +42,7 @@ class BlogController extends Controller
         // 1. Fetch all posts (or paginate them for a real application)
         // For testing, we will pass a simple array if the Post model doesn't exist yet.
         try {
-            $posts = Post::latet()->get();
+            $posts = Post::all()->sortByDesc('created_at');
         } catch (\Throwable $th) {
             // Fallback for testing if the DB/Model is not set up
             $posts = collect([

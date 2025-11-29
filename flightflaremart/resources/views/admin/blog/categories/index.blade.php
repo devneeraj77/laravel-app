@@ -7,7 +7,7 @@
     <div class="flex justify-between items-center mb-6">
         <h1 class="text-3xl font-bold text-gray-800">Blog Categories</h1>
         <a href="{{ route('admin.blog.categories.create') }}" 
-           class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition duration-300">
+           class="bg-accent hover:bg-accent/80 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition duration-300">
             + New Category
         </a>
     </div>

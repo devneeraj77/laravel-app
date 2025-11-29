@@ -24,6 +24,17 @@ class PostController extends Controller
     }
 
     /**
+     * Display a listing of the draft posts.
+     * @return \Illuminate\View\View
+     */
+    public function drafts()
+    {
+        // Fetch all posts, ordered by latest, with relationships
+        $posts = Post::with(['author', 'category'])->where('is_published', false)->latest()->paginate(10);
+        return view('admin.blog.posts.drafts', compact('posts'));
+    }
+
+    /**
      * Show the form for creating a new post.
      * @return \Illuminate\View\View
      */
@@ -116,5 +127,24 @@ class PostController extends Controller
         $post->delete();
 
         return redirect()->route('admin.blog.posts.index')->with('success', 'Post deleted successfully!');
+    }
+
+    /**
+     * Toggle the publish status of the specified post.
+     * @param Post $post
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function togglePublish(Post $post)
+    {
+        $post->is_published = !$post->is_published;
+        if ($post->is_published && is_null($post->published_at)) {
+            $post->published_at = now();
+        } elseif (!$post->is_published) {
+            $post->published_at = null;
+        }
+        $post->save();
+
+        $status = $post->is_published ? 'published' : 'draft';
+        return back()->with('success', "Post marked as {$status} successfully!");
     }
 }

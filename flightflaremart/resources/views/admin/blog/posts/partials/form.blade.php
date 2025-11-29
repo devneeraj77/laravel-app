@@ -105,14 +105,27 @@
                 @error('published_at') <p class="text-sm text-red-500 mt-1">{{ $message }}</p> @enderror
             </div>
 
-            <!-- Is Published Checkbox -->
-            <div class="flex items-center pt-6">
-                <input id="is_published" name="is_published" type="checkbox"
-                       class="h-5 w-5 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"
-                       value="1" {{ old('is_published', $post->is_published) ? 'checked' : '' }}>
-                <label for="is_published" class="ml-2 block text-base font-medium text-gray-700">
-                    Publish Post Now
-                </label>
+            <!-- Publication Status Radio Buttons -->
+            <div class="pt-6">
+                <label class="block text-sm font-medium text-gray-700 mb-2">Publication Status</label>
+                <div class="mt-1 flex items-center space-x-4">
+                    <div class="flex items-center">
+                        <input id="status_draft" name="is_published" type="radio" value="0"
+                               class="h-5 w-5 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"
+                               {{ old('is_published', $post->exists ? $post->is_published : false) == false ? 'checked' : '' }}>
+                        <label for="status_draft" class="ml-2 block text-base font-medium text-gray-700">
+                            Draft
+                        </label>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="status_publish" name="is_published" type="radio" value="1"
+                               class="h-5 w-5 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"
+                               {{ old('is_published', $post->exists ? $post->is_published : true) == true ? 'checked' : '' }}>
+                        <label for="status_publish" class="ml-2 block text-base font-medium text-gray-700">
+                            Publish
+                        </label>
+                    </div>
+                </div>
                 @error('is_published') <p class="text-sm text-red-500 mt-1">{{ $message }}</p> @enderror
             </div>
         </div>

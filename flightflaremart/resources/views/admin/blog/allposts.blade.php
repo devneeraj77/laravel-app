@@ -27,6 +27,7 @@
                             <th>Title</th>
                             <th>Slug</th>
                             <th>Created On</th>
+                            <th>Status</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -38,7 +39,20 @@
                             <td>{{ $post->slug }}</td>
                             <td>{{ $post->created_at->format('M d, Y') }}</td>
                             <td>
-                                <a href="#" class="btn btn-info btn-sm">Edit</a>
+                                @if($post->is_published)
+                                    <span class="badge badge-success">Published</span>
+                                @else
+                                    <span class="badge badge-secondary">Draft</span>
+                                @endif
+                            </td>
+                            <td>
+                                <a href="{{ route('admin.blog.posts.edit', $post->id) }}" class="btn btn-info btn-sm">Edit</a>
+                                <form action="{{ route('admin.blog.posts.toggle-publish', $post->id) }}" method="POST" style="display:inline-block;">
+                                    @csrf
+                                    <button type="submit" class="btn btn-sm {{ $post->is_published ? 'btn-success' : 'btn-warning' }}" onclick="return confirm('Are you sure you want to {{ $post->is_published ? 'draft' : 'publish' }} this post?')">
+                                        {{ $post->is_published ? 'Published' : 'Draft' }}
+                                    </button>
+                                </form>
                                 <form action="#" method="POST" style="display:inline-block;">
                                     @csrf
                                     @method('DELETE')

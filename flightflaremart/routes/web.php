@@ -32,7 +32,7 @@ Route::get('scripts.db-check', function () {
 });
 
 // Route to handle the search (POST request)
-// Route::post('/flights/search', [FlightController::class, 'search'])->name('flights.search');
+Route::post('/flights/search', [FlightController::class, 'search'])->name('flights.search');
 
 
 Route::view('/privacy-policy', 'privacy-policy')->name('privacy');
@@ -75,10 +75,12 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
         // Blog Posts and Categories
         Route::prefix('blog')->name('blog.')->group(function () {
+            Route::get('/posts/drafts', [BlogPostController::class, 'drafts'])->name('posts.drafts');
             Route::resource('posts', BlogPostController::class)->except(['show']);
             Route::resource('categories', CategoryController::class)->except(['show']);
             Route::post('/AddNewPost', [BlogPostController::class, 'AddNewPost'])->name('AddNewPost');
             Route::get('/allposts', [BlogController::class, 'allposts'])->name('allposts');
+            Route::post('/posts/{post}/toggle-publish', [BlogPostController::class, 'togglePublish'])->name('posts.toggle-publish');
         });
     });
 });
