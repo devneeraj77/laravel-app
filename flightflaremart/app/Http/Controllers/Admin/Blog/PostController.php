@@ -57,17 +57,6 @@ class PostController extends Controller
     public function store(PostRequest $request)
     {
         $data = $request->validated();
-
-        // Handle slug generation if not provided, ensuring uniqueness
-        $data['slug'] = Str::slug($data['slug'] ?? $data['title']);
-
-
-        if ($data['is_published'] && empty($data['published_at'])) {
-            $data['published_at'] = now();
-        } elseif (!$data['is_published']) {
-            $data['published_at'] = null; // Clear publication date if unpublished
-        }
-
         Post::create($data);
 
         return redirect()->route('admin.blog.posts.index')->with('success', 'Post created successfully!');
@@ -95,17 +84,6 @@ class PostController extends Controller
     public function update(PostRequest $request, Post $post)
     {
         $data = $request->validated();
-
-        // Handle slug generation if not provided, ensuring uniqueness
-        $data['slug'] = Str::slug($data['slug'] ?? $data['title']);
-
-
-        if ($data['is_published'] && is_null($post->published_at)) {
-            $data['published_at'] = now();
-        } elseif (!$data['is_published']) {
-            $data['published_at'] = null; // Clear publication date if unpublished
-        }
-
         $post->update($data);
 
         return redirect()->route('admin.blog.posts.index')->with('success', 'Post updated successfully!');

@@ -18,31 +18,51 @@ class PostRequest extends FormRequest
     protected function prepareForValidation(): void
     {
         $title = $this->input('title');
-        // Handle slug generation/cleaning
         $slug = $this->input('slug') ? Str::slug($this->input('slug')) : Str::slug($title);
         
-        // Handle 'is_published': checkbox is missing if unchecked, so we check for presence.
-        $isPublished = $this->has('is_published');
-        
-        // Handle 'published_at' logic based on the status
-        $publishedAtInput = $this->input('published_at');
-        
-        if ($isPublished && empty($publishedAtInput)) {
-            // If published but no date set, set it to now
-            $publishedAt = now();
-        } elseif (!$isPublished) {
-            // If unpublished, ensure the date is null
-            $publishedAt = null; 
-        } else {
-            // Otherwise, use the user's input date (or null if the input was blank)
-            $publishedAt = $publishedAtInput ?: null;
-        }
-
-        $this->merge([
+        $mergedData = [
             'slug' => $slug,
-            'is_published' => $isPublished,
-            'published_at' => $publishedAt,
-        ]);
+        ];
+
+        // Determine if this is an update operation by checking for a route parameter named 'post'
+        $isUpdate = $this->route('post') !== null;
+
+        if ($this->has('is_published')) {
+            // If 'is_published' is present in the request, use its boolean value.
+            // This covers cases where it's checked (1) or a hidden field sends (0).
+            $mergedData['is_published'] = $this->boolean('is_published');
+        } elseif (!$isUpdate) {
+            // If it's a 'store' operation and 'is_published' is not present, default to false.
+            $mergedData['is_published'] = false;
+        }
+        // If it's an 'update' operation and 'is_published' is not present, we deliberately
+        // don't add it to mergedData. This means the controller's update method
+        // will not attempt to change the post's is_published status.
+
+        // Handle 'published_at' logic.
+        // We need to consider the effective 'is_published' status for this.
+        // If 'is_published' was explicitly set in the request, use that.
+        // Otherwise, for updates, use the existing post's status. For store, use the default false.
+        $effectiveIsPublished = $mergedData['is_published'] ?? 
+                                ($isUpdate ? $this->route('post')->is_published : false);
+
+        $publishedAtInput = $this->input('published_at');
+        $publishedAt = $publishedAtInput; // Start with the input value
+
+        if ($effectiveIsPublished && empty($publishedAtInput)) {
+            // If effectively published, but published_at was empty in input, set to now.
+            // This also covers cases where 'is_published' was just toggled to true from the form.
+            $publishedAt = now();
+        } elseif (!$effectiveIsPublished) {
+            // If effectively unpublished, ensure published_at is null.
+            $publishedAt = null; 
+        } 
+        // Else, if effectiveIsPublished is true and publishedAtInput is not empty, use publishedAtInput.
+        // The default assignment $publishedAt = $publishedAtInput handles this.
+
+        $mergedData['published_at'] = $publishedAt;
+
+        $this->merge($mergedData);
     }
 
     public function rules(): array
