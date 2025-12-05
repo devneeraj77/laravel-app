@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Category;
 use App\Models\ImageAsset;
-use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Storage; // Added for local storage
 use Illuminate\Support\Str; // For slug generation
 
 class PostController extends Controller
@@ -57,28 +58,34 @@ class PostController extends Controller
         $post->save();
 
         if ($request->hasFile('image_upload')) {
+            Log::info('Image upload detected for new post.');
+            $file = $request->file('image_upload');
+            Log::info('Original Filename: ' . $file->getClientOriginalName() . ', Mime Type: ' . $file->getMimeType());
+
             try {
-                $uploadedFileUrl = Cloudinary::upload($request->file('image_upload')->getRealPath())->getSecurePath();
-                $publicId = Cloudinary::getPublicId();
+                $imagePath = $file->store('post_images', 'public');
+                Log::info('Image stored at: ' . $imagePath);
 
                 ImageAsset::create([
-                    'url' => $uploadedFileUrl,
+                    'url' => $imagePath,
                     'is_url' => false,
                     'post_id' => $post->id,
-                    'cloudinary_id' => $publicId,
                 ]);
+                Log::info('ImageAsset record created for uploaded file.');
             } catch (\Exception $e) {
-                // Log the error and redirect back with a message
-                \Log::error('Cloudinary Upload Error: ' . $e->getMessage());
-                return back()->withInput()->with('error', 'Failed to upload image to Cloudinary. Please try again.');
+                Log::error('Image Upload Error in store method: ' . $e->getMessage(), ['trace' => $e->getTraceAsString()]);
+                return back()->withInput()->with('error', 'Failed to upload image. Please try again.');
             }
         } elseif ($request->filled('image_url')) {
+            Log::info('Image URL detected for new post: ' . $validated['image_url']);
             ImageAsset::create([
                 'url' => $validated['image_url'],
                 'is_url' => true,
                 'post_id' => $post->id,
-                'cloudinary_id' => null, // No Cloudinary ID for external URLs
             ]);
+            Log::info('ImageAsset record created for image URL.');
+        } else {
+            Log::info('No image upload or URL provided for new post.');
         }
 
         return redirect()->route('admin.posts.index')->with('success', 'Post created successfully!');
@@ -128,55 +135,81 @@ class PostController extends Controller
 
         // Handle image update
         if ($request->hasFile('image_upload')) {
+            Log::info('Image upload detected for post update (Post ID: ' . $post->id . ').');
+            $file = $request->file('image_upload');
+            Log::info('Original Filename: ' . $file->getClientOriginalName() . ', Mime Type: ' . $file->getMimeType());
+
             try {
-                // Delete old image from Cloudinary if it exists
-                if ($post->imageAsset && $post->imageAsset->cloudinary_id) {
-                    Cloudinary::destroy($post->imageAsset->cloudinary_id);
+                // Delete old image from local storage if it exists
+                if ($post->imageAsset) {
+                    Log::info('Existing imageAsset found for post ' . $post->id);
+                    if (!$post->imageAsset->is_url) {
+                        Log::info('Existing image is local. Deleting old file: ' . $post->imageAsset->url);
+                        Storage::disk('public')->delete($post->imageAsset->url);
+                    } else {
+                        Log::info('Existing image is external URL. No file to delete.');
+                    }
                     $post->imageAsset->delete(); // Delete the old ImageAsset record
+                    Log::info('Old ImageAsset record deleted.');
                 }
 
-                $uploadedFileUrl = Cloudinary::upload($request->file('image_upload')->getRealPath())->getSecurePath();
-                $publicId = Cloudinary::getPublicId();
+                $imagePath = $file->store('post_images', 'public');
+                Log::info('New image stored at: ' . $imagePath);
 
                 ImageAsset::create([
-                    'url' => $uploadedFileUrl,
+                    'url' => $imagePath,
                     'is_url' => false,
                     'post_id' => $post->id,
-                    'cloudinary_id' => $publicId,
                 ]);
+                Log::info('New ImageAsset record created for uploaded file.');
             } catch (\Exception $e) {
-                \Log::error('Cloudinary Upload Error (Update): ' . $e->getMessage());
-                return back()->withInput()->with('error', 'Failed to upload image to Cloudinary during update. Please try again.');
+                Log::error('Image Upload Error in update method: ' . $e->getMessage(), ['trace' => $e->getTraceAsString()]);
+                return back()->withInput()->with('error', 'Failed to upload image during update. Please try again.');
             }
         } elseif ($request->filled('image_url')) {
+            Log::info('Image URL detected for post update (Post ID: ' . $post->id . '): ' . $validated['image_url']);
             try {
-                // If a new URL is provided, and there was an old Cloudinary image, delete it
-                if ($post->imageAsset && $post->imageAsset->cloudinary_id) {
-                    Cloudinary::destroy($post->imageAsset->cloudinary_id);
+                // If a new URL is provided, and there was an old local image, delete it
+                if ($post->imageAsset) {
+                    Log::info('Existing imageAsset found for post ' . $post->id);
+                    if (!$post->imageAsset->is_url) {
+                        Log::info('Existing image is local. Deleting old file: ' . $post->imageAsset->url);
+                        Storage::disk('public')->delete($post->imageAsset->url);
+                    } else {
+                        Log::info('Existing image is external URL. No file to delete.');
+                    }
                     $post->imageAsset->delete(); // Delete the old ImageAsset record
+                    Log::info('Old ImageAsset record deleted.');
                 }
 
                 ImageAsset::create([
                     'url' => $validated['image_url'],
                     'is_url' => true,
                     'post_id' => $post->id,
-                    'cloudinary_id' => null,
                 ]);
+                Log::info('New ImageAsset record created for image URL.');
             } catch (\Exception $e) {
-                \Log::error('Cloudinary Delete Error (Update with new URL): ' . $e->getMessage());
+                Log::error('Image Process Error in update method with new URL: ' . $e->getMessage(), ['trace' => $e->getTraceAsString()]);
                 return back()->withInput()->with('error', 'Failed to process image during update with new URL. Please try again.');
             }
         } elseif ($request->boolean('clear_image') && $post->imageAsset) {
+            Log::info('Clear image option detected for post update (Post ID: ' . $post->id . ').');
             try {
                 // Option to clear existing image without uploading new one
-                if ($post->imageAsset->cloudinary_id) {
-                    Cloudinary::destroy($post->imageAsset->cloudinary_id);
+                if (!$post->imageAsset->is_url) {
+                    Log::info('Existing image is local. Deleting file during clear: ' . $post->imageAsset->url);
+                    Storage::disk('public')->delete($post->imageAsset->url);
+                } else {
+                    Log::info('Existing image is external URL. No file to delete during clear.');
                 }
                 $post->imageAsset->delete();
+                Log::info('ImageAsset record deleted during clear.');
             } catch (\Exception $e) {
-                \Log::error('Cloudinary Delete Error (Clear Image): ' . $e->getMessage());
-                return back()->withInput()->with('error', 'Failed to clear image from Cloudinary. Please try again.');
+                Log::error('Image Clear Error in update method: ' . $e->getMessage(), ['trace' => $e->getTraceAsString()]);
+                return back()->withInput()->with('error', 'Failed to clear image. Please try again.');
             }
+        } else {
+            Log::info('No image upload, URL, or clear option provided for post update (Post ID: ' . $post->id . ').');
         }
 
 
@@ -188,20 +221,16 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        // Delete associated image from Cloudinary if it exists
+        Log::info('Destroy method called for Post ID: ' . $post->id);
         if ($post->imageAsset) {
-            if ($post->imageAsset->cloudinary_id) {
-                try {
-                    Cloudinary::destroy($post->imageAsset->cloudinary_id);
-                } catch (\Exception $e) {
-                    \Log::error('Cloudinary Delete Error (Destroy Post): ' . $e->getMessage());
-                    // Continue with deleting local record even if Cloudinary deletion fails
-                }
-            }
+            Log::info('ImageAsset found for Post ID: ' . $post->id . '. Triggering delete on ImageAsset.');
             $post->imageAsset->delete(); // This will trigger the ImageAsset model's deleting event
+        } else {
+            Log::info('No ImageAsset found for Post ID: ' . $post->id . '.');
         }
 
         $post->delete();
+        Log::info('Post deleted successfully (ID: ' . $post->id . ').');
 
         return redirect()->route('admin.posts.index')->with('success', 'Post deleted successfully!');
     }

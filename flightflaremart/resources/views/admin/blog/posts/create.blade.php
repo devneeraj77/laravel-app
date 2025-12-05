@@ -11,6 +11,8 @@
 
         <!-- The form partial handles all fields and TinyMCE initialization -->
         @include('admin.blog.posts.partials.form', ['post' => $post, 'categories' => $categories, 'authors' => $authors])
+  <body>
+    
     </form>
 </div>
 @endsection

@@ -9,6 +9,7 @@ use App\Models\Post;
 use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Gd\Driver;
 use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
+use Illuminate\Support\Facades\Log;
 
 class ImageAssetController extends Controller
 {
@@ -27,20 +28,25 @@ class ImageAssetController extends Controller
                 'url' => $request->image_url,
                 'is_url' => true,
                 'post_id' => $post->id,
-                'path' => null, // No local paths for URL images
+                // 'path' => null, // Removed incorrect assignment
             ]);
             $imageAsset->save(); // Corrected line
         } elseif ($request->hasFile('image_upload')) {
-            $uploadedFileUrl = Cloudinary::upload($request->file('image_upload')->getRealPath())->getSecurePath();
-            $publicId = Cloudinary::getPublicId();
+            try {
+                $uploadedFileUrl = Cloudinary::upload($request->file('image_upload')->getRealPath())->getSecurePath();
+                $publicId = Cloudinary::getPublicId();
 
-            $imageAsset = new ImageAsset([
-                'url' => $uploadedFileUrl,
-                'is_url' => false,
-                'post_id' => $post->id,
-                'cloudinary_id' => $publicId,
-            ]);
-            $imageAsset->save();
+                $imageAsset = new ImageAsset([
+                    'url' => $uploadedFileUrl,
+                    'is_url' => false,
+                    'post_id' => $post->id,
+                    'cloudinary_id' => $publicId,
+                ]);
+                $imageAsset->save();
+            } catch (\Exception $e) {
+                Log::error('Cloudinary upload failed in ImageAssetsController store method: ' . $e->getMessage());
+                return back()->with('error', 'Image upload failed: ' . $e->getMessage());
+            }
         }
 
         return back()->with('success','Image uploaded successfully.');
@@ -66,12 +72,17 @@ class ImageAssetController extends Controller
             if ($imageAsset->cloudinary_id) {
                 Cloudinary::destroy($imageAsset->cloudinary_id);
             }
-            $uploadedFileUrl = Cloudinary::upload($request->file('image_upload')->getRealPath())->getSecurePath();
-            $publicId = Cloudinary::getPublicId();
+            try {
+                $uploadedFileUrl = Cloudinary::upload($request->file('image_upload')->getRealPath())->getSecurePath();
+                $publicId = Cloudinary::getPublicId();
 
-            $imageAsset->url = $uploadedFileUrl;
-            $imageAsset->is_url = false;
-            $imageAsset->cloudinary_id = $publicId;
+                $imageAsset->url = $uploadedFileUrl;
+                $imageAsset->is_url = false;
+                $imageAsset->cloudinary_id = $publicId;
+            } catch (\Exception $e) {
+                Log::error('Cloudinary upload failed in ImageAssetsController update method: ' . $e->getMessage());
+                return back()->with('error', 'Image update failed: ' . $e->getMessage());
+            }
         } else {
             return back()->with('error', 'No image URL or file provided for update.');
         }

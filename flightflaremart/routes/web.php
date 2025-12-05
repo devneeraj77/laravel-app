@@ -16,6 +16,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::view('/upload', 'upload')->name('upload');
+
 // Route to show the form
 Route::get('/flights', function () {
     return view('flights.index');
@@ -87,5 +89,10 @@ Route::prefix('admin')->name('admin.')->group(function () {
             Route::get('/allposts', [BlogController::class, 'allposts'])->name('allposts');
             Route::post('/posts/{post}/toggle-publish', [BlogPostController::class, 'togglePublish'])->name('posts.toggle-publish');
         });
+
+        // Test route for Cloudinary widget
+        Route::get('/test-cloudinary', function () {
+            return view('admin.test-cloudinary');
+        })->name('test-cloudinary');
     });
 });

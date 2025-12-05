@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
+use Illuminate\Support\Facades\Storage;
 
 class ImageAsset extends Model
 {
@@ -14,7 +14,7 @@ class ImageAsset extends Model
         'url',
         'is_url',
         'post_id',
-        'cloudinary_id',
+        'caption',
     ];
 
     protected static function boot()
@@ -22,10 +22,19 @@ class ImageAsset extends Model
         parent::boot();
 
         static::deleting(function ($imageAsset) {
-            if ($imageAsset->cloudinary_id) {
-                Cloudinary::destroy($imageAsset->cloudinary_id);
+            if (!$imageAsset->is_url) {
+                Storage::disk('public')->delete($imageAsset->url);
             }
         });
+    }
+
+    public function getUrlAttribute($value)
+    {
+        if ($this->is_url) {
+            return $value;
+        }
+
+        return Storage::disk('public')->url($value);
     }
 
     public function post()

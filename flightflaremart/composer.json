@@ -11,7 +11,7 @@
     "require": {
         "php": "^8.2",
         "blade-ui-kit/blade-icons": "^1.8",
-        "cloudinary-labs/cloudinary-laravel": "^2.0",
+        "cloudinary-labs/cloudinary-laravel": "^2.3",
         "cloudinary/cloudinary_php": "^2.14",
         "faisal50x/blade-ionicons": "^1.1",
         "guzzlehttp/guzzle": "^7.10",

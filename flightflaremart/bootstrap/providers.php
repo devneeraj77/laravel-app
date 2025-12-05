@@ -3,5 +3,5 @@
 return [
     App\Providers\AppServiceProvider::class,
     BladeUI\Icons\BladeIconsServiceProvider::class,
-
+    CloudinaryLabs\CloudinaryLaravel\CloudinaryServiceProvider::class,
 ];
