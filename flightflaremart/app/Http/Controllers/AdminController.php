@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
+use App\Models\ContactMessage;
+use App\Models\Post;
 use Illuminate\Http\Request;
 use App\Models\Admin;
 use Illuminate\Support\Facades\Hash;
@@ -43,7 +46,23 @@ class AdminController extends Controller
             return redirect()->route('admin.login')->with('error', 'Please login first');
         }
 
-        return view('admin.dashboard');
+        $totalPosts = Post::count();
+        $publishedPosts = Post::where('is_published', true)->count();
+        $draftPosts = Post::where('is_published', false)->count();
+        $totalCategories = Category::count();
+        $totalMessages = ContactMessage::count();
+        $unreadMessages = ContactMessage::where('is_read', false)->count();
+        $recentPosts = Post::with('category', 'author')->latest()->take(5)->get();
+
+        return view('admin.dashboard', compact(
+            'totalPosts',
+            'publishedPosts',
+            'draftPosts',
+            'totalCategories',
+            'totalMessages',
+            'unreadMessages',
+            'recentPosts'
+        ));
     }
 
     public function logout()

@@ -21,7 +21,7 @@
                     </div>
                     <div class="flex-1 bg-white p-6 flex flex-col justify-between">
                         <div class="flex-1">
-                            <p class="text-sm font-medium text-indigo-600">
+                            <p class="text-sm font-medium text-accent/80">
                                 <a href="{{ route('blog.category', $post->category->slug) }}" class="hover:underline">
                                     {{ $post->category->name }}
                                 </a>
@@ -39,7 +39,7 @@
                             <div class="flex-shrink-0">
                                 <!-- Assuming author has a profile photo, otherwise a placeholder -->
                                 <span class="sr-only">{{ $post->author->name }}</span>
-                                <img class="h-10 w-10 rounded-full" src="{{ $post->author->profile_photo_url ?? 'https://ui-avatars.com/api/?name=' . urlencode($post->author->name) . '&color=7F9CF5&background=EBF4FF' }}" alt="">
+                                <img class="h-10 w-10 rounded-full" src="{{ $post->author->profile_photo_url ?? 'https://ui-avatars.com/api/?name=' . urlencode($post->author->name) . '&color=CAD593&background=EBF4FF' }}" alt="">
                             </div>
                             <div class="ml-3">
                                 <p class="text-sm font-medium text-gray-900">

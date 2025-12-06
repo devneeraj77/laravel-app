@@ -70,7 +70,7 @@
         <div class="mt-6">
             <p class="uppercase text-xs text-slate-400 mb-2">Info Opt.</p>
             <a href="{{ route('admin.messages.index') }}"
-                class="block py-2 px-3 rounded text-white hover:bg-[#34495e] transition duration-150 @if(request()->routeIs('admin.messages.index')) bg-indigo-600 font-semibold @endif">
+                class="block py-2 px-3 rounded text-white hover:bg-[#34495e] transition duration-150 @if(request()->routeIs('admin.messages.index')) bg-accent font-semibold @endif">
                 Contact Messages
             </a>
         </div>
