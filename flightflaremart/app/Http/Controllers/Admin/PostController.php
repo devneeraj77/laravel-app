@@ -43,7 +43,6 @@ class PostController extends Controller
             'category_id' => 'required|exists:categories,id',
             'is_published' => 'boolean',
             'image_upload' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048', // 2MB Max
-            'image_url' => 'nullable|url|max:2048',
         ]);
 
         $post = new Post();
@@ -67,8 +66,7 @@ class PostController extends Controller
                 Log::info('Image stored at: ' . $imagePath);
 
                 ImageAsset::create([
-                    'url' => $imagePath,
-                    'is_url' => false,
+                    'path' => $imagePath, // Use 'path' column for local storage
                     'post_id' => $post->id,
                 ]);
                 Log::info('ImageAsset record created for uploaded file.');
@@ -76,16 +74,8 @@ class PostController extends Controller
                 Log::error('Image Upload Error in store method: ' . $e->getMessage(), ['trace' => $e->getTraceAsString()]);
                 return back()->withInput()->with('error', 'Failed to upload image. Please try again.');
             }
-        } elseif ($request->filled('image_url')) {
-            Log::info('Image URL detected for new post: ' . $validated['image_url']);
-            ImageAsset::create([
-                'url' => $validated['image_url'],
-                'is_url' => true,
-                'post_id' => $post->id,
-            ]);
-            Log::info('ImageAsset record created for image URL.');
         } else {
-            Log::info('No image upload or URL provided for new post.');
+            Log::info('No image upload provided for new post.');
         }
 
         return redirect()->route('admin.posts.index')->with('success', 'Post created successfully!');
@@ -121,7 +111,6 @@ class PostController extends Controller
             'category_id' => 'required|exists:categories,id',
             'is_published' => 'boolean',
             'image_upload' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048', // 2MB Max
-            'image_url' => 'nullable|url|max:2048',
         ]);
 
         $post->title = $validated['title'];
@@ -135,81 +124,30 @@ class PostController extends Controller
 
         // Handle image update
         if ($request->hasFile('image_upload')) {
-            Log::info('Image upload detected for post update (Post ID: ' . $post->id . ').');
+            Log::info('New image upload detected for post update (Post ID: ' . $post->id . ').');
+            // Delete old image if it exists
+            if ($post->imageAsset) {
+                Log::info('Existing ImageAsset found for post ' . $post->id . '. Deleting old record.');
+                // The ImageAsset model's deleting event will handle storage deletion.
+                $post->imageAsset->delete();
+            }
+
             $file = $request->file('image_upload');
-            Log::info('Original Filename: ' . $file->getClientOriginalName() . ', Mime Type: ' . $file->getMimeType());
+            $imagePath = $file->store('post_images', 'public');
+            Log::info('New image stored at: ' . $imagePath);
 
-            try {
-                // Delete old image from local storage if it exists
-                if ($post->imageAsset) {
-                    Log::info('Existing imageAsset found for post ' . $post->id);
-                    if (!$post->imageAsset->is_url) {
-                        Log::info('Existing image is local. Deleting old file: ' . $post->imageAsset->url);
-                        Storage::disk('public')->delete($post->imageAsset->url);
-                    } else {
-                        Log::info('Existing image is external URL. No file to delete.');
-                    }
-                    $post->imageAsset->delete(); // Delete the old ImageAsset record
-                    Log::info('Old ImageAsset record deleted.');
-                }
-
-                $imagePath = $file->store('post_images', 'public');
-                Log::info('New image stored at: ' . $imagePath);
-
-                ImageAsset::create([
-                    'url' => $imagePath,
-                    'is_url' => false,
-                    'post_id' => $post->id,
-                ]);
-                Log::info('New ImageAsset record created for uploaded file.');
-            } catch (\Exception $e) {
-                Log::error('Image Upload Error in update method: ' . $e->getMessage(), ['trace' => $e->getTraceAsString()]);
-                return back()->withInput()->with('error', 'Failed to upload image during update. Please try again.');
-            }
-        } elseif ($request->filled('image_url')) {
-            Log::info('Image URL detected for post update (Post ID: ' . $post->id . '): ' . $validated['image_url']);
-            try {
-                // If a new URL is provided, and there was an old local image, delete it
-                if ($post->imageAsset) {
-                    Log::info('Existing imageAsset found for post ' . $post->id);
-                    if (!$post->imageAsset->is_url) {
-                        Log::info('Existing image is local. Deleting old file: ' . $post->imageAsset->url);
-                        Storage::disk('public')->delete($post->imageAsset->url);
-                    } else {
-                        Log::info('Existing image is external URL. No file to delete.');
-                    }
-                    $post->imageAsset->delete(); // Delete the old ImageAsset record
-                    Log::info('Old ImageAsset record deleted.');
-                }
-
-                ImageAsset::create([
-                    'url' => $validated['image_url'],
-                    'is_url' => true,
-                    'post_id' => $post->id,
-                ]);
-                Log::info('New ImageAsset record created for image URL.');
-            } catch (\Exception $e) {
-                Log::error('Image Process Error in update method with new URL: ' . $e->getMessage(), ['trace' => $e->getTraceAsString()]);
-                return back()->withInput()->with('error', 'Failed to process image during update with new URL. Please try again.');
-            }
+            ImageAsset::create([
+                'path' => $imagePath, // Use 'path' column for local storage
+                'post_id' => $post->id,
+            ]);
+            Log::info('New ImageAsset record created for uploaded file.');
         } elseif ($request->boolean('clear_image') && $post->imageAsset) {
             Log::info('Clear image option detected for post update (Post ID: ' . $post->id . ').');
-            try {
-                // Option to clear existing image without uploading new one
-                if (!$post->imageAsset->is_url) {
-                    Log::info('Existing image is local. Deleting file during clear: ' . $post->imageAsset->url);
-                    Storage::disk('public')->delete($post->imageAsset->url);
-                } else {
-                    Log::info('Existing image is external URL. No file to delete during clear.');
-                }
-                $post->imageAsset->delete();
-                Log::info('ImageAsset record deleted during clear.');
-            } catch (\Exception $e) {
-                Log::error('Image Clear Error in update method: ' . $e->getMessage(), ['trace' => $e->getTraceAsString()]);
-                return back()->withInput()->with('error', 'Failed to clear image. Please try again.');
-            }
+            // Delete old image
+            $post->imageAsset->delete(); // This triggers the model's deleting event
+            Log::info('ImageAsset record deleted during clear.');
         } else {
-            Log::info('No image upload, URL, or clear option provided for post update (Post ID: ' . $post->id . ').');
+            Log::info('No new image upload or clear option provided for post update (Post ID: ' . $post->id . ').');
         }
 
 

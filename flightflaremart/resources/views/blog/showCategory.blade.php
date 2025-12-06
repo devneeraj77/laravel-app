@@ -23,7 +23,7 @@
                         <div class="flex items-center mb-6">
                             <a href="{{ route('blog.show', ['category' => $post->category->slug, 'slug' => $post->slug]) }}">
                                 @if($post->imageAsset)
-                                    <img src="{{ $post->imageAsset->is_url ? $post->imageAsset->url : asset($post->imageAsset->path) }}" alt="{{ $post->title }}" class="rounded-lg w-full object-cover h-48">
+                                    <img src="{{ $post->imageAsset->image_url }}" alt="{{ $post->title }}" class="rounded-lg w-full object-cover h-48">
                                 @else
                                     <img src="https://placehold.co/800x400/cad593/FFFFFF?text=Demo Post" alt="Placeholder Image" class="rounded-lg w-full object-cover h-48">
                                 @endif

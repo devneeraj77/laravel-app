@@ -89,7 +89,7 @@
                 <!-- Radio Buttons -->
                 <div class="flex items-center space-x-4 mb-4">
                     <div class="flex items-center">
-                        <input x-model="imageSource" id="source_url" name="image_source" type="radio" value="url" class="h-5 w-5 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500">
+                        <input x-model="imageSource" id="source_url" name="image_source" type="radio" value="url" class="h-5 w-5 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500" >
                         <label for="source_url" class="ml-2 block text-base font-medium text-gray-700">From URL</label>
                     </div>
                     <div class="flex items-center">
@@ -113,7 +113,7 @@
                 @if ($post->imageAsset)
                 <div class="mt-4">
                     <p class="text-sm font-medium text-gray-700">Current Image:</p>
-                    <img src="{{ $post->imageAsset->url }}" alt="Current featured image" class="mt-2 h-20 w-auto object-cover rounded-lg shadow-sm">
+                    <img src="{{ $post->imageAsset->image_url }}" alt="Current featured image" class="mt-2 h-20 w-auto object-cover rounded-lg shadow-sm">
                     <div class="flex items-center mt-2">
                         <input id="clear_image" name="clear_image" type="checkbox" value="1" class="h-4 w-4 text-red-600 border-gray-300 rounded focus:ring-red-500">
                         <label for="clear_image" class="ml-2 block text-sm text-red-700">Clear Current Image</label>

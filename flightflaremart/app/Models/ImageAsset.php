@@ -11,8 +11,7 @@ class ImageAsset extends Model
     use HasFactory;
 
     protected $fillable = [
-        'url',
-        'is_url',
+        'path',
         'post_id',
         'caption',
     ];
@@ -22,19 +21,15 @@ class ImageAsset extends Model
         parent::boot();
 
         static::deleting(function ($imageAsset) {
-            if (!$imageAsset->is_url) {
-                Storage::disk('public')->delete($imageAsset->url);
+            if ($imageAsset->path) {
+                Storage::disk('public')->delete($imageAsset->path);
             }
         });
     }
 
-    public function getUrlAttribute($value)
+    public function getImageUrlAttribute()
     {
-        if ($this->is_url) {
-            return $value;
-        }
-
-        return Storage::disk('public')->url($value);
+        return asset('storage/' . $this->path);
     }
 
     public function post()

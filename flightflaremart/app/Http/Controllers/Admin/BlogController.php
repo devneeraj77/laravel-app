@@ -7,6 +7,7 @@ use App\Models\Post; // Assuming you have a Post model
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
+use Illuminate\Support\Facades\Log;
 use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Gd\Driver;
 
@@ -74,7 +75,7 @@ class BlogController extends Controller
                 $imageAsset->save();
             } catch (\Exception $e) {
                 // Log the exception for debugging
-                \Log::error('Cloudinary upload failed in store method: ' . $e->getMessage());
+                Log::error('Cloudinary upload failed in store method: ' . $e->getMessage());
                 return redirect()->back()->withInput()->with('error', 'The image upload failed. Please check your Cloudinary configuration and try again.');
             }
         }
@@ -179,7 +180,7 @@ class BlogController extends Controller
                     ]);
                     $newImageAsset->save();
                 } catch (\Exception $e) {
-                    \Log::error('Cloudinary upload failed in update method: ' . $e->getMessage());
+                    Log::error('Cloudinary upload failed in update method: ' . $e->getMessage());
                     return redirect()->back()->withInput()->with('error', 'The image upload failed. Please check your Cloudinary configuration and try again.');
                 }
             }

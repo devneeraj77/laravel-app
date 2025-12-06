@@ -28,7 +28,7 @@
         {{-- Featured Image --}}
         <figure class="rounded-box overflow-hidden mb-8 shadow-xl">
             @if($post->imageAsset)
-                <img src="{{ $post->imageAsset->is_url ? $post->imageAsset->url : asset($post->imageAsset->path) }}" alt="{{ $post->title }}" class="w-full h-96 object-cover">
+                <img src="{{ $post->imageAsset->image_url }}" alt="{{ $post->title }}" class="w-full h-96 object-cover">
             @else
                 <img src="https://placehold.co/800x400/cad593/FFFFFF?text=Demo Post" alt="Placeholder Image" class="w-full h-96 object-cover">
             @endif

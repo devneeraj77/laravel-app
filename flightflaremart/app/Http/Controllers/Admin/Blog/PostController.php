@@ -69,12 +69,11 @@ class PostController extends Controller
             Log::info('Original Filename: ' . $file->getClientOriginalName() . ', Mime Type: ' . $file->getMimeType());
 
             try {
-                $imagePath = $file->store('post_images', 'public');
+                $imagePath = $file->store('blog/post/images', 'public');
                 Log::info('Image stored at: ' . $imagePath);
 
                 $post->imageAsset()->create([
-                    'url' => $imagePath,
-                    'is_url' => false,
+                    'path' => $imagePath,
                 ]);
                 Log::info('ImageAsset record created for uploaded file.');
             } catch (\Exception $e) {
@@ -84,8 +83,7 @@ class PostController extends Controller
         } elseif ($request->filled('image_url')) {
             Log::info('Image URL detected for new post: ' . $request->input('image_url'));
             $post->imageAsset()->create([
-                'url' => $request->input('image_url'),
-                'is_url' => true,
+                'path' => $request->input('image_url'),
             ]);
             Log::info('ImageAsset record created for image URL.');
         } else {
@@ -130,23 +128,16 @@ class PostController extends Controller
             try {
                 // Delete old image from local storage if it exists
                 if ($post->imageAsset) {
-                    Log::info('Existing imageAsset found for post ' . $post->id);
-                    if (!$post->imageAsset->is_url) {
-                        Log::info('Existing image is local. Deleting old file: ' . $post->imageAsset->url);
-                        Storage::disk('public')->delete($post->imageAsset->url);
-                    } else {
-                        Log::info('Existing image is external URL. No file to delete.');
-                    }
-                    $post->imageAsset->delete(); // Delete the old ImageAsset record
+                    Log::info('Existing imageAsset found for post ' . $post->id . '. Deleting old asset.');
+                    $post->imageAsset->delete(); // The model event will handle file deletion
                     Log::info('Old ImageAsset record deleted.');
                 }
 
-                $imagePath = $file->store('post_images', 'public');
+                $imagePath = $file->store('blog/post/images', 'public');
                 Log::info('New image stored at: ' . $imagePath);
 
                 $post->imageAsset()->create([
-                    'url' => $imagePath,
-                    'is_url' => false,
+                    'path' => $imagePath,
                 ]);
                 Log::info('New ImageAsset record created for uploaded file.');
             } catch (\Exception $e) {
@@ -156,22 +147,15 @@ class PostController extends Controller
         } elseif ($request->filled('image_url')) {
             Log::info('Image URL detected for post update (Post ID: ' . $post->id . '): ' . $request->input('image_url'));
             try {
-                // If a new URL is provided, and there was an old local image, delete it
+                // If a new URL is provided, and there was an old image, delete it
                 if ($post->imageAsset) {
-                    Log::info('Existing imageAsset found for post ' . $post->id);
-                    if (!$post->imageAsset->is_url) {
-                        Log::info('Existing image is local. Deleting old file: ' . $post->imageAsset->url);
-                        Storage::disk('public')->delete($post->imageAsset->url);
-                    } else {
-                        Log::info('Existing image is external URL. No file to delete.');
-                    }
-                    $post->imageAsset->delete(); // Delete the old ImageAsset record
+                    Log::info('Existing imageAsset found for post ' . $post->id . '. Deleting old asset.');
+                    $post->imageAsset->delete(); // The model event will handle file deletion
                     Log::info('Old ImageAsset record deleted.');
                 }
 
                 $post->imageAsset()->create([
-                    'url' => $request->input('image_url'),
-                    'is_url' => true,
+                    'path' => $request->input('image_url'),
                 ]);
                 Log::info('New ImageAsset record created for image URL.');
             } catch (\Exception $e) {
@@ -182,12 +166,6 @@ class PostController extends Controller
             Log::info('Clear image option detected for post update (Post ID: ' . $post->id . ').');
             try {
                 // Option to clear existing image without uploading new one
-                if (!$post->imageAsset->is_url) {
-                    Log::info('Existing image is local. Deleting file during clear: ' . $post->imageAsset->url);
-                    Storage::disk('public')->delete($post->imageAsset->url);
-                } else {
-                    Log::info('Existing image is external URL. No file to delete during clear.');
-                }
                 $post->imageAsset->delete();
                 Log::info('ImageAsset record deleted during clear.');
             } catch (\Exception $e) {
