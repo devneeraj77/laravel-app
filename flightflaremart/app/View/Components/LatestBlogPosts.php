@@ -17,7 +17,7 @@ class LatestBlogPosts extends Component
     public function __construct()
     {
         $this->posts = Post::with('category', 'author')
-            ->where('is_published', true)
+            ->published()
             ->whereNotNull('category_id')
             ->orderBy('published_at', 'desc')
             ->take(6)

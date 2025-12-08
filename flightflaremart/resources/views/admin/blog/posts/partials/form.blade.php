@@ -150,9 +150,13 @@
 
     <!-- Submit Button (Part of the form) -->
     <div class="text-right pt-4">
-        <button type="submit"
-            class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg shadow-xl transition duration-300 transform hover:scale-105">
-            {{ $post->exists ? 'Update Post' : 'Create Post' }}
+        <button type="submit" id="submit-button"
+            class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg shadow-xl transition duration-300 transform hover:scale-105 flex items-center justify-center">
+            <span class="button-text">{{ $post->exists ? 'Update Post' : 'Create Post' }}</span>
+            <svg class="animate-spin h-5 w-5 text-white ml-2 hidden" id="spinner" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
         </button>
     </div>
 </div>
@@ -187,6 +191,20 @@
             }
         } else {
             console.error('TinyMCE not loaded. Check script tag and API key.');
+        }
+
+        const submitButton = document.getElementById('submit-button');
+        if (submitButton) {
+            const form = submitButton.closest('form');
+            if (form) {
+                form.addEventListener('submit', function() {
+                    submitButton.disabled = true;
+                    const buttonText = submitButton.querySelector('.button-text');
+                    const spinner = document.getElementById('spinner');
+                    if(buttonText) buttonText.textContent = 'Saving...';
+                    if(spinner) spinner.classList.remove('hidden');
+                }, false);
+            }
         }
     });
 </script>

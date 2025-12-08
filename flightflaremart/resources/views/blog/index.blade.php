@@ -14,7 +14,7 @@
 @endsection
 
 @section('main-content')
-    <section class="py-4 ">
+    <section class="py-4  min-h-screen">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="flex items-center gap-3 max-w-md w-full py-14">
                 <div class="flex items-center w-full border pl-3 gap-2 bg-white border-gray-500/30 h-[46px] rounded-md overflow-hidden">
@@ -23,7 +23,9 @@
                     </svg>
                     <input type="text" id="search-input" placeholder="Search for posts..." class="w-full h-full outline-none text-gray-500 placeholder-gray-500 text-sm">
                 </div>
-                <button type="submit" class="bg-accent w-32 h-[46px] rounded-md text-sm text-white">Search</button>
+            </div>
+            <div class="h-10 py-4">
+                <div id="search-status" class=" text-gray-500 " style="display: none;"></div>
             </div>
             <div id="posts-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 @include('blog._posts', ['posts' => $posts])
@@ -39,6 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const searchInput = document.getElementById('search-input');
     const postsGrid = document.getElementById('posts-grid');
     const pagination = document.getElementById('pagination-links');
+    const status = document.getElementById('search-status');
     const originalPosts = postsGrid.innerHTML;
     const originalPagination = pagination.innerHTML;
 
@@ -47,6 +50,8 @@ document.addEventListener('DOMContentLoaded', function () {
         return function(...args) {
             const context = this;
             clearTimeout(timeout);
+            status.textContent = 'Typing...';
+            status.style.display = 'block';
             timeout = setTimeout(() => func.apply(context, args), delay);
         };
     }
@@ -56,17 +61,29 @@ document.addEventListener('DOMContentLoaded', function () {
             postsGrid.innerHTML = originalPosts;
             pagination.innerHTML = originalPagination;
             pagination.style.display = 'block';
-        } else if (query.length > 2) {
-            fetch(`/blog/search?query=${query}`)
+            status.style.display = 'none';
+            return;
+        }
+        
+        if (query.length > 2) {
+            status.textContent = 'Loading...';
+            fetch(`/blog/search?query=${encodeURIComponent(query)}`)
                 .then(response => response.text())
                 .then(html => {
                     postsGrid.innerHTML = html;
                     pagination.style.display = 'none';
+                    status.style.display = 'none';
+                })
+                .catch(error => {
+                    console.error('Error fetching search results:', error);
+                    status.textContent = 'Error loading results.';
                 });
+        } else {
+            status.style.display = 'none';
         }
-    }, 300);
+    }, 500);
 
-    searchInput.addEventListener('keyup', function() {
+    searchInput.addEventListener('input', function() {
         debouncedSearch(this.value);
     });
 });

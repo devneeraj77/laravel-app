@@ -8,6 +8,7 @@ use App\Models\Category; // Assuming Category model is needed for relationships
 use App\Http\Requests\Admin\Blog\PostRequest;
 use App\Models\Admin;
 use App\Models\ImageAsset;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Log; // Added for logging
 use Illuminate\Support\Str;
@@ -20,11 +21,33 @@ class PostController extends Controller
      * Display a listing of the posts.
      * @return \Illuminate\View\View
      */
-    public function index()
+    public function index(Request $request)
     {
-        // Fetch all posts, ordered by latest, with relationships
-        $posts = Post::with(['author', 'category'])->latest()->paginate(10);
-        return view('admin.blog.posts.index', compact('posts'));
+        $query = Post::with(['author', 'category'])->latest();
+
+        if ($request->filled('title')) {
+            $query->where('title', 'like', '%' . $request->title . '%');
+        }
+
+        if ($request->filled('category')) {
+            $query->where('category_id', $request->category);
+        }
+
+        if ($request->filled('author')) {
+            $query->where('admin_id', $request->author);
+        }
+
+        if ($request->filled('status')) {
+            $isPublished = $request->status === 'published';
+            $query->where('is_published', $isPublished);
+        }
+
+        $posts = $query->paginate(10)->withQueryString();
+        
+        $categories = Category::orderBy('name')->get();
+        $authors = Admin::orderBy('name')->get();
+
+        return view('admin.blog.posts.index', compact('posts', 'categories', 'authors'));
     }
 
     /**
