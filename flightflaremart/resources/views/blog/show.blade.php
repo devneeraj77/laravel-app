@@ -40,13 +40,13 @@
             {{-- Title and Badges --}}
             <h1 class="text-5xl mb-2">{{ $post->title }}</h1>
             <div class="flex items-center space-x-3 mb-4">
-                <div class="badge badge-lg badge-secondary">{{ $post->category->name }}</div>
+                <div class="badge badge-lg badge-secondary text-accent">{{ $post->category->name }}</div>
                 <span class="text-sm text-base-content/70">Published on {{ $post->published_at->format('F d, Y') }}</span>
             </div>
         </header>
 
         {{-- Author Info (Avatar) --}}
-        <div role="alert" class="alert flex items-start justify-between shadow-lg mb-8 bg-base-200  border border-primary">
+        <div role="alert" class="alert flex-col md:flex-row flex border items-start justify-between shadow-lg mb-8 bg-base-200  border border-primary">
             <div class="flex gap-6 p-2">
                 <!-- Avatar -->
                 <div class="avatar">
@@ -58,10 +58,10 @@
                 <!-- Author Info + Social Share -->
                 <div class="flex items-center gap-6">
                     <div>
-                        <h4 class="font-bold">Written by {{ $post->author->name }}</h4>
-                        <span class="text-sm text-base-content/70">
+                        <h4 class="font-bold ">Written by {{ $post->author->name }}</h4>
+                        <!-- <span class="text-sm text-base-content/70">
                             {{ $post->author->bio ?? 'Lorem, ipsum dolor.' }}
-                        </span>
+                        </span> -->
                     </div>
                 </div>
 

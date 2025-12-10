@@ -1,2 +1,10 @@
 User-agent: *
-Disallow:
+Disallow: /admin/
+Disallow: /scripts/
+Disallow: /upload
+Disallow: /flights/search
+Disallow: /login
+Disallow: /register
+Disallow: /logout
+
+Sitemap: http://localhost:8000/sitemap

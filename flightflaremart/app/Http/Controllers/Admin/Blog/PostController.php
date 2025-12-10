@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Log; // Added for logging
 use Illuminate\Support\Str;
 use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Gd\Driver;
+use App\Jobs\PingSearchEngines;
 
 class PostController extends Controller
 {
@@ -87,6 +88,10 @@ class PostController extends Controller
         $data = $request->validated();
         
         $post = Post::create($data);
+
+        if ($post->is_published) {
+            PingSearchEngines::dispatch();
+        }
 
         $this->syncFaqs($post, $data['faqs'] ?? []);
 
@@ -265,6 +270,10 @@ class PostController extends Controller
             $post->published_at = null;
         }
         $post->save();
+
+        if ($post->is_published) {
+            PingSearchEngines::dispatch();
+        }
 
         $status = $post->is_published ? 'published' : 'draft';
         return back()->with('success', "Post marked as {$status} successfully!");
