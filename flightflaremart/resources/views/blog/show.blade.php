@@ -46,25 +46,31 @@
         </header>
 
         {{-- Author Info (Avatar) --}}
-        <div role="alert" class="alert shadow-lg mb-8 bg-base-200 border-l-4 border-primary">
-            <div class="flex items-center">
-                <div class="avatar mr-4">
+        <div role="alert" class="alert flex items-start justify-between shadow-lg mb-8 bg-base-200  border border-primary">
+            <div class="flex gap-6 p-2">
+                <!-- Avatar -->
+                <div class="avatar">
                     <div class="w-12 rounded-full">
                         <img src="{{ $post->author->avatar_url ?? 'https://placehold.co/50x50/cad593/cad593?text=profile' }}" alt="Author Avatar" />
                     </div>
                 </div>
-                <div class="flex items-center justify-between">
+
+                <!-- Author Info + Social Share -->
+                <div class="flex items-center gap-6">
                     <div>
                         <h4 class="font-bold">Written by {{ $post->author->name }}</h4>
-                        <span class="text-sm text-base-content/70">{{ $post->author->bio ?? 'Lorem, ipsum dolor.' }}</span>
-
-                    </div>
-                    <div>
-                        <x-social-share :post="$post" />
+                        <span class="text-sm text-base-content/70">
+                            {{ $post->author->bio ?? 'Lorem, ipsum dolor.' }}
+                        </span>
                     </div>
                 </div>
+
+            </div>
+            <div class="flex">
+                <x-social-share :post="$post" />
             </div>
         </div>
+
 
         {{-- Post Content --}}
         <div class="article-content">

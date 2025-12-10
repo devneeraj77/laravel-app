@@ -1,6 +1,9 @@
 @extends('admin.layouts.app')
 
 @section('title', 'Edit Post: ' . Str::limit($post->title, 30))
+@section('breadcrumb')
+    <span class="text-slate-500">Blog / Post / Edit</span>
+@endsection
 
 @section('content')
 <div class="container mx-auto px-4 py-6">

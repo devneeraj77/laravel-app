@@ -1,6 +1,9 @@
 @extends('admin.layouts.app')
 
 @section('title', 'Create New Blog Post')
+@section('breadcrumb')
+    <span class="text-slate-500">Blog / Post / Create</span>
+@endsection
 
 @section('content')
 <div class="container mx-auto px-4 py-6">

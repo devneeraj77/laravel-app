@@ -1,6 +1,9 @@
 @extends('admin.layouts.app')
 
 @section('title', 'Manage Blog Posts')
+@section('breadcrumb')
+    <span class="text-slate-500">Blog / All Posts</span>
+@endsection
 
 @section('content')
 <div class="container mx-auto px-4 py-6">
@@ -60,7 +63,7 @@
     </div>
 
 
-    <div class="bg-white shadow-xl rounded-lg overflow-hidden">
+    <div class="bg-white shadow-xl rounded-lg overflow-y-hidden">
         <table class="min-w-full divide-y divide-gray-200">
             <thead class="bg-gray-50">
                 <tr>

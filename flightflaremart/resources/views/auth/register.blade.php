@@ -1,26 +1,29 @@
 <!DOCTYPE html>
 @include('layouts.htmlcore')
+
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Register - FlightFlareMart</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body class="bg-gray-50 min-h-screen flex flex-col items-center justify-center">
     @include('layouts.header')
     <div class="w-full max-w-sm bg-white p-6 shadow rounded-lg">
         <h2 class="text-xl font-semibold text-center mb-4">Register</h2>
 
         @if(session('error'))
-            <div class="bg-red-100 text-red-700 p-2 rounded mb-3">{{ session('error') }}</div>
+        <div class="bg-red-100 text-red-700 p-2 rounded mb-3">{{ session('error') }}</div>
         @endif
         @if ($errors->any())
-            <div class="bg-red-100 text-red-700 p-2 rounded mb-3">
-                <ul class="text-sm pl-5">
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
+        <div class="bg-red-100 text-red-700 p-2 rounded mb-3">
+            <ul class="text-sm pl-5">
+                @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
         @endif
 
         <form method="POST" action="{{ route('register.post') }}">
@@ -45,4 +48,5 @@
         </form>
     </div>
 </body>
+
 </html>

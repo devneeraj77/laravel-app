@@ -19,7 +19,7 @@
 
 <body class="md:w-full text-left text-sm hover:bg-base-300">
 
-  <div x-data="{ sidebarOpen: false, sidebarMinimized: false }" x-cloak class="flex h-screen overflow-hidden">
+  <div x-data="{ sidebarOpen: false, sidebarMinimized: true }" x-cloak class="flex h-screen overflow-hidden">
 
     @include('admin.layouts.sidebar')
 
@@ -36,7 +36,8 @@
         @yield('content')
 
         <footer class="mt-8 text-center text-xs text-slate-400">
-          © {{ date('Y') }} FlightFareMart — Admin Dashboard
+          © {{ date('Y') }} FlightFareMart — Admin Dashboard <br>
+          <pre>Created by <a href="https://www.github.com/devneeraj77">neerajrekwar</a></pre>
         </footer>
 
       </main>

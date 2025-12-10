@@ -1,7 +1,9 @@
 @extends('admin.layouts.app')
 
 @section('title', 'Manage Blog Categories')
-
+@section('breadcrumb')
+    <span class="text-slate-500">Blog / All Category</span>
+@endsection
 @section('content')
 <div class="container mx-auto px-4 py-6">
     <div class="flex justify-between items-center mb-6">

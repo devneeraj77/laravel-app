@@ -1,5 +1,8 @@
 @extends('admin.layouts.app')
 
+@section('breadcrumb')
+    <span class="text-slate-500">Admin / Subscriptions</span>
+@endsection
 @section('content')
 <div class="container mx-auto px-4 sm:px-8">
     <div class="py-8">

@@ -1,6 +1,9 @@
 @extends('admin.layouts.app')
 
 @section('title', 'Manage Draft Posts')
+@section('breadcrumb')
+    <span class="text-slate-500">Blog / Post / Draft</span>
+@endsection
 
 @section('content')
 <div class="container mx-auto px-4 py-6">
