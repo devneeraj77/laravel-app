@@ -62,6 +62,9 @@
       </div>
 
     </section>
+    <section>
+      <!-- add -->
+    </section>
     <!-- section 2 -->
     <section class="py-24 mx-auto max-w-7xl">
       <p class="mx-auto px-5 md:px-4 max-w-6xl md:text-xl text-base text-center ">Trip on</p>
