@@ -1,0 +1,10 @@
+/vendor
+/node_modules
+.env
+/storage/framework/sessions/*
+/storage/framework/views/*
+/storage/framework/cache/*
+/storage/logs/*.log
+npm-debug.log
+yarn-error.log
+README.md
