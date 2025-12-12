@@ -13,12 +13,15 @@ class SubscriptionController extends Controller
      */
     public function store(Request $request)
     {
+        $request->merge(['email' => $request->input('subscribeEmail')]);
         $validator = Validator::make($request->all(), [
             'email' => 'required|email|unique:subscriptions,email',
+        ], [
+            'email.unique' => 'you are already subcribed our newsletter'
         ]);
 
         if ($validator->fails()) {
-            return back()->withErrors($validator)->withInput()->with('error', 'Subscription failed. Please check your email.');
+            return back()->withErrors($validator, 'subscription')->withInput()->with('subscription_error', 'Subscription failed. Please check your email.');
         }
 
         Subscription::create($request->only('email'));

@@ -32,9 +32,9 @@
                         {{ session('success') }}
                     </div>
                     @endif
-                    @if (session('error'))
+                    @if (session('contact_error'))
                     <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4" role="alert">
-                        {{ session('error') }}
+                        {{ session('contact_error') }}
                     </div>
                     @endif
 
@@ -45,20 +45,20 @@
                             <label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
                             <input type="text" name="name" id="name" required
                                 value="{{ old('name') }}"
-                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-secondary focus:ring-secondary p-3 border @error('name') border-red-500 @enderror"
+                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-secondary focus:ring-secondary p-3 border @error('name', 'contact') border-red-500 @enderror"
                                 placeholder="Type your name">
-                            @error('name')
+                            @error('name', 'contact')
                             <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                             @enderror
                         </div>
 
                         <div>
                             <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
-                            <input type="email" name="email" id="email" required
+                            <input type="email" name="contactEmail" id="email" required
                                 value="{{ old('email') }}"
-                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-secondary focus:ring-secondary p-3 border @error('email') border-red-500 @enderror"
+                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-secondary focus:ring-secondary p-3 border @error('email', 'contact') border-red-500 @enderror"
                                 placeholder="you@example.com">
-                            @error('email')
+                            @error('email', 'contact')
                             <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                             @enderror
                         </div>
@@ -67,9 +67,9 @@
                             <label for="subject" class="block text-sm font-medium text-gray-700">Subject</label>
                             <input type="text" name="subject" id="subject" required
                                 value="{{ old('subject') }}"
-                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-secondary focus:ring-secondary p-3 border @error('subject') border-red-500 @enderror"
+                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-secondary focus:ring-secondary p-3 border @error('subject', 'contact') border-red-500 @enderror"
                                 placeholder="Inquiry about booking">
-                            @error('subject')
+                            @error('subject', 'contact')
                             <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                             @enderror
                         </div>
@@ -77,9 +77,9 @@
                         <div>
                             <label for="message"  class="block text-sm font-medium text-gray-700">Message</label>
                             <textarea name="message" maxlength="260" id="message" rows="4" required
-                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-secondary focus:ring-secondary p-3 border @error('message') border-red-500 @enderror"
+                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-secondary focus:ring-secondary p-3 border @error('message', 'contact') border-red-500 @enderror"
                                 placeholder="How can we help you?">{{ old('message') }}</textarea>
-                            @error('message')
+                            @error('message', 'contact')
                             <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                             @enderror
                         </div>

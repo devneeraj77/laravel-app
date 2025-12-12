@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\ContactMessage;
 use Illuminate\Support\Facades\Validator;
+use Carbon\Carbon; // Added Carbon for date manipulation
 
 class ContactController extends Controller
 {
@@ -44,9 +45,27 @@ class ContactController extends Controller
 
         if ($validator->fails()) {
             return redirect()->route('contact.create')
-                ->withErrors($validator)
+                ->withErrors($validator, 'contact')
                 ->withInput();
         }
+        
+
+        // --- NEW RATE LIMITING LOGIC ---
+        $userEmail = $request->input('email');
+        $lastSubmission = ContactMessage::where('email', $userEmail)
+                                        ->orderByDesc('created_at')
+                                        ->first();
+
+        if ($lastSubmission) {
+            $oneMonthAgo = Carbon::now()->subMonth(); // Using Carbon's subMonth() for clarity
+
+            if ($lastSubmission->created_at->greaterThan($oneMonthAgo)) {
+                $daysRemaining = $lastSubmission->created_at->diffInDays(Carbon::now()->addMonth()); // Calculate days until one month is complete
+                return redirect()->route('contact.create')->with('contact_error', "You can only submit a contact message once every month. Please try again after " . ($daysRemaining + 1) . " days."); // Assuming 30 days as a month
+            }
+        }
+        // --- END NEW RATE LIMITING LOGIC ---
+
 
         // 2. Data Storage
         try {
@@ -56,7 +75,7 @@ class ContactController extends Controller
             return redirect()->route('contact.create')->with('success', 'Thank you for your message! We will get back to you soon.');
 
         } catch (\Exception $e) {
-            return redirect()->route('contact.create')->with('error', 'An error occurred while saving your message. Please try again.');
+            return redirect()->route('contact.create')->with('contact_error', 'An error occurred while saving your message. Please try again.');
         }
     }
 

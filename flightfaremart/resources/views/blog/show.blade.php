@@ -62,32 +62,29 @@
 
         <header class="mb-6">
             {{-- Title and Badges --}}
-            <div class="flex">
-                <h1 class="text-5xl mb-2">{{ $post->title }}<span class="text-base text-accent/80 ">  ~
-                        Written by {{ $post->author->name }}
-                    </span></h1>
+            <div class="flex flex-col   py-4">
+                <h1 class="text-5xl mb-2">{{ $post->title }}</h1>
+                <span class="text-base italic text-base-content/70"> ~ Written by {{ $post->author->name }}</span>
             </div>
             <!-- <small class=" text-accent/50">{{$post->excerpt}}</small> -->
-            <div class="flex items-center space-x-3 mb-2">
+            <div class="flex items-center justify-between space-x-3 mb-2">
                 <div class="badge badge-lg badge-secondary text-accent">{{ $post->category->name }}</div>
                 <span class="text-sm text-base-content/70">Published on {{ $post->published_at->format('F d, Y') }}</span>
             </div>
         </header>
-
+        <hr class="text-gray-200">
         {{-- Author Info (Avatar) --}}
-        <div
-            role="alert"
-            class=" flex flex-col md:flex-row items-start justify-between bg-primary p-4">
+        <div role="alert"
+            class=" flex flex-col-reverse gap-4 md:flex-row items-start justify-between bg-primary py-4 mb-6">
 
-
-            <!-- Social Share -->
-            <div class="flex-shrink-0 mb-4 md:mb-0">
-                <x-social-share :post="$post" />
-            </div>
             <!-- Author Section -->
             <div class="flex items-start text-accent/60 gap-4">
                 <!-- Description Info -->
-               {{ $post->excerpt }}
+                {{ $post->excerpt }}
+            </div>
+            <!-- Social Share -->
+            <div class="flex-shrink-0 mb-4 md:mb-0">
+                <x-social-share :post="$post" />
             </div>
         </div>
 

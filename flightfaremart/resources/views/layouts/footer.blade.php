@@ -79,7 +79,7 @@
               </svg>
             </a>
           </li>
-          
+
         </ul>
       </div>
 
@@ -99,27 +99,30 @@
       <!-- Subscribe -->
       <div>
         <form method="POST" action="{{ route('subscribe') }}">
-    @csrf
-    <h5 class="text-lg font-semibold text-black dark:text-primary mb-4">Subscribe now</h5>
-    <fieldset class="">
-        <label class="text-sm opacity-90 mb-3 pb-2">Sign up if you want to get notifications</label>
-        <div class="join">
-            <input type="email" name="email" placeholder="username@site.com"
+          @csrf
+          <h5 class="text-lg font-semibold text-black dark:text-primary mb-4">Subscribe now</h5>
+          <fieldset class="">
+            <label class="text-sm opacity-90 mb-3 pb-2">Sign up if you want to get notifications</label>
+            <div class="join">
+              <input type="email" name="subscribeEmail" placeholder="username@site.com"
                 class="input input-bordered join-item" required />
-            <button class="btn btn-primary join-item">Subscribe</button>
-        </div>
-    </fieldset>
-    @if (session('success'))
-        <div class="text-green-500 text-sm mt-2">
+              <button class="btn btn-primary join-item">Subscribe</button>
+            </div>
+          </fieldset>
+          @if (session('success'))
+          <div class="text-green-500 text-sm mt-2">
             {{ session('success') }}
-        </div>
-    @endif
-    @if ($errors->any())
-        <div class="text-red-500 text-sm mt-2">
-            {{ $errors->first('email') }}
-        </div>
-    @endif
-</form>
+          </div>
+          @endif
+          <!-- @if (session('subscription_error'))
+          <div class="text-red-500 text-sm mt-2">
+            {{ session('subscription_error') }}
+          </div>
+          @endif -->
+          @error('email', 'subscription')
+          <div class="text-red-500 text-sm mt-2">{{ $message }}</div>
+          @enderror
+        </form>
 
       </div>
     </div>
