@@ -54,7 +54,7 @@
 
     /* Typography */
     --font-display: "Playfair Display", serif;
-    --font-body: "Inter", sans-serif;
+    --font-body: "Roboto", sans-serif;
 
     /* Radius */
     --radius-selector: 1rem;
@@ -143,6 +143,7 @@
 }
 
 
+
 body {
     /* background: #24301036; */
     margin: 0;
@@ -154,9 +155,7 @@ body {
 section , #blog h1, #blog h2, #blog h3, #blog h4, #blog h5, #blog h6 {
     font-family: var(--font-display);
 }
-article {
-    
-}
+
 
 
 /* From Uiverse.io by Bodyhc */

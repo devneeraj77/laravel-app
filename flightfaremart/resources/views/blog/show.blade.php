@@ -71,8 +71,8 @@
                 <div class="badge badge-lg badge-secondary text-accent">{{ $post->category->name }}</div>
                 <span class="text-sm text-base-content/70">Published on {{ $post->published_at->format('F d, Y') }}</span>
             </div>
+            <hr class="text-gray-200">
         </header>
-        <hr class="text-gray-200">
         {{-- Author Info (Avatar) --}}
         <div role="alert"
             class=" flex flex-col-reverse gap-4 md:flex-row items-start justify-between bg-primary py-4 mb-6">
@@ -93,7 +93,8 @@
         {{-- Post Content --}}
         <div class="article-content">
             {{-- Note: Use {!! $post->content !!} if the content is stored as sanitized HTML --}}
-            {!! $post->content !!}
+            {!! nl2br($post->content) !!}
+            
         </div>
 
     </article>
