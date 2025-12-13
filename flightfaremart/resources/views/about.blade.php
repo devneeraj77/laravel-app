@@ -6,8 +6,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="//unpkg.com/alpinejs" defer></script>
-    <title>About - flightfaremart</title>
-
+    <title>About FlightFareMart: Your Trusted Partner for the Best Flight Fares</title>
+    <meta name="description" content="Discover FlightFareMart's mission to make air travel affordable. Learn about our commitment to finding and sharing the cheapest flights and best travel deals worldwide.">
+    <meta name="keywords" content="FlightFareMart, about us, cheapest flights, best airfare deals, company mission, flight deals, travel savings, affordable travel">
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />

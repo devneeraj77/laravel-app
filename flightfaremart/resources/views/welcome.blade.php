@@ -6,8 +6,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="//unpkg.com/alpinejs" defer></script>
-  <title>{{ config('app.name', 'Laravel') }}</title>
-
+  <!-- <title>{{ config('app.name', 'Laravel') }}</title> -->
+  <title>FlightFareMart | Find the Cheapest Flights & Best Airfare Deals</title>
+  <meta name="description" content="FlightFareMart is your trusted source for finding the cheapest flights worldwide. Compare airfare, discover deals, and book your next trip with guaranteed low prices.">
+  <meta name="keywords" content="FlightFareMart, cheapest flights, flight booking, best airfare deals, low cost airline tickets, discount flights, flight comparison, travel deals, book flights online">
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.bunny.net">
   <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
@@ -23,9 +25,9 @@
       <div class="relative py-8">
         <img src="img/aircraft_usu4.svg" class=" absolute -right-15 top-2 sm:left-20 sm:-top-10 md:left-50 md:-top-30 lg:left-50 lg:-top-25 z-30 -rotate-25 md:-rotate-15 lg:-rotate-3 " width="950" height="200" alt="" srcset="">
       </div>
-      <div class="flex flex-col relative  max-md:gap-20 md:flex-row pb-20 items-center justify-between mt-20 px-4 md:px-16 lg:px-20 xl:px-24">
-        <div class=" flex flex-col z-40  p-3 items-center md:items-start">
-          <div class="flex flex-wrap backdrop-blur-sm items-center justify-center p-1.5 rounded-full border border-secondary text-white text-xs">
+      <div class="flex flex-col relative  max-md:gap-20 md:flex-row pb-8 items-center justify-between mt-20 px-4 ">
+        <div class=" flex flex-col z-40  items-center md:items-start">
+          <div class="flex flex-wrap p-3 backdrop-blur-sm items-center justify-center p-1.5 rounded-full border border-secondary text-white text-xs">
             <div class="flex items-center ">
               <img class="size-7 rounded-full border-3 border-white"
                 src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=50" alt="userImage1">
@@ -56,7 +58,7 @@
           </button>-->
         </div>
         <!-- <img src="https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/hero/hero-section-showcase-3.png" alt="hero" class="max-w-xs sm:max-w-sm lg:max-w-md transition-all duration-300"> -->
-        <div class=" z-40">
+        <div class=" z-40 w-90 md:w-fit md:ml-18">
           <x-flight-search-form class="relative" />
         </div>
       </div>
@@ -367,10 +369,10 @@
       <x-latest-blog-posts />
     </section>
 
-    <section class="py-16 dark:bg-black h-90  bg-base-300 text-accent w-full text-center px-2 ">
+    <section class="py-16 min-h-screen flex flex-col justify-center items-center dark:bg-black h-90  bg-base-300 text-accent w-full text-center px-2 ">
       <div class="max-w-7xl mx-auto">
         <p class="text-xl font-medium text- dark:text-base-200 ">Let’s start your trip!</p>
-        <h2 class="font-medium dark:text-base-300/80 text-4xl max-w-lg mx-auto my-4">For work inquires feel free to get in touch with team.</h2>
+        <h2 class="font-medium  md:text-7xl dark:text-base-300/80 text-4xl max-w-5xl mx-auto my-4">For work inquires feel free to get in touch with team.</h2>
         <a href="contact@prebuiltui.com" class="text-lg dark:text-secondary">contact@flightfaremart.com</a>
       </div>
     </section>

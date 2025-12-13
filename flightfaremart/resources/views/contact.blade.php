@@ -4,21 +4,22 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="//unpkg.com/alpinejs" defer></script>
-    <title>Contact - flightfaremart</title>
-    
+    <script src="https://unpkg.com/alpinejs" defer></script>
+    <title>Contact FlightFareMart: Get Support or Ask Questions</title>
+    <meta name="description" content="Need help with a booking or have a question? Contact FlightFareMart's customer support team via phone, email, or live chat for assistance with your airfare needs.">
+    <meta name="keywords" content="FlightFareMart contact, customer support, contact us, phone number, email support, live chat, airfare assistance, travel help">
     @include('layouts.head')
 
     <!-- @vite(['resources/css/app.css', 'resources/js/app.js']) -->
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
 </head>
 
-<body class="bg-gray-50">
+<body class="bg-base-300 dark:bg-black">
     @include('layouts.navmanu')
 
     <div class="min-h-screen flex flex-col items-center justify-center p-4">
         <div class="w-full max-w-7xl mx-auto py-12">
-            <h1 class="text-4xl font-extrabold text-gray-900 text-center mb-10">Get in Touch</h1>
+            <h1 class="text-4xl  text-gray-900 text-center mb-10">Get in Touch</h1>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
 
@@ -27,9 +28,9 @@
                     <h2 class="text-2xl font-bold text-gray-800 mb-6">Send us a Message</h2>
 
                     {{-- Session Messages --}}
-                    @if (session('success'))
+                    @if (session('contact_success'))
                     <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4" role="alert">
-                        {{ session('success') }}
+                        {{ session('contact_success') }}
                     </div>
                     @endif
                     @if (session('contact_error'))
@@ -54,7 +55,7 @@
 
                         <div>
                             <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
-                            <input type="email" name="contactEmail" id="email" required
+                            <input type="email" name="email" id="email" required
                                 value="{{ old('email') }}"
                                 class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-secondary focus:ring-secondary p-3 border @error('email', 'contact') border-red-500 @enderror"
                                 placeholder="you@example.com">
@@ -75,7 +76,7 @@
                         </div>
 
                         <div>
-                            <label for="message"  class="block text-sm font-medium text-gray-700">Message</label>
+                            <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
                             <textarea name="message" maxlength="260" id="message" rows="4" required
                                 class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-secondary focus:ring-secondary p-3 border @error('message', 'contact') border-red-500 @enderror"
                                 placeholder="How can we help you?">{{ old('message') }}</textarea>

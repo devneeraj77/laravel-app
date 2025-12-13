@@ -72,7 +72,7 @@ class ContactController extends Controller
             ContactMessage::create($request->only(['name', 'email', 'subject', 'message','is_read']));
 
             // 3. Redirect with success message
-            return redirect()->route('contact.create')->with('success', 'Thank you for your message! We will get back to you soon.');
+            return redirect()->route('contact.create')->with('contact_success', 'Thank you for your message! We will get back to you soon.');
 
         } catch (\Exception $e) {
             return redirect()->route('contact.create')->with('contact_error', 'An error occurred while saving your message. Please try again.');

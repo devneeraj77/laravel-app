@@ -107,7 +107,13 @@
 
 *, html{
     scroll-behavior: smooth;
-    font-weight: 400 !important;
+    font-weight: 400;
+}
+h1, h2, h3, h4, h5, h6{
+    font-family: var(--font-display);
+}
+p{
+    font-family: var(--font-body);
 }
 input[type="checkbox"]#selectAll {
   width: 20px; /* Adjust size as needed */
@@ -148,14 +154,11 @@ input[type="checkbox"]#selectAll {
  
 }
 
-
-
 body {
     /* background: #24301036; */
     margin: 0;
     padding: 0;
     font-family: var(--font-body);
-    
 }
 
 section , #blog h1, #blog h2, #blog h3, #blog h4, #blog h5, #blog h6 {

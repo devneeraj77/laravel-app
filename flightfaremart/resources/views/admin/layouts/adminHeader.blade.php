@@ -20,15 +20,6 @@
 
     <div class="flex items-center gap-4">
       <div class="hidden sm:flex sm:items-center sm:gap-3">
-        <label class="relative block">
-          <input type="search" placeholder="Search..." class="w-48 rounded-md border border-slate-200 bg-base-300 px-3 py-2 text-sm placeholder-slate-400 focus:ring-0 focus:outline-none">
-        </label>
-
-        <button class="rounded-md p-2 hover:bg-slate-100">
-          <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118.6 14H17" />
-          </svg>
-        </button>
       </div>
 
       <div x-data="{ open: false }" class="relative">

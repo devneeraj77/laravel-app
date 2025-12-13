@@ -103,8 +103,6 @@
           departureDate: '',
           returnDate: '',
         },
-        results: [],
-        loading: false,
 
         swapLocations() {
           const temp = this.form.from;
@@ -112,7 +110,7 @@
           this.form.to = temp;
         },
 
-        async handleSubmit() {
+        handleSubmit() {
           if (!this.form.from || !this.form.to) {
             alert('Please select both departure and destination locations');
             return;
@@ -121,35 +119,26 @@
             alert('Please select a departure date');
             return;
           }
-
-          this.loading = true;
-          this.results = [];
-
-          try {
-            const response = await fetch('{{ route("flights.search") }}', {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json',
-                'X-CSRF-TOKEN': '{{ csrf_token() }}'
-              },
-              body: JSON.stringify(this.form)
-            });
-
-            const data = await response.json();
-
-            if (response.ok) {
-              this.results = data["flights_results"] || [];
-            } else {
-              alert(data.error || 'Failed to search flights.');
-            }
-          } catch (error) {
-            console.error(error);
-            alert('An error occurred. Please try again.');
-          } finally {
-            this.loading = false;
+          
+          if (this.form.tripType === 'round-trip' && !this.form.returnDate) {
+            alert('Please select a return date for a round trip');
+            return;
           }
+          
+          if (this.form.tripType === 'multi-city') {
+            alert('Multi-city flights are not supported with this form.');
+            return;
+          }
+
+          const baseUrl = '/flights';
+          const params = new URLSearchParams(this.form);
+          const searchUrl = `${baseUrl}?${params.toString()}`;
+
+          // Open in a new tab
+          window.open(searchUrl, '_blank');
         }
       };
     }
   </script>
 </div>
+

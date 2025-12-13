@@ -21,9 +21,6 @@
 @if($post->imageAsset)
 <meta property="twitter:image" content="{{ $post->imageAsset->image_url }}">
 @endif
-
-{{-- Canonical URL --}}
-<link rel="canonical" href="{{ url('/blog/' . $post->category->slug . '/' . $post->slug) }}">
 @endsection
 
 @section('sidebar')

@@ -1,5 +1,5 @@
 <header class="w-full relative z-10 dark:bg-dark-primary text-accent text-sm dark:text-dark-light  top-0 left-0 z-50">
-<div class="text-center font-medium py-2  bg-gradient-to-r from-base-200 via-base-200 to-transparent">
+<div class="text-center font-medium py-2  bg-gradient-to-r from-base-200 dark:from-base-200/10  to-transparent dark:text-secondary">
     <p>Exclusive Price Drop! Hurry, <span class="underline underline-offset-2">Offer Ends Soon!</span></p>
   </div>  
 <nav class="max-w-7xl  mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
@@ -64,10 +64,10 @@
   <div id="mobile-menu" class="absolute top-26 w-full hidden md:hidden bg-primary dark:bg-dark-primary border-t border-secondary dark:border-dark-secondary">
     <div class="flex flex-col items-center space-y-4 py-4 text-light dark:text-dark-light">
       <a href="/" class="hover:text-accent transition">Home</a>
-      <a href="about" class="hover:text-accent transition">About</a>
-      <a href="blog" class="hover:text-accent transition">blog</a>
-      <a href="faqs" class="hover:text-accent transition">FAQs</a>
-      <a href="contact" class="hover:text-accent transition">Contact</a>
+      <a href="{{ route('about') }}" class="hover:text-accent transition">About</a>
+      <a href="{{ route('blog.index') }}" class="hover:text-accent transition">blog</a>
+      <a href="{{ route('faqs') }}" class="hover:text-accent transition">FAQs</a>
+      <a href="{{ route('contact.create') }}" class="hover:text-accent transition">Contact</a>
     </div>
   </div>
 </header>

@@ -6,8 +6,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="//unpkg.com/alpinejs" defer></script>
-    <title>FAQ's - flightfaremart</title>
-
+    <title>FlightFareMart FAQs: Answers to Your Cheapest Flight Booking Questions</title>
+    <meta name="description" content="Find quick answers to common questions about booking, payments, cancellations, and finding the cheapest airfare deals with FlightFareMart.">
+    <meta name="keywords" content="FlightFareMart FAQs, flight booking questions, cheapest flight answers, travel policies, payment methods, cancellation policy, customer support, airfare questions">
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />

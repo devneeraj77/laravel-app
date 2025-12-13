@@ -24,10 +24,8 @@ Route::post('/subscribe', [SubscriptionController::class, 'store'])->name('subsc
 
 Route::view('/upload', 'upload')->name('upload');
 
-// Route to show the form
-Route::get('/flights', function () {
-    return view('flights.index');
-});
+// Route to handle flight search and display results
+Route::get('/flights', [FlightController::class, 'search'])->name('flights.search');
 Route::get('/', [\App\Http\Controllers\TestimonialController::class, 'index']);
 
 
@@ -39,9 +37,6 @@ Route::get('scripts.db-check', function () {
         return response()->json(['status' => 'error', 'message' => $e->getMessage()], 500);
     }
 });
-
-// Route to handle the search (POST request)
-Route::post('/flights/search', [FlightController::class, 'search'])->name('flights.search');
 
 
 Route::view('/privacy-policy', 'privacy-policy')->name('privacy');
