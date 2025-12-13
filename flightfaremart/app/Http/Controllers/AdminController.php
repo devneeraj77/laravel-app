@@ -10,6 +10,8 @@ use Illuminate\Http\Request;
 use App\Models\Admin;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\SubscriptionsExport;
 
 class AdminController extends Controller
 {
@@ -69,8 +71,43 @@ class AdminController extends Controller
 
     public function subscriptions()
     {
-        $subscriptions = Subscription::latest()->get();
+        $subscriptions = Subscription::latest()->paginate(20);
         return view('admin.subscriptions', compact('subscriptions'));
+    }
+
+    public function exportSubscriptions(Request $request)
+    {
+        $format = $request->query('format');
+
+        if ($format == 'csv') {
+            $subscriptions = Subscription::all();
+            $headers = [
+                "Content-type"        => "text/csv",
+                "Content-Disposition" => "attachment; filename=subscriptions.csv",
+                "Pragma"              => "no-cache",
+                "Cache-Control"       => "must-revalidate, post-check=0, pre-check=0",
+                "Expires"             => "0"
+            ];
+
+            $callback = function() use ($subscriptions) {
+                $file = fopen('php://output', 'w');
+                fputcsv($file, ['ID', 'Email', 'Subscribed At']);
+
+                foreach ($subscriptions as $subscription) {
+                    fputcsv($file, [$subscription->id, $subscription->email, $subscription->created_at->toDateTimeString()]);
+                }
+
+                fclose($file);
+            };
+
+            return response()->stream($callback, 200, $headers);
+        }
+
+        if ($format == 'xlsx') {
+            return Excel::download(new SubscriptionsExport, 'subscriptions.xlsx');
+        }
+
+        return redirect()->back()->with('error', 'Invalid export format.');
     }
 
     public function logout()
@@ -89,4 +126,24 @@ class AdminController extends Controller
         // Else redirect to login
         return redirect()->route('admin.login');
     }
+
+    public function destroySubscription(Subscription $subscription)
+    {
+        $subscription->delete();
+
+        return redirect()->route('admin.subscriptions.index')->with('success', 'Subscription deleted successfully.');
+    }
+
+    public function destroyMultipleSubscriptions(Request $request)
+    {
+        $request->validate([
+            'subscription_ids' => 'required|array',
+            'subscription_ids.*' => 'exists:subscriptions,id',
+        ]);
+
+        Subscription::whereIn('id', $request->subscription_ids)->delete();
+
+        return redirect()->route('admin.subscriptions.index')->with('success', 'Selected subscriptions deleted successfully.');
+    }
 }
+

@@ -53,8 +53,8 @@
     --color-trans: oklab(84.88% -0.03826 0.07836 / 0.39);
 
     /* Typography */
-    --font-display: "Playfair Display", serif;
-    --font-body: "Roboto", sans-serif;
+    --font-display: "Abril Fatface", serif;
+    --font-body: "Lato", sans-serif;
 
     /* Radius */
     --radius-selector: 1rem;
@@ -107,7 +107,13 @@
 
 *, html{
     scroll-behavior: smooth;
+    font-weight: 400 !important;
 }
+input[type="checkbox"]#selectAll {
+  width: 20px; /* Adjust size as needed */
+  height: 20px; /* Adjust size as needed */
+}
+
 #blog h1 {
   font-size: 2.5rem; /* Large size for the main page title */
   font-weight: 700;  /* Bold weight */

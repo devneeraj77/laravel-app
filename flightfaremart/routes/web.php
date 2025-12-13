@@ -102,6 +102,10 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/test-cloudinary', function () {
             return view('admin.test-cloudinary');
         })->name('test-cloudinary');
-        Route::get('/subscriptions', [AdminController::class, 'subscriptions'])->name('subscriptions.index');
+        // Subscriptions routes (from my previous admin.php changes)
+        Route::get('subscriptions', [AdminController::class, 'subscriptions'])->name('subscriptions.index');
+        Route::get('subscriptions/export', [AdminController::class, 'exportSubscriptions'])->name('subscriptions.export');
+        Route::delete('subscriptions/{subscription}', [AdminController::class, 'destroySubscription'])->name('subscriptions.destroy');
+        Route::delete('subscriptions', [AdminController::class, 'destroyMultipleSubscriptions'])->name('subscriptions.destroy.multiple');
     });
 });

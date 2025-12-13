@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
 
-@section('title', 'Admin Dashboard')
+@section('title', 'Flightfaremart')
 
 @section('content')
 <div class="container mx-auto px-4 py-6">
