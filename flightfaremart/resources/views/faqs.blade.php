@@ -14,6 +14,7 @@
 </head>
 
 <body class="dark:bg-black bg-primary">
+    <x-preloading />
     @include('layouts.navmanu')
     <main class="min-h-screen py-6">
         <div class="max-w-xl mx-auto flex flex-col items-center justify-center px-4 md:px-0">

@@ -10,8 +10,8 @@
     <div class="flex justify-between items-center ">
         <h1 class="text-3xl font-bold text-gray-800">Blog Posts</h1>
         <a href="{{ route('admin.blog.posts.create') }}"
-            class="bg-accent hover:bg-accent/80 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition duration-300">
-            + New Post
+            class="bg-accent hover:bg-accent/80 text-white font-semibold flex justify-center items-center gap-1 py-2 px-4 rounded-lg shadow-md transition duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-plus"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 5l0 14" /><path d="M5 12l14 0" /></svg> <span class="pt-1">New Post</span>
         </a>
     </div>
     <div class="flex justify-between items-center  mb-6">

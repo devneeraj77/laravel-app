@@ -12,7 +12,7 @@
           <select x-model="form.tripType" class="select select-bordered w-full text-accent ">
             <option value="round-trip">Round trip</option>
             <option value="one-way">One way</option>
-            <option value="multi-city">Multi-city</option>
+            <option value="multi-city" disabled>Multi-city</option>
           </select>
         </div>
 
@@ -135,7 +135,46 @@
             { code: 'FRA', name: 'Frankfurt Airport', city: 'Frankfurt', country: 'Germany' },
             { code: 'SFO', name: 'San Francisco International Airport', city: 'San Francisco', country: 'USA' },
             { code: 'MIA', name: 'Miami International Airport', city: 'Miami', country: 'USA' },
-            { code: 'DEL', name: 'Indra Gandhi International Airport', city: 'Miami', country: 'USA' },
+            { code: 'DEL', name: 'Indira Gandhi International Airport', city: 'New Delhi', country: 'India' },
+            { code: 'SYD', name: 'Sydney Kingsford Smith Airport', city: 'Sydney', country: 'Australia' },
+            { code: 'ICN', name: 'Incheon International Airport', city: 'Seoul', country: 'South Korea' },
+            { code: 'SIN', name: 'Singapore Changi Airport', city: 'Singapore', country: 'Singapore' },
+            { code: 'BKK', name: 'Suvarnabhumi Airport', city: 'Bangkok', country: 'Thailand' },
+            { code: 'HKG', name: 'Hong Kong International Airport', city: 'Hong Kong', country: 'China' },
+            { code: 'IST', name: 'Istanbul Airport', city: 'Istanbul', country: 'Turkey' },
+            { code: 'MUC', name: 'Munich Airport', city: 'Munich', country: 'Germany' },
+            { code: 'BCN', name: 'Barcelona–El Prat Airport', city: 'Barcelona', country: 'Spain' },
+            { code: 'FCO', name: 'Leonardo da Vinci–Fiumicino Airport', city: 'Rome', country: 'Italy' },
+            { code: 'ZRH', name: 'Zurich Airport', city: 'Zurich', country: 'Switzerland' },
+            { code: 'CPH', name: 'Copenhagen Airport', city: 'Copenhagen', country: 'Denmark' },
+            { code: 'VIE', name: 'Vienna International Airport', city: 'Vienna', country: 'Austria' },
+            { code: 'DUB', name: 'Dublin Airport', city: 'Dublin', country: 'Ireland' },
+            { code: 'GRU', name: 'São Paulo/Guarulhos–Governador André Franco Montoro International Airport', city: 'São Paulo', country: 'Brazil' },
+            { code: 'MEX', name: 'Mexico City International Airport', city: 'Mexico City', country: 'Mexico' },
+            { code: 'EZE', name: 'Ministro Pistarini International Airport', city: 'Buenos Aires', country: 'Argentina' },
+            { code: 'JNB', name: 'O. R. Tambo International Airport', city: 'Johannesburg', country: 'South Africa' },
+            { code: 'CAI', name: 'Cairo International Airport', city: 'Cairo', country: 'Egypt' },
+            { code: 'BOM', name: 'Chhatrapati Shivaji Maharaj International Airport', city: 'Mumbai', country: 'India' },
+            { code: 'HNL', name: 'Daniel K. Inouye International Airport', city: 'Honolulu', country: 'USA' },
+            { code: 'CUN', name: 'Cancún International Airport', city: 'Cancún', country: 'Mexico' },
+            { code: 'PUJ', name: 'Punta Cana International Airport', city: 'Punta Cana', country: 'Dominican Republic' },
+            { code: 'MBJ', name: 'Sangster International Airport', city: 'Montego Bay', country: 'Jamaica' },
+            { code: 'ATH', name: 'Athens International Airport', city: 'Athens', country: 'Greece' },
+            { code: 'LIS', name: 'Lisbon Airport', city: 'Lisbon', country: 'Portugal' },
+            { code: 'PRG', name: 'Václav Havel Airport Prague', city: 'Prague', country: 'Czech Republic' },
+            { code: 'BUD', name: 'Budapest Ferenc Liszt International Airport', city: 'Budapest', country: 'Hungary' },
+            { code: 'KUL', name: 'Kuala Lumpur International Airport', city: 'Kuala Lumpur', country: 'Malaysia' },
+            { code: 'DPS', name: 'Ngurah Rai International Airport', city: 'Denpasar', country: 'Indonesia' },
+            { code: 'ORD', name: 'O\'Hare International Airport', city: 'Chicago', country: 'USA' },
+            { code: 'DFW', name: 'Dallas/Fort Worth International Airport', city: 'Dallas', country: 'USA' },
+            { code: 'ATL', name: 'Hartsfield-Jackson Atlanta International Airport', city: 'Atlanta', country: 'USA' },
+            { code: 'PEK', name: 'Beijing Capital International Airport', city: 'Beijing', country: 'China' },
+            { code: 'PVG', name: 'Shanghai Pudong International Airport', city: 'Shanghai', country: 'China' },
+            { code: 'CAN', name: 'Guangzhou Baiyun International Airport', city: 'Guangzhou', country: 'China' },
+            { code: 'SZX', name: 'Shenzhen Bao\'an International Airport', city: 'Shenzhen', country: 'China' },
+            { code: 'AUH', name: 'Abu Dhabi International Airport', city: 'Abu Dhabi', country: 'UAE' },
+            { code: 'BRU', name: 'Brussels Airport', city: 'Brussels', country: 'Belgium' },
+            { code: 'NRT', name: 'Narita International Airport', city: 'Tokyo', country: 'Japan' }
         ],
         fromSearch: '',
         toSearch: '',

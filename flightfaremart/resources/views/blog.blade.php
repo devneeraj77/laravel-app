@@ -19,6 +19,7 @@
 </head>
 
 <body class="dark:bg-black bg-primary">
+    <x-preloading />
 
     @include('layouts.navmanu')
     <main class="min-h-screen flex text-accent dark:text-secondary">

@@ -19,9 +19,10 @@
 </head>
 
 <body class=" antialiased bg-primary   overflow-x-hidden font-display dark:bg-black dark:text-secondary  px-2 ">
+  <x-preloading />
   @include('layouts.navmanu')
   <main>
-    <section class="overflow-hidden max-w-7xl mx-auto">
+    <section class="overflow-hidden max-w-7xl mx-auto md:mb-20 lg:mb-30 lg:mt-20">
       <div class="relative py-8">
         <img src="img/aircraft_usu4.svg" class=" absolute -right-15 top-2 sm:left-20 sm:-top-10 md:left-50 md:-top-30 lg:left-50 lg:-top-25 z-30 -rotate-25 md:-rotate-15 lg:-rotate-3 " width="950" height="200" alt="" srcset="">
       </div>

@@ -19,27 +19,19 @@
 </head>
 
 <body class="dark:bg-black bg-primary">
+    <x-preloading />
     @include('layouts.navmanu')
 
     <main class="dark:text-base-300 text-accent">
         <section class=" flex flex-col items-center py-10 sm:py-14 md:py-24 xlg:h-auto">
             <h1 class="text-4xl md:text-6xl text-center  text-accent dark:text-secondary px-5 md:px-3 py-2 mb-4 gap-4">About Us</h1>
-            <p class="px-8 md:px-40 text-xl dark:text-base-300/80 text-accent/80">
-                Lorem, ipsum dolor sit amet consectetur adipisicing
-                elit. Officiis hic nobis inventore sequi nesciunt commodi tenetur ad
-                eum iure exercitationem, maiores qui,
-                repellendus repellat ab animi provident rerum, consequuntur culpa.
-            </p>
-            <div class=" m-auto max-w-7xl md:flex md:flex-row items-center h-fit px-4 md:p-8 gap-4">
-                <div class="basis-1/2 flex flex-col gap-3 p-4">
-                    <h2 class="text-2xl">Our Story</h2>
-                    <p>
+            <div class=" m-auto max-w-7xl md:flex md:flex-row items-center justify-start h-fit px-4 md:p-8 gap-4">
+                <div class="basis-1/2 flex  flex-col gap-3 p-4">
+                    <p class="text-xl">
                         FlightFareMart is an online travel platform built to make flight booking simpler, smarter, and more affordable for every traveler. Whether you're planning a quick business trip, a family vacation, or a once-in-a-lifetime adventure, we help you find the best fares from hundreds of global airlines—all in one seamless experience.
                     </p>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur
-                        adipisicing elit. Repudiandae quos numquam, odit magni veniam veritatis facere
-                        labore voluptates neque ipsum esse soluta minus, omnis, sint atque ratione est! Ipsum, reprehenderit.
+                        Here you will find our most exceptional and premier offers for all individuals seeking to acquire flight equipment. With the help of all our blogs, you will gain enormous knowledge.
                     </p>
 
                 </div>
@@ -58,10 +50,10 @@
                 </div>
             </div>
         </section>
-        <section class="min-h-screen text-center py-14 mb-5">
+        <section class="min-h-80 text-center py-14 mb-5">
             <h2 class="dark:text-secondary  md:text-xl">Intro</h2>
             <p class="text-3xl dark:text-base-300 font-semibold md:text-5xl text-accent px-5 md:px-3 py-1 mb-2">flightfaremart was created with one mission</p>
-            <div class="md:flex  m-auto max-w-7xl gap-4 py-6">
+            <div class="md:flex flex-row-reverse m-auto max-w-7xl gap-4 py-6">
                 <div class="basis-1/2 flex flex-col gap-2 min-h-[400px] text-left min-h-40  m-4 p-8  rounded-2xl">
                     <h3 class="text-2xl dark:text-secondary">FlightFareMart was created with one mission</h3>
                     <div class="px-2 py-2 flex flex-col gap-2 dark:text-base-200/50">
@@ -84,7 +76,7 @@
                 </div>
             </div>
         </section>
-        <section class="min-h-screen flex flex-col items-center text-center py-14 mb-5">
+        <section class="min-h-80 flex flex-col items-center text-center py-14 mb-5">
             <h2 class="dark:text-secondary  md:text-xl">What We Do</h2>
             <p class="text-3xl dark:text-base-300 font-semibold md:text-5xl text-accent px-5 md:px-3 py-1 mb-2">At FlightFareMart</p>
             <div class="md:flex flex-col md:flex-row m-auto max-w-7xl gap-4 py-6">
@@ -105,7 +97,7 @@
                 </div>
             </div>
         </section>
-        <section class="min-h-screen dark:bg-black bg-base-200 py-10 px-1">
+        <section class="min-h-80 dark:bg-black bg-base-200 py-10 px-1">
             <div class="flex flex-col items-center text-center">
                 <h1 class="text-4xl px-4  dark:text-base-200/80 font-bold max-w-[740px] mb-[72px]">Trusted by <span class="dark:text-secondary text-accent/80">3k+</span> world class companies & design teams</h1>
                 <div class="flex flex-wrap items-center justify-center gap-4 m-2">

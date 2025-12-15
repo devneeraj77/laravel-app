@@ -1,5 +1,5 @@
 @if($posts->isNotEmpty())
-<div class="py-12 bg-gray-50">
+<div class="py-12 ">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center">
             <h2 class="text-2xl md:text-6xl mx-auto max-w-6xl dark:text-secondary text-accent px-5 md:px-3">
@@ -27,7 +27,7 @@
                                 </a>
                             </p>
                             <a href="{{ route('blog.show', ['category' => $post->category->slug, 'slug' => $post->slug]) }}" class="block mt-2">
-                                <p class="text-xl font-semibold text-gray-900">
+                                <p id="post-title" class=" md:text-2xl font-semibold text-gray-900">
                                     {{ Str::limit($post->title, 60) }}
                                 </p>
                                 <p class="mt-3 text-base text-gray-500">

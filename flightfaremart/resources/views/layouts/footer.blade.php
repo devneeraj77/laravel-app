@@ -41,7 +41,7 @@
 
   </div>
   <!-- Top dark section -->
-  <div class="bg-primary dark:bg-black text-dark dark:text-secondary py-10">
+  <div class="bg-primary dark:bg-black text-dark dark:text-secondary pb-4 pt-10">
     <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8 px-6">
 
       <div class=" flex-1 space-x-4 ">
@@ -132,9 +132,11 @@
         <a href="{{ route('terms') }}" class="hover:text-seconary">Terms & Conditions</a>
       </div>
       <p>© 2025 FlightFareMart. All rights reserved.</p>
-
     </div>
 
   </div>
-
+  <div class="bg-base-200">
+    <p class=" text-xs text-center p-4   mx-auto max-w-5xl text-red-400 bg-sacondary dark:text-red-200">DISCLEAMER: We are not legally responsible for any issues, losses, or decisions that result from using the information on our site. We recommend verifying details with airlines or official sources before making any travel plans. </p>
+  </div>
+  
 </footer>

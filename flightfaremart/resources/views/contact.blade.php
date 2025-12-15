@@ -15,6 +15,7 @@
 </head>
 
 <body class="bg-base-300 dark:bg-black">
+    <x-preloading />
     @include('layouts.navmanu')
 
     <div class="min-h-screen flex flex-col items-center justify-center p-4">

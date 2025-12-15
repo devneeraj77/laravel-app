@@ -30,6 +30,7 @@
         <div class="hidden md:flex space-x-4 text-sm px-3 text-accent ">
           <a href="/" aria-current="page" class="px-1 py-2 text-sm  text-accent bg-trans hover:bg-white/5  dark:text-primary ">Home</a>
           <a href="{{ route('about') }}" class="px-1 py-2 text-sm  text-accent hover:bg-white/5 hover:text-accent/80 dark:text-secondary">About</a>
+          <a href="{{ route('services') }}" class="px-1 py-2 text-sm  text-accent hover:bg-white/5 hover:text-accent/80 dark:text-secondary">Services</a>
           
           <a href="{{ route('blog.index') }}" class="px-1 py-2 text-sm  text-accent hover:bg-white/5 hover:text-accent/80 dark:text-secondary">Blog</a>
           <a href="{{ route('faqs') }}" class="px-1 py-2 text-sm  text-accent hover:bg-white/5 hover:text-accent/80 dark:text-secondary">FAQs</a>
@@ -65,7 +66,8 @@
     <div class="flex flex-col items-center space-y-4 py-4 text-light dark:text-dark-light">
       <a href="/" class="hover:text-accent transition">Home</a>
       <a href="{{ route('about') }}" class="hover:text-accent transition">About</a>
-      <a href="{{ route('blog.index') }}" class="hover:text-accent transition">blog</a>
+      <a href="{{ route('services') }}" class="hover:text-accent transition">Services</a>
+      <a href="{{ route('blog.index') }}" class="hover:text-accent transition">Blog</a>
       <a href="{{ route('faqs') }}" class="hover:text-accent transition">FAQs</a>
       <a href="{{ route('contact.create') }}" class="hover:text-accent transition">Contact</a>
     </div>

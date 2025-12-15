@@ -40,9 +40,10 @@ Route::get('scripts.db-check', function () {
 
 
 Route::view('/privacy-policy', 'privacy-policy')->name('privacy');
-Route::view('/terms', 'terms')->name('terms');
+Route::view('/terms-and-conditions', 'terms-and-conditions')->name('terms');
 Route::view('/about', 'about')->name('about');
 Route::view('/faqs', 'faqs')->name('faqs');
+Route::view('/services', 'services')->name('services');
 Route::view('/contact', 'contact')->name('contact');
 Route::get('/blog', [PublicBlogController::class, 'index'])->name('blog.index');
 Route::get('/blog/search', [PublicBlogController::class, 'search'])->name('blog.search');

@@ -19,6 +19,8 @@
         "vite": "^7.2.1"
     },
     "dependencies": {
+        "jquery": "^3.7.1",
+        "owl.carousel": "^2.3.4",
         "vercel-php": "^0.7.4"
     }
 }
