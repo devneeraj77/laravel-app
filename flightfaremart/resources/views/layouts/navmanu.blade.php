@@ -50,7 +50,7 @@
       </div>
 
       <!-- Mobile Menu Button -->
-      <button id="menu-btn" class="md:hidden focus:outline-none">
+      <button id="menu-btn" class="md:hidden focus:outline-none dark:text-secondary">
         <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-light dark:text-dark-light" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
@@ -62,8 +62,8 @@
   </nav>
 
   <!-- Mobile Menu -->
-  <div id="mobile-menu" class="absolute top-26 w-full hidden md:hidden bg-primary dark:bg-dark-primary border-t border-secondary dark:border-dark-secondary">
-    <div class="flex flex-col items-center space-y-4 py-4 text-light dark:text-dark-light">
+  <div id="mobile-menu" class="absolute top-26 w-full hidden md:hidden bg-primary dark:bg-accent border-t border-secondary dark:border-dark-secondary">
+    <div class="flex flex-col items-center space-y-4 py-4 text-light dark:text-secondary">
       <a href="/" class="hover:text-accent transition">Home</a>
       <a href="{{ route('about') }}" class="hover:text-accent transition">About</a>
       <a href="{{ route('services') }}" class="hover:text-accent transition">Services</a>

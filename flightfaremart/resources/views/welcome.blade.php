@@ -22,7 +22,7 @@
   <x-preloading />
   @include('layouts.navmanu')
   <main>
-    <section class="overflow-hidden max-w-7xl mx-auto md:mb-20 lg:mb-30 lg:mt-20">
+    <section class="overflow-hidden max-w-7xl mx-auto md:mb-20 lg:mb-30 lg:mt-4">
       <div class="relative py-8">
         <img src="img/aircraft_usu4.svg" class=" absolute -right-15 top-2 sm:left-20 sm:-top-10 md:left-50 md:-top-30 lg:left-50 lg:-top-25 z-30 -rotate-25 md:-rotate-15 lg:-rotate-3 " width="950" height="200" alt="" srcset="">
       </div>
@@ -40,7 +40,7 @@
             </div>
             <p class="-translate-x-2 text-slate-500 ">Grab of 100+ countries deals </p>
           </div>
-          <h1 class="text-center mt-4 md:text-left text-4xl leading-[48px] md:text-5xl md:leading-[74px] font-medium max-w-xl text-accent dark:text-secondary">
+          <h1 class="text-center mt-4 md:text-left text-4xl lg:text-6xl leading-[48px] md:text-5xl md:leading-[74px] font-medium max-w-xl text-accent dark:text-secondary">
             Find Your Perfect Flight, Guaranteed Lowest Fare.
           </h1>
           <p class="text-center text-accent md:text-left text-base dark:text-base-300 max-w-lg mt-2">

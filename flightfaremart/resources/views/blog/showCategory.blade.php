@@ -5,7 +5,7 @@
 @section('sidebar')
     <aside class=" rounded-t-2xl p-10  w-60">
         <h1 class="text-lg">Categories</h1>
-        <ul class="px-2 dark:text-base-200/40 text-accent/70">
+    <ul class="px-2 dark:text-base-200/40 text-accent/70 list-image-[url(/img/chevron-right.svg)]">
             @foreach($categories as $cat)
                 <li class="{{ $cat->slug == $category->slug ? 'font-bold' : '' }}"><a href="{{ route('blog.category', $cat->slug) }}">{{ $cat->name }}</a></li>
             @endforeach
@@ -16,10 +16,10 @@
 @section('main-content')
     <section class="py-4 ">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <h1 class="text-4xl  text-gray-900 mb-8 border-b pb-4">Posts in: {{ $category->name }}</h1>
+            <h1 class="text-4xl text-accent/90  dark:text-base-200 mb-8 border-b pb-4">Posts in: {{ $category->name }}</h1>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
                 @foreach($posts as $post)
-                    <div class="group cursor-pointer border border-gray-300 rounded-2xl p-5 transition-all duration-300 hover:border-indigo-600">
+                    <div class="group cursor-pointer border border-base-200 rounded-2xl p-5 transition-all duration-300 hover:border-secondary">
                         <div class="flex items-center mb-6">
                             <a href="{{ route('blog.show', ['category' => $post->category->slug, 'slug' => $post->slug]) }}" class="h-48 w-full overflow-hidden">
                                 @if($post->imageAsset)
@@ -30,10 +30,10 @@
                             </a>
                         </div>
                         <div class="block">
-                            <h4 class="text-gray-900 font-medium leading-8 mb-9"><a href="{{ route('blog.show', ['category' => $post->category->slug, 'slug' => $post->slug]) }}">{{ $post->title }}</a></h4>
+                            <h4 class="text-accent dark:text-secondary font-medium leading-8 mb-9"><a href="{{ route('blog.show', ['category' => $post->category->slug, 'slug' => $post->slug]) }}">{{ $post->title }}</a></h4>
                             <div class="flex items-center justify-between  font-medium">
-                                <h6 class="text-sm text-gray-500">By {{ $post->author->name }}</h6>
-                                <span class="text-sm text-indigo-600">{{ $post->published_at->diffForHumans() }}</span>
+                                <h6 class="text-sm dark:text-base-300/80">By {{ $post->author->name }}</h6>
+                                <span class="text-sm dark:text-base-300/80">{{ $post->published_at->diffForHumans() }}</span>
                             </div>
                         </div>
                     </div>

@@ -60,22 +60,22 @@
         <header class="mb-6">
             {{-- Title and Badges --}}
             <div class="flex flex-col   py-4">
-                <h1 class="text-5xl mb-2">{{ $post->title }}</h1>
-                <span class="text-base italic text-base-content/70"> ~ Written by {{ $post->author->name }}</span>
+                <h1 class="text-5xl text-accent dark:text-secondary mb-2">{{ $post->title }}</h1>
+                <span class="text-base italic text-accent/70 dark:text-base-300/70"> ~ Written by {{ $post->author->name }}</span>
             </div>
             <!-- <small class=" text-accent/50">{{$post->excerpt}}</small> -->
-            <div class="flex items-center justify-between space-x-3 mb-2">
-                <div class="badge badge-lg badge-secondary text-accent">{{ $post->category->name }}</div>
-                <span class="text-sm text-base-content/70">Published on {{ $post->published_at->format('F d, Y') }}</span>
+            <div class="flex  items-start justify-between space-x-3 mb-2">
+                <div class="badge badge-lg badge-secondary dark:bg-secondary dark:text-accent  text-accent">{{ $post->category->name }}</div>
+                <span class="text-sm dark:text-base-200 text-accent/80">Published on {{ $post->published_at->format('F d, Y') }}</span>
             </div>
             <hr class="text-gray-200">
         </header>
         {{-- Author Info (Avatar) --}}
         <div role="alert"
-            class=" flex flex-col-reverse gap-4 md:flex-row items-start justify-between bg-primary py-4 mb-6">
+            class=" flex flex-col-reverse gap-4 md:flex-row items-start justify-between text-accent  dark:text-secondary py-4 mb-6">
 
             <!-- Author Section -->
-            <div class="flex items-start text-accent/60 gap-4">
+            <div class="flex items-start text-accent/60 dark:text-base-300/50 gap-4">
                 <!-- Description Info -->
                 {{ $post->excerpt }}
             </div>
@@ -88,7 +88,7 @@
 
 
         {{-- Post Content --}}
-        <div class="article-content">
+        <div class="article-content text-accent dark:text-base-300/80">
             {{-- Note: Use {!! $post->content !!} if the content is stored as sanitized HTML --}}
             {!! nl2br($post->content) !!}
             
@@ -97,15 +97,15 @@
     </article>
 
     @if($post->faqs->count() > 0)
-    <section class="mt-12 p-6 bg-base-100 shadow-xl rounded-box">
-        <h2 class="text-3xl font-bold mb-6 text-center">Frequently Asked Questions</h2>
+    <section class="mt-12 p-3  shadow-xl rounded-box">
+        <h2 class="text-3xl font-bold mb-6 text-center text-accent dark:text-secondary">Frequently Asked Questions</h2>
         <div class="space-y-4">
             @foreach($post->faqs as $faq)
-            <div tabindex="0" class="collapse collapse-plus border border-base-300 bg-base-200 rounded-box">
-                <div class="collapse-title text-xl font-medium">
+            <div tabindex="0" class="collapse collapse-plus border border-base-300 dark:dark:bg-accent/50 bg-base-200/50 rounded-box">
+                <div class="collapse-title text-xl font-medium dark:text-base-300">
                     {{ $faq->question }}
                 </div>
-                <div class="collapse-content">
+                <div class="collapse-content dark:text-base-200/80">
                     <p>{{ $faq->answer }}</p>
                 </div>
             </div>

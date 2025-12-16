@@ -29,7 +29,7 @@
     --color-primary-content: #353535;
 
     --color-secondary: #cad593;
-    --color-secondary-content: oklch(98% 0.01 200);
+    --color-secondary-content: oklab(31.779000000000003% -0.02207 0.02023)oklch(98% 0.01 200);
 
     --color-accent: #2a3c24;
     --color-accent-content: oklch(98% 0.01 160);
@@ -86,8 +86,10 @@
 
 :root {
     --acme-canvas-color: oklab(91.696% -0.01535 0.02446);
+    --blog-text-color: rgb(225, 228, 231);
 }
 [data-theme="dark"] {
+    
     --acme-canvas-color: oklch(0.21 0.034 264.665);
     --acme-canvas-color: oklab(84.88% -0.03826 0.07836 / 0.39);
 }
@@ -155,6 +157,7 @@ input[type="checkbox"]#selectAll {
   font-weight: 400;
  
 }
+
 
 body {
     /* background: #24301036; */

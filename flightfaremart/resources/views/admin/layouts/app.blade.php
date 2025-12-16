@@ -18,6 +18,7 @@
 </head>
 
 <body class="md:w-full text-left text-sm hover:bg-base-300">
+  @include('admin.layouts.preloading')
 
   <div x-data="{ sidebarOpen: false, sidebarMinimized: true }" x-cloak class="flex h-screen overflow-hidden">
 

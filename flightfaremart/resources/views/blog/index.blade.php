@@ -3,11 +3,11 @@
 @section('title', 'Blog')
 
 @section('sidebar')
-    <aside class=" rounded-t-2xl p-10  w-60">
+    <aside class=" rounded-t-2xl p-10  w-70">
         <h1 class="text-lg">Categories</h1>
-        <ul class="px-2 dark:text-base-200/40 text-accent/70">
+        <ul class="px-2 dark:text-base-200/40 pb-4  text-accent/70  ">
             @foreach($categories as $category)
-                <li><a href="{{ route('blog.category', $category->slug) }}">{{ $category->name }}</a></li>
+                <li class="border-t pb-2 w-fit"><a href="{{ route('blog.category', $category->slug) }}">{{ $category->name }}</a></li>
             @endforeach
         </ul>
     </aside>

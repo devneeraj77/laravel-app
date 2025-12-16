@@ -19,7 +19,7 @@
                             <img class="h-48 w-full object-cover" src="{{ $post->imageAsset->image_url ?? 'https://via.placeholder.com/400x200' }}" alt="{{ $post->title }}">
                         </a>
                     </div>
-                    <div class="flex-1 bg-white p-6 flex flex-col justify-between">
+                    <div class="flex-1 bg-base-300 p-6 flex flex-col justify-between">
                         <div class="flex-1">
                             <p class="text-sm font-medium text-accent/80">
                                 <a href="{{ route('blog.category', $post->category->slug) }}" class="hover:underline">
@@ -28,7 +28,7 @@
                             </p>
                             <a href="{{ route('blog.show', ['category' => $post->category->slug, 'slug' => $post->slug]) }}" class="block mt-2">
                                 <p id="post-title" class=" md:text-2xl font-semibold text-gray-900">
-                                    {{ Str::limit($post->title, 60) }}
+                                    {{ Str::limit($post->title, 50) }}
                                 </p>
                                 <p class="mt-3 text-base text-gray-500">
                                      {{ Str::limit($post->excerpt, 90) }}

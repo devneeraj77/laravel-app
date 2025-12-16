@@ -1,177 +1,290 @@
-
 <style>
-    #preloader {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 9999;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    /* From Uiverse.io by andrew-manzyk */ 
+  #preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    min-height: 100vh;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+/* From Uiverse.io by andrew-manzyk */ 
 .loader {
-  /* --cloud-color: #4387f4; */
-  /* --arrows-color: #80b1ff; */
-  --time-animation: 1s;
-  transform: scale(1); /* You can change the size */
+  --main-size: 4em;
+  --text-color: #a1b973ff;
+  --shine-color: #ffffff40;
+  --shadow-color: #a4a5a1ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  user-select: none;
+  position: relative;
+  font-size: var(--main-size);
+  font-weight: 900;
+  text-transform: uppercase;
+  color: var(--text-color);
+  width: 7.3em;
+  height: 1em;
+  filter: drop-shadow(0 0 0.05em var(--shine-color));
 }
 
-.loader #cloud {
-  width: 100px;
-  height: 200px;
+.loader .text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  position: absolute;
 }
 
-.loader #cloud rect {
-  fill: var(--cloud-color);
+.loader .text:nth-child(1) {
+  clip-path: polygon(0% 0%, 11.11% 0%, 11.11% 100%, 0% 100%);
+  font-size: calc(var(--main-size) / 20);
+  margin-left: -2.1em;
+  opacity: 0.6;
 }
 
-.loader #cloud g:nth-child(3) {
-  transform-origin: 50% 72.8938%;
-  fill: var(--arrows-color);
-  filter: drop-shadow(0 0 8px black);
-  animation: rotation var(--time-animation) linear infinite;
+.loader .text:nth-child(2) {
+  clip-path: polygon(11.11% 0%, 22.22% 0%, 22.22% 100%, 11.11% 100%);
+  font-size: calc(var(--main-size) / 16);
+  margin-left: -0.98em;
+  opacity: 0.7;
 }
 
-.loader #shapes g g circle {
-  animation: cloud calc(var(--time-animation) * 2) linear infinite;
+.loader .text:nth-child(3) {
+  clip-path: polygon(22.22% 0%, 33.33% 0%, 33.33% 100%, 22.22% 100%);
+  font-size: calc(var(--main-size) / 13);
+  margin-left: -0.33em;
+  opacity: 0.8;
 }
 
-.loader #shapes g g circle:nth-child(2) {
-  animation-delay: calc((var(--time-animation) * 2) / -3);
+.loader .text:nth-child(4) {
+  clip-path: polygon(33.33% 0%, 44.44% 0%, 44.44% 100%, 33.33% 100%);
+  font-size: calc(var(--main-size) / 11);
+  margin-left: -0.05em;
+  opacity: 0.9;
 }
 
-.loader #shapes g g circle:nth-child(3) {
-  animation-delay: calc((var(--time-animation) * 2) / -1.5);
+.loader .text:nth-child(5) {
+  clip-path: polygon(44.44% 0%, 55.55% 0%, 55.55% 100%, 44.44% 100%);
+  font-size: calc(var(--main-size) / 10);
+  margin-left: 0em;
+  opacity: 1;
 }
 
-.loader svg #lines g line {
-  stroke-width: 5;
-  transform-origin: 50% 50%;
-  rotate: -65deg;
-  animation: lines calc(var(--time-animation) / 1.33) linear infinite;
+.loader .text:nth-child(6) {
+  clip-path: polygon(55.55% 0%, 66.66% 0%, 66.66% 100%, 55.55% 100%);
+  font-size: calc(var(--main-size) / 11);
+  margin-left: 0.05em;
+  opacity: 0.9;
 }
 
-@keyframes rotation {
+.loader .text:nth-child(7) {
+  clip-path: polygon(66.66% 0%, 77.77% 0%, 77.77% 100%, 66.66% 100%);
+  font-size: calc(var(--main-size) / 13);
+  margin-left: 0.33em;
+  opacity: 0.8;
+}
+
+.loader .text:nth-child(8) {
+  clip-path: polygon(77.77% 0%, 88.88% 0%, 88.88% 100%, 77.77% 100%);
+  font-size: calc(var(--main-size) / 16);
+  margin-left: 0.98em;
+  opacity: 0.7;
+}
+
+.loader .text:nth-child(9) {
+  clip-path: polygon(88.88% 0%, 100% 0%, 100% 100%, 88.88% 100%);
+  font-size: calc(var(--main-size) / 20);
+  margin-left: 2.1em;
+  opacity: 0.6;
+}
+
+.loader .text span {
+  animation:
+    scrolling 2s cubic-bezier(0.1, 0.6, 0.9, 0.4) infinite,
+    shadow 2s cubic-bezier(0.1, 0.6, 0.9, 0.4) infinite;
+}
+
+.loader .text:nth-child(1) span {
+  background: linear-gradient(
+    to right,
+    var(--text-color) 4%,
+    var(--shadow-color) 7%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  color: transparent;
+}
+
+.loader .text:nth-child(2) span {
+  background: linear-gradient(
+    to right,
+    var(--text-color) 9%,
+    var(--shadow-color) 13%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  color: transparent;
+}
+
+.loader .text:nth-child(3) span {
+  background: linear-gradient(
+    to right,
+    var(--text-color) 15%,
+    var(--shadow-color) 18%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  color: transparent;
+}
+
+.loader .text:nth-child(4) span {
+  background: linear-gradient(
+    to right,
+    var(--text-color) 20%,
+    var(--shadow-color) 23%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  color: transparent;
+}
+
+.loader .text:nth-child(6) span {
+  background: linear-gradient(
+    to right,
+    var(--shadow-color) 29%,
+    var(--text-color) 32%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  color: transparent;
+}
+
+.loader .text:nth-child(7) span {
+  background: linear-gradient(
+    to right,
+    var(--shadow-color) 34%,
+    var(--text-color) 37%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  color: transparent;
+}
+
+.loader .text:nth-child(8) span {
+  background: linear-gradient(
+    to right,
+    var(--shadow-color) 39%,
+    var(--text-color) 42%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  color: transparent;
+}
+
+.loader .text:nth-child(9) span {
+  background: linear-gradient(
+    to right,
+    var(--shadow-color) 45%,
+    var(--text-color) 48%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  color: transparent;
+}
+
+.loader .line {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  height: 0.05em;
+  width: calc(var(--main-size) / 2);
+  margin-top: 0.9em;
+  border-radius: 0.05em;
+}
+
+.loader .line::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: var(--text-color);
+  opacity: 0.3;
+}
+
+.loader .line::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: var(--text-color);
+  border-radius: 0.05em;
+  transform: translateX(-90%);
+  animation: wobble 2s cubic-bezier(0.5, 0.8, 0.5, 0.2) infinite;
+}
+
+@keyframes wobble {
   0% {
-    transform: rotate(0deg);
+    transform: translateX(-90%);
   }
   50% {
-    transform: rotate(180deg);
+    transform: translateX(90%);
   }
   100% {
-    transform: rotate(360deg);
+    transform: translateX(-90%);
   }
 }
 
-@keyframes lines {
+@keyframes scrolling {
   0% {
-    transform: translateY(-10px);
+    transform: translateX(-100%);
   }
   100% {
-    transform: translateY(8px);
+    transform: translateX(100%);
   }
 }
 
-@keyframes cloud {
+@keyframes shadow {
   0% {
-    cx: 20;
-    cy: 60;
-    r: 15;
-  }
-  50% {
-    cx: 50;
-    cy: 45;
-    r: 20;
+    background-position: -98% 0;
   }
   100% {
-    cx: 80;
-    cy: 60;
-    r: 15;
+    background-position: 102% 0;
   }
 }
 
 </style>
 
-<div id="preloader" class="bg-base-300 dark:bg-accent">
-    <!-- From Uiverse.io by andrew-manzyk --> 
-<div class="loader fill-accent dark:fill-secondary">
-  <svg id="cloud" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-    <defs>
-      <filter id="roundness">
-        <feGaussianBlur in="SourceGraphic" stdDeviation="1.5"></feGaussianBlur>
-        <feColorMatrix
-          values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 20 -10"
-        ></feColorMatrix>
-      </filter>
-      <mask id="shapes">
-        <g fill="white">
-          <polygon points="50 37.5 80 75 20 75 50 37.5"></polygon>
-          <circle cx="20" cy="60" r="15"></circle>
-          <circle cx="80" cy="60" r="15"></circle>
-          <g>
-            <circle cx="20" cy="60" r="15"></circle>
-            <circle cx="20" cy="60" r="15"></circle>
-            <circle cx="20" cy="60" r="15"></circle>
-          </g>
-        </g>
-      </mask>
-      <mask id="clipping" clipPathUnits="userSpaceOnUse">
-        <g id="lines" filter="url(#roundness)">
-          <g mask="url(#shapes)" stroke="white">
-            <line x1="-50" y1="-40" x2="150" y2="-40"></line>
-            <line x1="-50" y1="-31" x2="150" y2="-31"></line>
-            <line x1="-50" y1="-22" x2="150" y2="-22"></line>
-            <line x1="-50" y1="-13" x2="150" y2="-13"></line>
-            <line x1="-50" y1="-4" x2="150" y2="-4"></line>
-            <line x1="-50" y1="5" x2="150" y2="5"></line>
-            <line x1="-50" y1="14" x2="150" y2="14"></line>
-            <line x1="-50" y1="23" x2="150" y2="23"></line>
-            <line x1="-50" y1="32" x2="150" y2="32"></line>
-            <line x1="-50" y1="41" x2="150" y2="41"></line>
-            <line x1="-50" y1="50" x2="150" y2="50"></line>
-            <line x1="-50" y1="59" x2="150" y2="59"></line>
-            <line x1="-50" y1="68" x2="150" y2="68"></line>
-            <line x1="-50" y1="77" x2="150" y2="77"></line>
-            <line x1="-50" y1="86" x2="150" y2="86"></line>
-            <line x1="-50" y1="95" x2="150" y2="95"></line>
-            <line x1="-50" y1="104" x2="150" y2="104"></line>
-            <line x1="-50" y1="113" x2="150" y2="113"></line>
-            <line x1="-50" y1="122" x2="150" y2="122"></line>
-            <line x1="-50" y1="131" x2="150" y2="131"></line>
-            <line x1="-50" y1="140" x2="150" y2="140"></line>
-          </g>
-        </g>
-      </mask>
-    </defs>
-    <rect
-      x="0"
-      y="0"
-      width="100"
-      height="100"
-      rx="0"
-      ry="0"
-      mask="url(#clipping)"
-    ></rect>
-    <g>
-      <path
-        d="M33.52,68.12 C35.02,62.8 39.03,58.52 44.24,56.69 C49.26,54.93 54.68,55.61 59.04,58.4 C59.04,58.4 56.24,60.53 56.24,60.53 C55.45,61.13 55.68,62.37 56.63,62.64 C56.63,62.64 67.21,65.66 67.21,65.66 C67.98,65.88 68.75,65.3 68.74,64.5 C68.74,64.5 68.68,53.5 68.68,53.5 C68.67,52.51 67.54,51.95 66.75,52.55 C66.75,52.55 64.04,54.61 64.04,54.61 C57.88,49.79 49.73,48.4 42.25,51.03 C35.2,53.51 29.78,59.29 27.74,66.49 C27.29,68.08 28.22,69.74 29.81,70.19 C30.09,70.27 30.36,70.31 30.63,70.31 C31.94,70.31 33.14,69.44 33.52,68.12Z"
-      ></path>
-      <path
-        d="M69.95,74.85 C68.35,74.4 66.7,75.32 66.25,76.92 C64.74,82.24 60.73,86.51 55.52,88.35 C50.51,90.11 45.09,89.43 40.73,86.63 C40.73,86.63 43.53,84.51 43.53,84.51 C44.31,83.91 44.08,82.67 43.13,82.4 C43.13,82.4 32.55,79.38 32.55,79.38 C31.78,79.16 31.02,79.74 31.02,80.54 C31.02,80.54 31.09,91.54 31.09,91.54 C31.09,92.53 32.22,93.09 33.01,92.49 C33.01,92.49 35.72,90.43 35.72,90.43 C39.81,93.63 44.77,95.32 49.84,95.32 C52.41,95.32 55,94.89 57.51,94.01 C64.56,91.53 69.99,85.75 72.02,78.55 C72.47,76.95 71.54,75.3 69.95,74.85Z"
-      ></path>
-    </g>
-  </svg>
-</div>
+<div id="preloader" class="bg-base-300 dark:bg-black">
+  <!-- From Uiverse.io by andrew-manzyk -->
+
+  <div class="loader text-accent">
+    <div class="text"><span>Loading</span></div>
+    <div class="text"><span>Loading</span></div>
+    <div class="text"><span>Loading</span></div>
+    <div class="text"><span>Loading</span></div>
+    <div class="text"><span>Loading</span></div>
+    <div class="text"><span>Loading</span></div>
+    <div class="text"><span>Loading</span></div>
+    <div class="text"><span>Loading</span></div>
+    <div class="text"><span>Loading</span></div>
+    <div class="line"></div>
+  </div>
+
 
 </div>
 
 <script>
-    window.addEventListener('load', function() {
-        const preloader = document.getElementById('preloader');
-        preloader.style.display = 'none';
-    });
+  window.addEventListener('load', function() {
+    const preloader = document.getElementById('preloader');
+    preloader.style.display = 'none';
+  });
 </script>

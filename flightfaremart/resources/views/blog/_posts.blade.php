@@ -11,11 +11,11 @@
                 </a>
             </div>
             <div class="block">
-                <h4 class="text-gray-900 font-medium leading-8 mb-4"><a href="{{ route('blog.show', ['category' => $post->category->slug, 'slug' => $post->slug]) }}">{{ $post->title }}</a></h4>
+                <h4 class="dark:text-base-300/50 font-medium leading-8 mb-4"><a href="{{ route('blog.show', ['category' => $post->category->slug, 'slug' => $post->slug]) }}">{{ $post->title }}</a></h4>
                 <p class="text-gray-500 text-sm mb-9">{{ Str::limit(strip_tags($post->body), 100) }}</p>
                 <div class="flex items-center justify-between  font-medium">
-                    <h6 class="text-sm text-gray-500">By {{ $post->author->name }}</h6>
-                    <span class="text-sm text-indigo-600">{{ $post->published_at->diffForHumans() }}</span>
+                    <h6 class="text-sm dark:text-base-300/80">By {{ $post->author->name }}</h6>
+                    <span class="text-sm dark:text-base-300/80">{{ $post->published_at->diffForHumans() }}</span>
                 </div>
             </div>
         </div>

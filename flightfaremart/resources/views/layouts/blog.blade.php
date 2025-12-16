@@ -9,17 +9,19 @@
     <title>@yield('title', 'Blog')</title>
     @yield('head')
 </head>
-<body class="min-h-screen">
-    @include('layouts.navmanu')
+<body class="antialiased bg-primary   overflow-x-hidden font-display dark:bg-black dark:text-secondary  px-2  min-h-screen">
+  <x-preloading />
+   
+@include('layouts.navmanu')
 
     <div class="container mx-auto py-8">
-        <div class="flex flex-col lg:flex-row ">
+        <div class="flex flex-col lg:flex-row border ">
 
-            <main class="w-full lg:w-3/4 px-4">
+            <main class="w-full lg:w-3/4 border px-4">
                 @yield('main-content')
             </main>
 
-            <aside class="w-full lg:w-1/4 px-4 mt-8 lg:mt-0">
+            <aside class="w-full lg:w-1/4 px-4   mt-8 lg:mt-0">
                 @yield('sidebar')
             </aside>
 

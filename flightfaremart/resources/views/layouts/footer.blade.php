@@ -135,8 +135,8 @@
     </div>
 
   </div>
-  <div class="bg-base-200">
-    <p class=" text-xs text-center p-4   mx-auto max-w-5xl text-red-400 bg-sacondary dark:text-red-200">DISCLEAMER: We are not legally responsible for any issues, losses, or decisions that result from using the information on our site. We recommend verifying details with airlines or official sources before making any travel plans. </p>
+  <div class="bg-base-200 dark:bg-secondary">
+    <p class=" text-xs text-center p-4   mx-auto max-w-5xl  bg-sacondary ">DISCLEAMER: We are not legally responsible for any issues, losses, or decisions that result from using the information on our site. We recommend verifying details with airlines or official sources before making any travel plans. </p>
   </div>
   
 </footer>
