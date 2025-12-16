@@ -26,9 +26,9 @@
 @section('sidebar')
 <aside class=" rounded-t-2xl p-10  w-70 sticky top-0">
     <h1 class="text-lg pb-2">Categories</h1>
-    <ul class="px-2 dark:text-base-200/40 text-accent/70 ">
+    <ul class="px-2 dark:text-base-200/40 text-accent/70 flex flex-col justify-center items-start ">
         @foreach($categories as $category)
-        <li class="{{ $category->slug == $post->category->slug ? 'font-bold' : '' }} border-t pb-2 w-fit"><a href="{{ route('blog.category', $category->slug) }}">{{ $category->name }}</a></li>
+        <li class="{{ $category->slug == $post->category->slug ? 'font-bold font-bold dark:text-secondary text-accent list-disc' : '' }}"><a href="{{ route('blog.category', $category->slug) }}">{{ $category->name }}</a></li>
         @endforeach
     </ul>
 </aside>
@@ -91,22 +91,44 @@
         <div class="article-content text-accent dark:text-base-300/80">
             {{-- Note: Use {!! $post->content !!} if the content is stored as sanitized HTML --}}
             {!! nl2br($post->content) !!}
-            
+
         </div>
 
     </article>
 
     @if($post->faqs->count() > 0)
-    <section class="mt-12 p-3  shadow-xl rounded-box">
-        <h2 class="text-3xl font-bold mb-6 text-center text-accent dark:text-secondary">Frequently Asked Questions</h2>
+    <section class="mt-12 p-3 shadow-xl rounded-box"
+        itemscope
+        itemtype="https://schema.org/FAQPage">
+
+        <h2 class="text-3xl font-bold mb-6 text-center text-accent dark:text-secondary">
+            Frequently Asked Questions
+        </h2>
+
         <div class="space-y-4">
+            {{-- The @foreach loop handles dynamic content --}}
             @foreach($post->faqs as $faq)
-            <div tabindex="0" class="collapse collapse-plus border border-base-300 dark:dark:bg-accent/50 bg-base-200/50 rounded-box">
-                <div class="collapse-title text-xl font-medium dark:text-base-300">
+            {{-- itemscope and itemtype define a single FAQ entry (Question) --}}
+            <div tabindex="0"
+                class="collapse collapse-plus border border-base-300 dark:dark:bg-accent/50 bg-base-200/50 rounded-box"
+                itemscope
+                itemprop="mainEntity"
+                itemtype="https://schema.org/Question">
+
+                {{-- itemprop="name" for the Question title --}}
+                <div class="collapse-title text-xl font-medium dark:text-base-300"
+                    itemprop="name">
                     {{ $faq->question }}
                 </div>
-                <div class="collapse-content dark:text-base-200/80">
-                    <p>{{ $faq->answer }}</p>
+
+                {{-- itemscope and itemtype define the Answer section --}}
+                <div class="collapse-content dark:text-base-200/80"
+                    itemscope
+                    itemprop="acceptedAnswer"
+                    itemtype="https://schema.org/Answer">
+
+                    {{-- itemprop="text" for the Answer content --}}
+                    <p itemprop="text">{{ $faq->answer }}</p>
                 </div>
             </div>
             @endforeach

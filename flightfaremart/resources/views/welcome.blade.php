@@ -71,7 +71,7 @@
     <!-- section 2 -->
     <section class="py-24 mx-auto max-w-7xl">
       <p class="mx-auto px-5 md:px-4 max-w-6xl md:text-xl text-base text-center ">Trip on</p>
-      <h2 class="text-4xl  md:text-6xl mx-auto max-w-6xl px-5 md:px-3 text-center">Popular Flight Deals Right Now</h2>
+      <h2 class="text-4xl  md:text-6xl mx-auto text-accent dark:secondary max-w-6xl px-5 md:px-3 text-center">Popular Flight Deals Right Now</h2>
       <div class="flex-1 md:flex my-6 bg-trans items-center">
         <div class="basis-4/3">
           <div class="container mx-auto px-4 md:py-8">

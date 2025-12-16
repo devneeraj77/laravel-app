@@ -7,7 +7,7 @@
         <h1 class="text-lg pb-2">Categories</h1>
         <ul class="px-2 dark:text-base-200/40 pb-4  text-accent/70  ">
             @foreach($categories as $category)
-                <li class="border-t pb-2 w-fit"><a href="{{ route('blog.category', $category->slug) }}">{{ $category->name }}</a></li>
+                <li><a href="{{ route('blog.category', $category->slug) }}">{{ $category->name }}</a></li>
             @endforeach
         </ul>
     </aside>
@@ -31,7 +31,7 @@
                 @include('blog._posts', ['posts' => $posts])
             </div>
             <div id="pagination-links" class="mt-14 ">
-                {{ $posts->links() }}
+                {{ $posts->links('vendor.pagination.custom') }}
             </div>
         </div>
     </section>

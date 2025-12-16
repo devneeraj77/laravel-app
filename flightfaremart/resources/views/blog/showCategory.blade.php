@@ -7,7 +7,7 @@
         <h1 class="text-lg pb-2">Categories</h1>
     <ul class="px-2 dark:text-base-200/40 text-accent/70">
             @foreach($categories as $cat)
-                <li class="{{ $cat->slug == $category->slug ? 'font-bold' : '' }} border-t pb-2 w-fit"><a href="{{ route('blog.category', $cat->slug) }}">{{ $cat->name }}</a></li>
+                <li class="{{ $cat->slug == $category->slug ? 'font-bold dark:text-secondary text-accent list-disc' : '' }}"><a href="{{ route('blog.category', $cat->slug) }}">{{ $cat->name }}</a></li>
             @endforeach
         </ul>
     </aside>

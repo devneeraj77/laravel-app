@@ -11,7 +11,7 @@
     <div class="flex h-16 shrink-0 items-center justify-between" :class="!sidebarMinimized ? 'px-4' : 'px-2 justify-center'">
         <a href="{{ route('admin.dashboard') }}" class="flex items-center gap-x-2 text-white" x-show="!sidebarMinimized">
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-plane-departure"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14.639 10.258l4.83 -1.294a2 2 0 1 1 1.035 3.863l-14.489 3.883l-4.45 -5.02l2.897 -.776l2.45 1.414l2.897 -.776l-3.743 -6.244l2.898 -.777l5.675 5.727z" /><path d="M3 21h18" /></svg>
-            <span class="text-xl font-semibold">FlightFlare</span>
+            <span class="text-xl font-semibold">FlightFlaremart</span>
         </a>
         <a href="{{ route('admin.dashboard') }}" class="p-2" x-show="sidebarMinimized" title="FlightFlare">
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-plane-departure"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14.639 10.258l4.83 -1.294a2 2 0 1 1 1.035 3.863l-14.489 3.883l-4.45 -5.02l2.897 -.776l2.45 1.414l2.897 -.776l-3.743 -6.244l2.898 -.777l5.675 5.727z" /><path d="M3 21h18" /></svg>
@@ -31,7 +31,7 @@
             </svg>
             <span class="ml-3" x-show="!sidebarMinimized">Dashboard</span>
         </a>
-        <a href="#" class="group flex items-center rounded-md px-3 py-2 text-sm font-medium text-slate-300 hover:bg-accent/20 hover:text-white" :title="sidebarMinimized ? 'Flights' : ''">
+        <a href="#" aria-disabled="on" class="group flex items-center rounded-md px-3 py-2 text-sm font-medium text-slate-300 hover:bg-accent/20 hover:text-white" :title="sidebarMinimized ? 'Flights' : ''">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                 <path d="M16 10h4a2 2 0 0 1 0 4h-4l-4 7h-3l2 -7h-4l-2 2h-3l2 -4l-2 -4h3l2 2h4l-2 -7h3z" />
