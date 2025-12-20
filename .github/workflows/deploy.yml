@@ -80,6 +80,7 @@ jobs:
         host: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.REMOTE_USER }}
         password: ${{ secrets.FTP_PASSWORD }}
+        port: ${{ secrets.REMOTE_PORT }}
         script: |
           cd public_html
           php artisan optimize:clear
