@@ -56,6 +56,7 @@ jobs:
         REMOTE_PORT: ${{ secrets.REMOTE_PORT }}
         SOURCE: "./"
         TARGET: public_html/
+        ARGS: "-rlgoDzvc -i"
         EXCLUDE: "/.git/, /node_modules/, /.env, /.env.example, /.gitignore, /.editorconfig, /composer.json, /composer.lock, /package.json, /package-lock.json, /phpunit.xml, /README.md, /vite.config.js, /storage/logs/, /storage/framework/sessions/, /storage/framework/cache/, /storage/framework/views/"
 
     - name: Run post-deployment commands
