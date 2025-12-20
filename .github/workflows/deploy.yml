@@ -47,17 +47,32 @@ jobs:
         echo "DB_PASSWORD=${{ secrets.DB_PASSWORD }}" >> .env
         # Add other environment variables as needed
 
-    - name: Deploy to Namecheap via rsync over SSH
-      uses: easingthemes/ssh-deploy@v5.0.0
+    - name: Deploy to Namecheap via FTP
+      uses: SamKirkland/FTP-Deploy-Action@4.3.3
       with:
-        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-        REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
-        REMOTE_USER: ${{ secrets.REMOTE_USER }}
-        REMOTE_PORT: ${{ secrets.REMOTE_PORT }}
-        SOURCE: "./"
-        TARGET: public_html/
-        ARGS: "-rlgoDzvc -i"
-        EXCLUDE: "/.git/, /node_modules/, /.env, /.env.example, /.gitignore, /.editorconfig, /composer.json, /composer.lock, /package.json, /package-lock.json, /phpunit.xml, /README.md, /vite.config.js, /storage/logs/, /storage/framework/sessions/, /storage/framework/cache/, /storage/framework/views/"
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        server-dir: public_html/
+        exclude: |
+          **/.git*
+          **/.git*/**
+          **/node_modules/**
+          .env
+          .env.example
+          .gitignore
+          .editorconfig
+          composer.json
+          composer.lock
+          package.json
+          package-lock.json
+          phpunit.xml
+          README.md
+          vite.config.js
+          storage/logs/
+          storage/framework/sessions/
+          storage/framework/cache/
+          storage/framework/views/
 
     - name: Run post-deployment commands
       uses: appleboy/ssh-action@master
