@@ -77,10 +77,9 @@ jobs:
     - name: Run post-deployment commands
       uses: appleboy/ssh-action@master
       with:
-        host: ${{ secrets.REMOTE_HOST }}
+        host: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.REMOTE_USER }}
-        key: ${{ secrets.SSH_PRIVATE_KEY }}
-        port: ${{ secrets.REMOTE_PORT }}
+        password: ${{ secrets.FTP_PASSWORD }}
         script: |
           cd public_html
           php artisan optimize:clear
