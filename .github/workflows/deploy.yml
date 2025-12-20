@@ -77,7 +77,7 @@ jobs:
     - name: Run post-deployment commands
       uses: appleboy/ssh-action@master
       with:
-        host: ${{ secrets.FTP_SERVER }}
+        host: ${{ secrets.FTP_HOST }}
         username: ${{ secrets.FTP_USERNAME }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         port: ${{ secrets.REMOTE_PORT }}
