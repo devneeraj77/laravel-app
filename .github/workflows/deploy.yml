@@ -77,10 +77,11 @@ jobs:
     - name: Run post-deployment commands
       uses: appleboy/ssh-action@master
       with:
-        host: ${{ secrets.FTP_HOST }}
+        host: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        port: ${{ secrets.FTP_PORT }}
+        port: ${{ secrets.REMOTE_PORT }}
+        command_timeout: 10m
         script: |
           cd public_html
           php artisan optimize:clear
