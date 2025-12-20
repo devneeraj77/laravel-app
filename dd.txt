@@ -86,3 +86,5 @@ jobs:
           php artisan optimize:clear
           php artisan migrate --force
           # Add any other commands you need to run post-deployment
+
+          php artisan migrate --path=database/migrations/2025_12_09_120000_create_faqs_table
