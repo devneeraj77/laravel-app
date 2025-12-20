@@ -80,7 +80,7 @@ jobs:
         host: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USERNAME }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
-        port: ${{ secrets.REMOTE_PORT }}
+        port: 22
         command_timeout: 10m
         debug: false
         script: |
