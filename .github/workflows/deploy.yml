@@ -1,4 +1,4 @@
-name: Deploy to Namecheap
+name: Deploy Laravel to Namecheap (Shared Hosting)
 
 on:
   push:
@@ -6,83 +6,64 @@ on:
       - main
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
+      # 1️⃣ Get source code
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-    - name: Set up PHP
-      uses: shivammathur/setup-php@v2
-      with:
-        php-version: '8.2'
+      # 2️⃣ PHP setup
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          tools: composer
 
-    - name: Install Composer dependencies
-      run: composer install --no-dev --optimize-autoloader
+      # 3️⃣ Install backend dependencies
+      - name: Install Composer dependencies
+        run: composer install --no-dev --optimize-autoloader --no-interaction
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '20'
+      # 4️⃣ Node setup
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
 
-    - name: Install NPM dependencies
-      run: npm install
+      # 5️⃣ Frontend build
+      - name: Install NPM dependencies
+        run: npm ci
 
-    - name: Build frontend assets
-      run: npm run build
+      - name: Build frontend assets
+        run: npm run build
 
-    - name: Create .env file
-      run: |
-        echo "APP_NAME=Laravel" > .env
-        echo "APP_ENV=production" >> .env
-        echo "APP_KEY=${{ secrets.APP_KEY }}" >> .env
-        echo "APP_DEBUG=false" >> .env
-        echo "APP_URL=${{ secrets.APP_URL }}" >> .env
-        echo "DB_CONNECTION=mysql" >> .env
-        echo "DB_HOST=${{ secrets.DB_HOST }}" >> .env
-        echo "DB_PORT=${{ secrets.DB_PORT }}" >> .env
-        echo "DB_DATABASE=${{ secrets.DB_DATABASE }}" >> .env
-        echo "DB_USERNAME=${{ secrets.DB_USERNAME }}" >> .env
-        echo "DB_PASSWORD=${{ secrets.DB_PASSWORD }}" >> .env
-        # Add other environment variables as needed
-
-    - name: Deploy to Namecheap via FTP
-      uses: SamKirkland/FTP-Deploy-Action@4.3.3
-      with:
-        server: ${{ secrets.FTP_SERVER }}
-        username: ${{ secrets.FTP_USERNAME }}
-        password: ${{ secrets.FTP_PASSWORD }}
-        server-dir: public_html/
-        exclude: |
-          **/.git*
-          **/.git*/**
-          **/node_modules/**
-          .env
-          .env.example
-          .gitignore
-          .editorconfig
-          composer.json
-          composer.lock
-          package.json
-          package-lock.json
-          phpunit.xml
-          README.md
-          vite.config.js
-          storage/logs/
-          storage/framework/sessions/
-          storage/framework/cache/
-          storage/framework/views/
-
-    - name: Run post-deployment commands
-      uses: appleboy/ssh-action@master
-      with:
-        host: ${{ secrets.FTP_SERVER }}
-        username: ${{ secrets.FTP_USERNAME }}
-        password: ${{ secrets.FTP_PASSWORD }}
-        port: ${{ secrets.FTP_PORT }}
-        script: |
-          cd public_html
-          php artisan optimize:clear
-          php artisan migrate --force
-          # Add any other commands you need to run post-deployment
+      # 6️⃣ Deploy via FTP (NO SSH)
+      - name: Deploy to Namecheap via FTP
+        uses: SamKirkland/FTP-Deploy-Action@4.3.3
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          port: 21
+          server-dir: public_html/
+          dangerous-clean-slate: false
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            **/.env
+            **/.env.example
+            **/.editorconfig
+            **/.gitignore
+            composer.json
+            composer.lock
+            package.json
+            package-lock.json
+            phpunit.xml
+            README.md
+            vite.config.js
+            storage/logs/**
+            storage/framework/sessions/**
+            storage/framework/cache/**
+            storage/framework/views/**
