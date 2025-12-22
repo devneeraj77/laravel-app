@@ -378,7 +378,7 @@
       <div class="max-w-7xl mx-auto">
         <p class="text-xl font-medium text- dark:text-base-200 ">Let’s start your trip!</p>
         <h2 class="font-medium  md:text-7xl dark:text-base-300/80 text-4xl max-w-5xl mx-auto my-4">For work inquires feel free to get in touch with team.</h2>
-        <a href="contact@prebuiltui.com" class="text-lg dark:text-secondary">contact@flightfaremart.com</a>
+        <a href="#" class="text-lg dark:text-secondary">contact@flightfaremart.com</a>
       </div>
     </section>
 

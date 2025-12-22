@@ -42,9 +42,9 @@
   </div>
   <!-- Top dark section -->
   <div class="bg-primary dark:bg-black text-dark dark:text-secondary pb-4 pt-10">
-    <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8 px-6">
+    <div class="max-w-7xl mx-auto md:flex justify-between  md:flex-row-reverse gap-2 px-6">
 
-      <div class=" flex-1 space-x-4 ">
+      <div class=" flex-1 space-x-4 mb-10">
         <h4 class="font-semibold text-black  dark:text-primary">Social Links</h4>
         <ul class="flex mt-3 space-x-4">
           <li>
@@ -84,7 +84,7 @@
       </div>
 
       <!-- Contact -->
-      <div>
+      <div class="md:w-sm space-x-8 mb-10">
         <h3 class="text-lg   font-semibold text-black dark:text-primary mb-4">Contact Us</h3>
         <p class="text-sm opacity-90 text-start flex content-center items-center gap-2 py-1">hello@flightfaremart.com<a href="mailto:hello@flightfaremart.com"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-external-link">
               <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -97,16 +97,16 @@
       </div>
 
       <!-- Subscribe -->
-      <div>
-        <h3 class="text-lg   font-semibold text-black dark:text-primary mb-4">Subscribe now</h3>
+      <div class="md:w-md lg:space-x-8 mb-10">
+        <h3 class="text-lg font-semibold text-black dark:text-primary mb-4">Subscribe now</h3>
         <form id="subscribe-form" method="POST" action="{{ route('subscribe') }}">
           @csrf
           <fieldset class="fieldset   rounded-box w-xs ">
             <label class="text-sm opacity-90 pb-2">Sign up if you want to get notifications</label>
-            
-            <div class="join">
-              <div>
-                <label class="input bg-base-300 validator  join-item">
+
+            <div class="join ">
+              <div class="">
+                <label class="input bg-base-300 validator join-item focus-within:border-none focus-within:outline-none focus-within:ring-0">
                   <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <g
                       stroke-linejoin="round"
@@ -118,7 +118,7 @@
                       <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
                     </g>
                   </svg>
-                  <input type="email" type="email" name="subscribeEmail" placeholder="mail@site.com" class="input w-38                                                                                              text-accent join-item" required />
+                  <input type="email" name="subscribeEmail" placeholder="mail@site.com" class="input  focus:outline-none border-none ring-0" />
                 </label>
                 <div class="validator-hint hidden">Enter valid email address</div>
               </div>
