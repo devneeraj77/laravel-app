@@ -9,7 +9,6 @@
                 Latest articles and news from our team.
             </p>
         </div>
-
         <div class="mt-12 grid gap-8 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
             @foreach($posts as $post)
                 @if($post->category && $post->author)
