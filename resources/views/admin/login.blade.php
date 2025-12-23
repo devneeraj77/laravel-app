@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Login - FlightFlareMart</title>
-    @include('layouts.head')
+    @include('admin.layouts.adminHead')
 </head>
 
 <body class="bg-base-100 dark:bg-black">
@@ -16,13 +16,13 @@
             <!-- Logo and-text -->
             <div class="flex flex-col items-center space-y-2">
                 <a href="/" class="flex items-center text-2xl font-semibold text-gray-900 dark:text-secondary">
-                    <img class="w-8 h-8 mr-2 rounded-full" src="https://placehold.co/50x50/cad593/cad593?text=admin" alt="logo">
+                    <!-- <img class="w-8 h-8 mr-2 rounded-full" src="https://placehold.co/50x50/cad593/cad593?text=admin" alt="logo"> -->
                     FlightFlareMart
-
-                <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-secondary">
+                </a>
+                <h1 class="text-md font-bold leading-tight tracking-tight text-gray-900 md:text-xl dark:text-secondary">
                     Admin Sign In
                 </h1>
-            </div>                </a>
+            </div>
 
             <!-- Session Messages -->
             @if(session('error'))
@@ -50,7 +50,7 @@
                 <div class="flex items-center justify-between">
                     <div class="flex items-start">
                         <div class="flex items-center h-5">
-                            <input id="remember" aria-describedby="remember" type="checkbox" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800">
+                            <input id="remember" aria-describedby="remember" type="checkbox" class="checkbox dark:bg-secondary dark:text-accent text-accent bg-secondary">
                         </div>
                         <div class="ml-3 text-sm">
                             <label for="remember" class="text-gray-500 dark:text-gray-300">Remember me</label>

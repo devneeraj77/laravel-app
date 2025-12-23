@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin Dashboard - @yield('title', 'Welcome')</title>
-  @include('layouts.head')
+  @include('admin.layouts.adminHead')
   {{-- Alpine.js for small interactivity (sidebar toggle, dropdowns) --}}
   @cloudinaryJS
   <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
