@@ -21,3 +21,6 @@ $canonicalUrl = $canonical
 
 {{-- Meta --}}
 <meta name="robots" content="noindex, follow">
+
+{{-- Google Analytics --}}
+@include('analytics')

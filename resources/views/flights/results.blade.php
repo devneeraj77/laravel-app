@@ -22,10 +22,15 @@
     <main id="main-content" class="max-w-7xl mx-auto py-8 p-2" style="visibility: hidden;">
         <h1 class="text-3xl font-bold text-accent  dark:text-secondary/70  px-2">Flight Search Results</h1>
         <p class="px-2 mb-6 dark:text-base-300/70 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, beatae.</p>
+        
         @if (isset($error))
-        <div class="bg-red-500 text-white p-4 rounded-lg">
-            <p>{{ $error }}</p>
-        </div>
+            @if (str_contains(strtolower($error), 'api') && str_contains(strtolower($error), 'limit'))
+                {{-- API limit error is handled by the script below, which shows a retry message in the preloader. --}}
+            @else
+                <div class="bg-red-500 text-white p-4 rounded-lg">
+                    <p>{{ $error }}</p>
+                </div>
+            @endif
         @elseif (isset($results) && (isset($results['best_flights']) || isset($results['other_flights'])))
         <div class="space-y-10">
 
@@ -232,19 +237,40 @@
         window.addEventListener('load', function() {
             const preloader = document.getElementById('preloader');
             const mainContent = document.getElementById('main-content');
+            const isApiLimitError = `@json(isset($error) && str_contains(strtolower($error ?? ''), 'api') && str_contains(strtolower($error ?? ''), 'limit'))`;
 
-            setTimeout(function() {
+            if (isApiLimitError) {
+                const preloaderText = preloader.querySelector('p');
+                if (preloaderText) {
+                    preloaderText.textContent = 'Retrying in 10 seconds...';
+                }
+                
+                // Ensure preloader is visible
                 if (preloader) {
-                    preloader.style.transition = 'opacity 0.5s ease-out';
-                    preloader.style.opacity = '0';
-                    setTimeout(() => {
-                        preloader.style.display = 'none';
-                    }, 500); // match transition duration
+                    preloader.style.opacity = '1';
+                    preloader.style.display = 'flex';
                 }
                 if (mainContent) {
-                    mainContent.style.visibility = 'visible';
+                    mainContent.style.visibility = 'hidden';
                 }
-            }, 500); // Minimum time to show preloader
+
+                setTimeout(() => {
+                    window.location.reload();
+                }, 10000); // 10 second delay
+            } else {
+                setTimeout(function() {
+                    if (preloader) {
+                        preloader.style.transition = 'opacity 0.5s ease-out';
+                        preloader.style.opacity = '0';
+                        setTimeout(() => {
+                            preloader.style.display = 'none';
+                        }, 500); // match transition duration
+                    }
+                    if (mainContent) {
+                        mainContent.style.visibility = 'visible';
+                    }
+                }, 500); // Minimum time to show preloader
+            }
         });
     </script>
 </body>
