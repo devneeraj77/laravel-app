@@ -37,13 +37,10 @@
         </ul>
       </div>
     </div>
-
-
   </div>
   <!-- Top dark section -->
   <div class="bg-primary dark:bg-black text-dark dark:text-secondary pb-4 pt-10">
     <div class="max-w-7xl mx-auto md:flex justify-between  md:flex-row-reverse gap-2 px-6">
-
       <div class=" flex-1 space-x-4 mb-10">
         <h4 class="font-semibold text-black  dark:text-primary">Social Links</h4>
         <ul class="flex mt-3 space-x-4">
