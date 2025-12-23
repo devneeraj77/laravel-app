@@ -71,7 +71,7 @@
                     </div>
                 </div>
                 <div class="basis-1/2  p-4 m-3 flex items-center justify-center  min-h-40">
-                    <img class="aspact-square  rounded-2xl" src="\img\about-2.png" alt="">
+                    <img class="aspact-square  rounded-2xl" src="/img/about-2.png" alt="about us">
                 </div>
             </div>
         </section>
@@ -80,7 +80,7 @@
             <p class="text-3xl dark:text-base-300 font-semibold md:text-5xl text-accent px-5 md:px-3 py-1 mb-2">At FlightFareMart</p>
             <div class="md:flex flex-col md:flex-row m-auto max-w-7xl gap-4 py-6">
                 <div class="basis-1/2 flex-col   p-4 m-3 flex items-center justify-center  min-h-40">
-                    <img class="aspact-square " src="\img\undraw_teamwork_zplp.svg" alt="">
+                    <img class="aspact-square " src="/img/undraw_teamwork_zplp.svg" alt="">
                 </div>
                 <div class="basis-1/2 flex flex-col gap-2 min-h-[400px] text-left min-h-40 p-8 m-4 bg-base-300/20 rounded-2xl dark:text-s">
                     <h3 class="text-2xl">we combine advanced technology with real human insight to deliver a better way to book flights.</h3>
