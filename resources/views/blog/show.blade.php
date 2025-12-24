@@ -55,8 +55,8 @@
             sizes="(max-width: 600px) 400px, 800px"
             alt="Featured image for {{ $post->title }}"
             fetchpriority="high"
-            width="800"
-            height="400"
+            width="1280"
+            height="549"
             class="w-full h-96 object-cover" />
 
         @else
