@@ -7,11 +7,10 @@
     @include('layouts.head')
     
     <title>@yield('title', 'Blog')</title>
-    <meta name="description" content="@yeild('title', 'Posts in ' . $category->name)">
-    <meta name="description" content="@yield('meta_description', 'Default general description for the website.')">
+    <meta name="description" content="@yield('category', 'Default general description for the website.')">
     @yield('head')
 </head>
-<body class="antialiased bg-primary   overflow-x-hidden font-display dark:bg-black dark:text-secondary  px-2  min-h-screen">
+<body class="antialiased bg-primary overflow-x-hidden font-display dark:bg-black dark:text-secondary  px-2  min-h-screen">
   <x-preloading />
    
 @include('layouts.navmanu')
@@ -22,14 +21,14 @@
             <main class="w-full lg:w-3/4  px-4">
                 @yield('main-content')
             </main>
-
-            <aside class="w-full lg:w-1/4 px-4   mt-8 lg:mt-0">
+            
+            <aside class="w-full lg:w-1/4 px-4 mt-8 lg:mt-0">
                 @yield('sidebar')
             </aside>
 
         </div>
     </div>
-
+    
     @include('layouts.footer')
 </body>
 </html>

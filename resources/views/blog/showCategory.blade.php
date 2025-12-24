@@ -1,6 +1,8 @@
 @extends('layouts.blog')
 
 @section('title', 'Posts in ' . $category->name)
+@section('category', 'Posts in ' . $category->name)
+
 
 @section('sidebar')
     <aside class=" rounded-t-2xl p-10  w-70 sticky top-0">

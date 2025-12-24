@@ -24,7 +24,17 @@
   <main>
     <section class="overflow-hidden max-w-7xl mx-auto md:mb-20 lg:mb-30 lg:mt-4">
       <div class="relative py-8">
-        <img src="img/aircraft_usu4.svg" class=" absolute -right-15 top-2 sm:left-20 sm:-top-10 md:left-50 md:-top-30 lg:left-50 lg:-top-25 z-30 -rotate-25 md:-rotate-15 lg:-rotate-3 " width="950" height="200" alt="" srcset="">
+        <img
+          src="img/aircraft_usu4.svg"
+          alt="Stylized aircraft illustration"
+          class="absolute -right-15 top-2 sm:left-20 sm:-top-10 md:left-50 md:-top-30 lg:left-50 lg:-top-25 z-30 -rotate-25 md:-rotate-15 lg:-rotate-3"
+          width="950"
+          height="200"
+          loading="lazy"
+          fetchpriority="high"
+          srcset="img/aircraft_usu4.svg 950w, img/aircraft_usu4.svg 480w"
+          sizes="(max-width: 640px) 480px, 950px" />
+
       </div>
       <div class="flex flex-col relative  max-md:gap-20 md:flex-row pb-8 items-center justify-between mt-20 px-4 ">
         <div class=" flex flex-col z-40  items-center md:items-start">
@@ -174,10 +184,10 @@
           <p class="py-2 px-3 dark:text-base-300">Discover those destinations that make you relax and create unforgettable memories. Whether you're planning any big international journey or a normal weekend getaway.  </p>
           <a href="#" class="text-base underline p-3 my-2 pt-5">Find more</a>
           <div class="flex justify-between items-start flex-col p-8 items-end h-64 mx-3 my-4 dark:bg-secondary rounded-3xl mt-6 md:mt-10 bg-base-300">
-          <div class="text-3xl dark:text-accent">
-            <span>Flightfaremart brings you the best flight deals and travel offers in real time.</span>
-          </div>
-          <a href="#" class="flex gap-2 content-center items-center text-dark dark:text-accent">Grab Now
+            <div class="text-3xl dark:text-accent">
+              <span>Flightfaremart brings you the best flight deals and travel offers in real time.</span>
+            </div>
+            <a href="#" class="flex gap-2 content-center items-center text-dark dark:text-accent">Grab Now
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-8">
                 <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 0 0 1.06 0l7.22-7.22v5.69a.75.75 0 0 0 1.5 0v-7.5a.75.75 0 0 0-.75-.75h-7.5a.75.75 0 0 0 0 1.5h5.69l-7.22 7.22a.75.75 0 0 0 0 1.06Z" clip-rule="evenodd" />
               </svg>
@@ -360,7 +370,7 @@
             <h3 class="text-[24px]/7.5  text-accent dark:text-base-300 font-medium mt-6">The "Smart-Route" Algorithm</h3>
             <p class="text-accent/70 dark:text-base-200  mt-2">Our proprietary search engine doesn't just look for direct routes. It analyzes "virtual interlining"—combining flights from different carriers that don't usually partner—to find unique connection paths that can save you up to 40% compared to standard bookings.</p>
             <a href="/" class="group  flex items-center gap-2 mt-4 text-accent hover:text-accent/80 transition">
-            Real-Time Price Aggregation
+              Real-Time Price Aggregation
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right size-5  group-hover:translate-x-0.5 transition duration-300" aria-hidden="true">
                 <path d="M7 7h10v10"></path>
                 <path d="M7 17 17 7"></path>
