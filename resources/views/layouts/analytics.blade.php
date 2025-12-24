@@ -6,5 +6,8 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-B09KB964LQ');
+  if (!window.gaConfigured) {
+    gtag('config', 'G-B09KB964LQ');
+    window.gaConfigured = true;
+  }
 </script>

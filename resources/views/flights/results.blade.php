@@ -24,8 +24,8 @@
         <p class="px-2 mb-6 dark:text-base-300/70 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, beatae.</p>
         
         @if (isset($error))
-            @if (str_contains(strtolower($error), 'api') && str_contains(strtolower($error), 'limit'))
-                {{-- API limit error is handled by the script below, which shows a retry message in the preloader. --}}
+            @if (str_contains(strtolower($error), 'api'))
+                {{-- API error is handled by the script below, which shows a retry message in the preloader. --}}
             @else
                 <div class="bg-red-500 text-white p-4 rounded-lg">
                     <p>{{ $error }}</p>
@@ -237,27 +237,7 @@
         window.addEventListener('load', function() {
             const preloader = document.getElementById('preloader');
             const mainContent = document.getElementById('main-content');
-            const isApiLimitError = `@json(isset($error) && str_contains(strtolower($error ?? ''), 'api') && str_contains(strtolower($error ?? ''), 'limit'))`;
-
-            if (isApiLimitError) {
-                const preloaderText = preloader.querySelector('p');
-                if (preloaderText) {
-                    preloaderText.textContent = 'Retrying in 10 seconds...';
-                }
-                
-                // Ensure preloader is visible
-                if (preloader) {
-                    preloader.style.opacity = '1';
-                    preloader.style.display = 'flex';
-                }
-                if (mainContent) {
-                    mainContent.style.visibility = 'hidden';
-                }
-
-                setTimeout(() => {
-                    window.location.reload();
-                }, 10000); // 10 second delay
-            } else {
+           
                 setTimeout(function() {
                     if (preloader) {
                         preloader.style.transition = 'opacity 0.5s ease-out';
@@ -270,8 +250,7 @@
                         mainContent.style.visibility = 'visible';
                     }
                 }, 500); // Minimum time to show preloader
-            }
-        });
+            });
     </script>
 </body>
 

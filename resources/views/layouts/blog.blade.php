@@ -7,6 +7,8 @@
     @include('layouts.head')
     
     <title>@yield('title', 'Blog')</title>
+    <meta name="description" content="@yeild('title', 'Posts in ' . $category->name)">
+    <meta name="description" content="@yield('meta_description', 'Default general description for the website.')">
     @yield('head')
 </head>
 <body class="antialiased bg-primary   overflow-x-hidden font-display dark:bg-black dark:text-secondary  px-2  min-h-screen">
