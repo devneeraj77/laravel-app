@@ -37,6 +37,10 @@ jobs:
 
       - name: Build frontend assets
         run: npm run build
+      
+      # Display Laravel environment details
+      - name: Display Laravel enviroment details
+        run: php artisan about
 
       # Create required Laravel directories BEFORE deploy
       - name: Prepare Laravel directories
