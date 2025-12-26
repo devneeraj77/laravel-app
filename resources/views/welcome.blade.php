@@ -40,11 +40,11 @@
           <div class="flex flex-wrap p-3 backdrop-blur-sm items-center justify-center p-1.5 rounded-full border border-secondary text-white text-xs">
             <div class="flex items-center ">
               <img class="size-7 rounded-full border-3 border-white"
-                src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=50" alt="userImage1">
+                src="/img/mbr/m-5.webp" alt="userImage1">
               <img class="size-7 rounded-full border-3 border-white -translate-x-2"
-                src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=50" alt="userImage2">
+                src="/img/mbr/m-2.webp" alt="userImage2">
               <img class="size-7 rounded-full border-3 border-white -translate-x-4"
-                src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=50&h=50&auto=format&fit=crop"
+                src="/img/mbr/m-1.webp"
                 alt="userImage3">
             </div>
             <p class="-translate-x-2 text-slate-500 ">Grab of 100+ countries deals </p>
@@ -91,9 +91,10 @@
                 <div
                   class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-50 transition-opacity duration-300">
                   <div class="absolute bottom-0 left-0 right-0 p-4">
-                    <h3 class="text-2xl font-bold text-white">New York</h3>
+                    <span class="text-2xl font-bold text-white">New York</span>
                     <p class="text-white">Discover the beauty of the natural world</p>
                   </div>
+                  
                 </div>
               </div>
 
@@ -103,7 +104,7 @@
                 <div
                   class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-50 transition-opacity duration-300">
                   <div class="absolute bottom-0 left-0 right-0 p-4">
-                    <h4 class="text-xl font-bold text-white">Germany</h4>
+                    <span class="text-xl font-bold text-white">Germany</span>
                   </div>
                 </div>
               </div>
@@ -112,7 +113,7 @@
                 <div
                   class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-50 transition-opacity duration-300">
                   <div class="absolute bottom-0 left-0 right-0 p-4">
-                    <h4 class="text-xl font-bold text-white">Moscow</h4>
+                    <span class="text-xl font-bold text-white">Moscow</span>
                   </div>
                 </div>
               </div>
@@ -123,7 +124,7 @@
                 <div
                   class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-50 transition-opacity duration-300">
                   <div class="absolute bottom-0 left-0 right-0 p-4">
-                    <h4 class="text-xl font-bold text-white">France</h4>
+                    <span class="text-xl font-bold text-white">France</span>
                   </div>
                 </div>
               </div>
@@ -132,7 +133,7 @@
                 <div
                   class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-50 transition-opacity duration-300">
                   <div class="absolute bottom-0 left-0 right-0 p-4">
-                    <h4 class="text-xl font-bold text-white">London(UK)</h4>
+                    <span class="text-xl font-bold text-white">London(UK)</span>
                   </div>
                 </div>
               </div>
@@ -143,7 +144,7 @@
                 <div
                   class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-50 transition-opacity duration-300">
                   <div class="absolute bottom-0 left-0 right-0 p-4">
-                    <h4 class="text-xl font-bold text-white">Mexico</h4>
+                    <span class="text-xl font-bold text-white">Mexico</span>
                   </div>
                 </div>
               </div>
@@ -152,7 +153,7 @@
                 <div
                   class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-50 transition-opacity duration-300">
                   <div class="absolute bottom-0 left-0 right-0 p-4">
-                    <h4 class="text-xl font-bold text-white">Italy</h4>
+                    <span class="text-xl font-bold text-white">Italy</span>
                   </div>
                 </div>
               </div>
@@ -161,7 +162,7 @@
                 <div
                   class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-50 transition-opacity duration-300">
                   <div class="absolute bottom-0 left-0 right-0 p-4">
-                    <h4 class="text-xl font-bold text-white">Thailand</h4>
+                    <span class="text-xl font-bold text-white">Thailand</span>
                   </div>
                 </div>
               </div>
@@ -170,7 +171,7 @@
                 <div
                   class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-50 transition-opacity duration-300">
                   <div class="absolute bottom-0 left-0 right-0 p-4">
-                    <h4 class="text-xl font-bold text-white">Australia</h4>
+                    <span class="text-xl font-bold text-white">Australia</span>
                   </div>
                 </div>
               </div>

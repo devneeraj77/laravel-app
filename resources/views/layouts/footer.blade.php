@@ -7,9 +7,8 @@
       <!-- Logo + Social -->
       <div class="col-span-2">
         <h2 class="text-2xl font-semibold mb-4">flightfaremart</h2>
-        <p class="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat nostrum magnam reprehenderit.</p>
+        <p class="text-sm">Stop searching and start flying. FlightFareMart combines cutting-edge tech with radical transparency to bring the horizon closer to your wallet.</p>
       </div>
-
       <div>
         <h3 class="font-semibold mb-3">About Us</h3>
         <ul class="space-y-2 text-sm opacity-90">

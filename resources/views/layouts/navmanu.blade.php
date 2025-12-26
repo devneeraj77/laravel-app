@@ -1,8 +1,8 @@
 <header class="w-full relative z-10 dark:bg-dark-primary text-accent text-sm dark:text-dark-light  top-0 left-0 z-50">
-<div class="text-center font-medium py-2  bg-gradient-to-r from-base-200 dark:from-base-200/10  to-transparent dark:text-secondary">
+  <div class="text-center font-medium py-2  bg-gradient-to-r from-base-200 dark:from-base-200/10  to-transparent dark:text-secondary">
     <p>Exclusive Price Drop! Hurry, <span class="underline underline-offset-2">Offer Ends Soon!</span></p>
-  </div>  
-<nav class="max-w-7xl  mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+  </div>
+  <nav class="max-w-7xl  mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
 
     <!-- Logo -->
     <a href="/" class="text-2xl p-2 text-accent font-semibold italic">
@@ -27,15 +27,45 @@
           </label>
         </div>
         <!-- Desktop Menu -->
-        <div class="hidden md:flex space-x-4 text-sm px-3 text-accent ">
-          <a href="/" aria-current="page" class="px-1 py-2 text-sm  text-accent bg-trans hover:bg-white/5  dark:text-primary ">Home</a>
-          <a href="{{ route('about') }}" class="px-1 py-2 text-sm  text-accent hover:bg-white/5 hover:text-accent/80 dark:text-secondary">About</a>
-          <a href="{{ route('services') }}" class="px-1 py-2 text-sm  text-accent hover:bg-white/5 hover:text-accent/80 dark:text-secondary">Services</a>
-          
-          <a href="{{ route('blog.index') }}" class="px-1 py-2 text-sm  text-accent hover:bg-white/5 hover:text-accent/80 dark:text-secondary">Blog</a>
-          <a href="{{ route('faqs') }}" class="px-1 py-2 text-sm  text-accent hover:bg-white/5 hover:text-accent/80 dark:text-secondary">FAQs</a>
-          <a href="{{ route('contact.create') }}" class="px-1 py-2 text-sm  text-accent hover:bg-white/5 hover:text-accent/80 dark:text-secondary">Contact</a>
-        </div>
+        <ul class="hidden md:flex items-center space-x-6 px-4 text-sm">
+          <li>
+            <a href="/" aria-current="page"
+              class="px-2 py-2 text-accent font-medium hover:text-accent/80 hover:bg-base-200/50 rounded-md transition-colors dark:text-primary">
+              Home
+            </a>
+          </li>
+          <li>
+            <a href="{{ route('about') }}"
+              class="px-2 py-2 text-accent font-medium hover:text-accent/80 hover:bg-base-200/50 rounded-md transition-colors dark:text-secondary">
+              About
+            </a>
+          </li>
+          <li>
+            <a href="{{ route('services') }}"
+              class="px-2 py-2 text-accent font-medium hover:text-accent/80 hover:bg-base-200/50 rounded-md transition-colors dark:text-secondary">
+              Services
+            </a>
+          </li>
+          <li>
+            <a href="{{ route('blog.index') }}"
+              class="px-2 py-2 text-accent font-medium hover:text-accent/80 hover:bg-base-200/50 rounded-md transition-colors dark:text-secondary">
+              Blog
+            </a>
+          </li>
+          <li>
+            <a href="{{ route('faqs') }}"
+              class="px-2 py-2 text-accent font-medium hover:text-accent/80 hover:bg-base-200/50 rounded-md transition-colors dark:text-secondary">
+              FAQs
+            </a>
+          </li>
+          <li>
+            <a href="{{ route('contact.create') }}"
+              class="px-2 py-2 text-accent font-medium hover:text-accent/80 hover:bg-base-200/50 rounded-md transition-colors dark:text-secondary">
+              Contact
+            </a>
+          </li>
+        </ul>
+
         <!-- Auth / Menu Links -->
         @auth
         <span class="md:inline-block text-[#1b1b18] hidden  dark:text-[#EDEDEC]">
@@ -62,15 +92,28 @@
   </nav>
 
   <!-- Mobile Menu -->
-  <div id="mobile-menu" class="absolute top-26 w-full hidden md:hidden bg-primary dark:bg-accent border-t border-secondary dark:border-dark-secondary">
-    <div class="flex flex-col items-center space-y-4 py-4 text-light dark:text-secondary">
-      <a href="/" class="hover:text-accent transition">Home</a>
-      <a href="{{ route('about') }}" class="hover:text-accent transition">About</a>
-      <a href="{{ route('services') }}" class="hover:text-accent transition">Services</a>
-      <a href="{{ route('blog.index') }}" class="hover:text-accent transition">Blog</a>
-      <a href="{{ route('faqs') }}" class="hover:text-accent transition">FAQs</a>
-      <a href="{{ route('contact.create') }}" class="hover:text-accent transition">Contact</a>
-    </div>
+  <div id="mobile-menu" class="absolute top-24 w-full hidden md:hidden bg-base-100 dark:bg-black border-t border-secondary dark:border-dark-secondary shadow-md">
+    <ul class="flex flex-col items-center space-y-4 py-4 text-light dark:text-secondary text-sm">
+      <li>
+        <a href="/" class="hover:text-accent transition-colors">Home</a>
+      </li>
+      <li>
+        <a href="{{ route('about') }}" class="hover:text-accent transition-colors">About</a>
+      </li>
+      <li>
+        <a href="{{ route('services') }}" class="hover:text-accent transition-colors">Services</a>
+      </li>
+      <li>
+        <a href="{{ route('blog.index') }}" class="hover:text-accent transition-colors">Blog</a>
+      </li>
+      <li>
+        <a href="{{ route('faqs') }}" class="hover:text-accent transition-colors">FAQs</a>
+      </li>
+      <li>
+        <a href="{{ route('contact.create') }}" class="hover:text-accent transition-colors">Contact</a>
+      </li>
+    </ul>
   </div>
+
 </header>
 <!-- Page padding for fixed navbar -->

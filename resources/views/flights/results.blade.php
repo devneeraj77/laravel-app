@@ -21,7 +21,7 @@
 
     <main id="main-content" class="max-w-7xl mx-auto py-8 p-2" style="visibility: hidden;">
         <h1 class="text-3xl font-bold text-accent  dark:text-secondary/70  px-2">Flight Search Results</h1>
-        <p class="px-2 mb-6 dark:text-base-300/70 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, beatae.</p>
+        <p class="px-2 mb-6 dark:text-base-300/70 ">Finding the Best Airfare with FlightFareMart.</p>
         
         @if (isset($error))
             @if (str_contains(strtolower($error), 'api'))
