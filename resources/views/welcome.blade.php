@@ -10,9 +10,6 @@
   <title>FlightFareMart | Find the Cheapest Flights & Best Airfare Deals</title>
   <meta name="description" content="FlightFareMart is your trusted source for finding the cheapest flights worldwide. Compare airfare, discover deals, and book your next trip with guaranteed low prices.">
   <meta name="keywords" content="FlightFareMart, cheapest flights, flight booking, best airfare deals, low cost airline tickets, discount flights, flight comparison, travel deals, book flights online">
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.bunny.net">
-  <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
   @include('layouts.head')
   <!-- @vite(['resources/css/app.css', 'resources/js/app.js']) -->
   <!-- <script src="https://cdn.tailwindcss.com"></script> -->
