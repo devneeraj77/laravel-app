@@ -37,11 +37,11 @@
           <div class="flex flex-wrap p-3 backdrop-blur-sm items-center justify-center p-1.5 rounded-full border border-secondary text-white text-xs">
             <div class="flex items-center ">
               <img class="size-7 rounded-full border-3 border-white"
-                src="/img/mbr/m-5.webp" alt="userImage1">
+                src="/img/mbr/small/m-5.webp" alt="userImage1">
               <img class="size-7 rounded-full border-3 border-white -translate-x-2"
-                src="/img/mbr/m-2.webp" alt="userImage2">
+                src="/img/mbr/small/m-2.webp" alt="userImage2">
               <img class="size-7 rounded-full border-3 border-white -translate-x-4"
-                src="/img/mbr/m-1.webp"
+                src="/img/mbr/small/m-1.webp"
                 alt="userImage3">
             </div>
             <p class="-translate-x-2 text-slate-500 ">Grab of 100+ countries deals </p>
@@ -91,7 +91,7 @@
                     <span class="text-2xl font-bold text-white">New York</span>
                     <p class="text-white">Discover the beauty of the natural world</p>
                   </div>
-                  
+
                 </div>
               </div>
 
@@ -215,27 +215,27 @@
             [
             'city' => 'Miami',
             'caption' => 'Fly to the Magic City with fares starting as low as $150.',
-            'image' => 'https://images.unsplash.com/photo-1514214246283-d427a95c5d2f?q=80&w=780&auto=format&fit=crop',
+            'image' => 'https://images.unsplash.com/photo-1514214246283-d427a95c5d2f?q=80&w=250&auto=format&fit=crop',
             ],
             [
             'city' => 'London',
             'caption' => 'Fly to the Magic City with fares starting as low as $150.',
-            'image' => 'https://plus.unsplash.com/premium_photo-1671734045770-4b9e1a5e53a0?q=80&w=774&auto=format&fit=crop',
+            'image' => 'https://plus.unsplash.com/premium_photo-1671734045770-4b9e1a5e53a0?q=80&w=250&auto=format&fit=crop',
             ],
             [
             'city' => 'Paris',
             'caption' => 'Fly to the Magic City with fares starting as low as $150.',
-            'image' => 'https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?q=80&w=387&auto=format&fit=crop',
+            'image' => 'https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?q=80&w=250&auto=format&fit=crop',
             ],
             [
             'city' => 'Singapore',
             'caption' => 'Fly to the Magic City with fares starting as low as $150.',
-            'image' => 'https://images.unsplash.com/photo-1720941001711-2d1a1d46cc83?q=80&w=387&auto=format&fit=crop',
+            'image' => 'https://images.unsplash.com/photo-1720941001711-2d1a1d46cc83?q=80&w=250&auto=format&fit=crop',
             ],
             [
             'city' => 'Dubai',
             'caption' => 'Fly to the Magic City with fares starting as low as $150.',
-            'image' => 'https://images.unsplash.com/photo-1518684079-3c830dcef090?q=80&w=387&auto=format&fit=crop',
+            'image' => 'https://images.unsplash.com/photo-1518684079-3c830dcef090?q=80&w=250&auto=format&fit=crop',
             ],
             ];
             @endphp
