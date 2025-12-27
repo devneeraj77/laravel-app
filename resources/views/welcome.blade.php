@@ -37,7 +37,7 @@
           <div class="flex flex-wrap p-3 backdrop-blur-sm items-center justify-center p-1.5 rounded-full border border-secondary text-white text-xs">
             <div class="flex items-center ">
               <img class="size-7 rounded-full border-3 border-white"
-                src="/img/mbr/m-5.webp" alt="userImage1">
+                src="/img/mbr/m-4.webp" alt="userImage1">
               <img class="size-7 rounded-full border-3 border-white -translate-x-2"
                 src="/img/mbr/m-2.webp" alt="userImage2">
               <img class="size-7 rounded-full border-3 border-white -translate-x-4"
@@ -240,7 +240,7 @@
             ];
             @endphp
 
-            <div class="flex flex-wrap items-center justify-center mt-10 mx-auto gap-4 mb-3 md:mb-8 lg:mb-14">
+            <div class="flex flex-wrap items-center justify-center mt-10 mx-auto gap-2 mb-3 md:mb-8 lg:mb-14">
 
               @foreach ($destinations as $d)
               <div class="relative">
