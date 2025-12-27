@@ -64,7 +64,7 @@
                 alt="Profile image of user 3">
             </div>
 
-            <p class="-translate-x-2 text-slate-500 ">Grab of 100+ countries deals </p>
+            <p class="-translate-x-2 text-accent md:text-sm dark:text-base-200">Unlock deals from 100+ countries today! </p>
           </div>
           <h1 class="text-center mt-4 md:text-left text-4xl lg:text-6xl leading-[48px] md:text-5xl md:leading-[74px] font-medium max-w-xl text-accent dark:text-secondary">
             Find Your Perfect Flight, Guaranteed Lowest Fare.
