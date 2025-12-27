@@ -35,15 +35,35 @@
       <div class="flex flex-col relative  max-md:gap-20 md:flex-row pb-8 items-center justify-between mt-20 px-4 ">
         <div class=" flex flex-col z-40  items-center md:items-start">
           <div class="flex flex-wrap p-3 backdrop-blur-sm items-center justify-center p-1.5 rounded-full border border-secondary text-white text-xs">
-            <div class="flex items-center ">
-              <img class="size-7 rounded-full border-3 border-white"
-                src="/img/mbr/m-4.webp" alt="userImage1">
-              <img class="size-7 rounded-full border-3 border-white -translate-x-2"
-                src="/img/mbr/m-2.webp" alt="userImage2">
-              <img class="size-7 rounded-full border-3 border-white -translate-x-4"
+            <div class="flex items-center">
+              <img
+                class="size-7 rounded-full border-3 border-white"
+                src="/img/mbr/m-4.webp"
+                srcset="/img/mbr/m-4.webp 64w, /img/mbr/m-4.webp 128w"
+                sizes="32px"
+                width="28" height="28"
+                loading="lazy"
+                alt="Profile image of user 1">
+
+              <img
+                class="size-7 rounded-full border-3 border-white -translate-x-2"
+                src="/img/mbr/m-2.webp"
+                srcset="/img/mbr/m-2.webp 64w, /img/mbr/m-2.webp 128w"
+                sizes="32px"
+                width="28" height="28"
+                loading="lazy"
+                alt="Profile image of user 2">
+
+              <img
+                class="size-7 rounded-full border-3 border-white -translate-x-4"
                 src="/img/mbr/m-1.webp"
-                alt="userImage3">
+                srcset="/img/mbr/m-1.webp 64w, /img/mbr/m-1.webp 128w"
+                sizes="32px"
+                width="28" height="28"
+                loading="lazy"
+                alt="Profile image of user 3">
             </div>
+
             <p class="-translate-x-2 text-slate-500 ">Grab of 100+ countries deals </p>
           </div>
           <h1 class="text-center mt-4 md:text-left text-4xl lg:text-6xl leading-[48px] md:text-5xl md:leading-[74px] font-medium max-w-xl text-accent dark:text-secondary">
@@ -84,20 +104,20 @@
             <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
               <!-- Large item -->
               <div class="md:col-span-2 md:row-span-2 relative overflow-hidden rounded-2xl shadow-lg group">
-                <img src="https://images.unsplash.com/photo-1485871981521-5b1fd3805eee?q=80&w=650&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Nature" class="w-full h-full object-cover object-center transition duration-500 group-hover:scale-105" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1485871981521-5b1fd3805eee?q=60&w=650&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Nature" class="w-full h-full object-cover object-center transition duration-500 group-hover:scale-105" loading="lazy">
                 <div
                   class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-50 transition-opacity duration-300">
                   <div class="absolute bottom-0 left-0 right-0 p-4">
                     <span class="text-2xl font-bold text-white">New York</span>
                     <p class="text-white">Discover the beauty of the natural world</p>
                   </div>
-                  
+
                 </div>
               </div>
 
               <!-- Two small items -->
               <div class="relative overflow-hidden rounded-2xl shadow-lg group">
-                <img src="https://images.unsplash.com/photo-1618259278412-2819cbdea4dc?q=80&w=300&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Food" class="w-full h-48 object-cover object-center transition duration-500 group-hover:scale-105 object-center transition duration-500 group-hover:scale-105" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1618259278412-2819cbdea4dc?q=60&w=300&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Food" class="w-full h-48 object-cover object-center transition duration-500 group-hover:scale-105 object-center transition duration-500 group-hover:scale-105" loading="lazy">
                 <div
                   class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-50 transition-opacity duration-300">
                   <div class="absolute bottom-0 left-0 right-0 p-4">
@@ -106,7 +126,7 @@
                 </div>
               </div>
               <div class="relative overflow-hidden rounded-2xl shadow-lg group">
-                <img src="https://images.unsplash.com/photo-1547448415-e9f5b28e570d?q=80&w=300&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Technology" class="w-full h-48 object-cover object-center transition duration-500 group-hover:scale-105" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1547448415-e9f5b28e570d?q=60&w=300&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Technology" class="w-full h-48 object-cover object-center transition duration-500 group-hover:scale-105" loading="lazy">
                 <div
                   class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-50 transition-opacity duration-300">
                   <div class="absolute bottom-0 left-0 right-0 p-4">
@@ -117,7 +137,7 @@
 
               <!-- Three medium items -->
               <div class="relative overflow-hidden rounded-2xl shadow-lg group">
-                <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?q=80&w=300&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Travel" class="w-full h-48 object-cover object-center transition duration-500 group-hover:scale-105" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?q=60&w=300&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Travel" class="w-full h-48 object-cover object-center transition duration-500 group-hover:scale-105" loading="lazy">
                 <div
                   class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-50 transition-opacity duration-300">
                   <div class="absolute bottom-0 left-0 right-0 p-4">
@@ -126,7 +146,7 @@
                 </div>
               </div>
               <div class="relative overflow-hidden rounded-2xl shadow-lg group">
-                <img src="https://images.unsplash.com/photo-1488747279002-c8523379faaa?q=80&w=300&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Art" class="w-full h-48 object-cover object-center transition duration-500 group-hover:scale-105" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1488747279002-c8523379faaa?q=60&w=300&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Art" class="w-full h-48 object-cover object-center transition duration-500 group-hover:scale-105" loading="lazy">
                 <div
                   class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-50 transition-opacity duration-300">
                   <div class="absolute bottom-0 left-0 right-0 p-4">
@@ -137,7 +157,7 @@
 
               <!-- bottom cards -->
               <div class="relative overflow-hidden rounded-2xl shadow-lg group">
-                <img src="https://plus.unsplash.com/premium_photo-1697730336238-5d1d342127e8?q=80&w=300&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Sport" class="w-full h-48 object-cover object-center transition duration-500 group-hover:scale-105" loading="lazy">
+                <img src="https://plus.unsplash.com/premium_photo-1697730336238-5d1d342127e8?q=60&w=300&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Sport" class="w-full h-48 object-cover object-center transition duration-500 group-hover:scale-105" loading="lazy">
                 <div
                   class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-50 transition-opacity duration-300">
                   <div class="absolute bottom-0 left-0 right-0 p-4">
@@ -146,7 +166,7 @@
                 </div>
               </div>
               <div class="relative overflow-hidden rounded-2xl shadow-lg group">
-                <img src="https://images.unsplash.com/photo-1520175480921-4edfa2983e0f?q=80&w=300&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Sport" class="w-full h-48 object-cover object-center transition duration-500 group-hover:scale-105" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1520175480921-4edfa2983e0f?q=60&w=300&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Sport" class="w-full h-48 object-cover object-center transition duration-500 group-hover:scale-105" loading="lazy">
                 <div
                   class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-50 transition-opacity duration-300">
                   <div class="absolute bottom-0 left-0 right-0 p-4">
@@ -155,7 +175,7 @@
                 </div>
               </div>
               <div class="relative overflow-hidden rounded-2xl shadow-lg group">
-                <img src="https://plus.unsplash.com/premium_photo-1661962958462-9e52fda9954d?q=80&w=300&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Sport" class="w-full h-48 object-cover object-center transition duration-500 group-hover:scale-105" loading="lazy">
+                <img src="https://plus.unsplash.com/premium_photo-1661962958462-9e52fda9954d?q=60&w=300&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Sport" class="w-full h-48 object-cover object-center transition duration-500 group-hover:scale-105" loading="lazy">
                 <div
                   class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-50 transition-opacity duration-300">
                   <div class="absolute bottom-0 left-0 right-0 p-4">
@@ -164,7 +184,7 @@
                 </div>
               </div>
               <div class="relative overflow-hidden rounded-2xl shadow-lg group">
-                <img src="https://images.unsplash.com/photo-1624138784614-87fd1b6528f8?q=80&w=300&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Sport" class="w-full h-48 object-cover object-center transition duration-500 group-hover:scale-105" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1624138784614-87fd1b6528f8?q=60&w=300&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Sport" class="w-full h-48 object-cover object-center transition duration-500 group-hover:scale-105" loading="lazy">
                 <div
                   class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-50 transition-opacity duration-300">
                   <div class="absolute bottom-0 left-0 right-0 p-4">
