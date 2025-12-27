@@ -15,7 +15,7 @@
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
 </head>
 
-<body class="dark:bg-black bg-primary">
+<body class="dark:bg-black  bg-primary">
     <x-preloading />
     @include('layouts.navmanu')
 
@@ -44,7 +44,7 @@
                     <!-- Overlay text -->
                     <div class="absolute inset-0 flex items-center justify-center bg-black/20 ">
                         <div class="text-white absolute w-96 grid grid-row text-start top-8 md:-left-10 sm:-left-20 -left-10 bg-secondary/20 px-6 p-5 backdrop-blur rounded-xl text-md font-semibold text-center px-4">
-                            <p class="text-sm text-right flex flex-col"> <strong class="text-2xl">Affordability</strong> <span class="uppercase font-normal text-xs">We don’t just help you book flights—we help you travel smarter.</span></p>
+                            <p class="text-sm text-right flex flex-col"> <strong class="text-2xl">Affordability</strong> <span class="uppercase font-normal text-accent/90 dark:text-base-300/60">We don’t just help you book flights—we help you travel smarter.</span></p>
                         </div>
 
                     </div>
@@ -102,7 +102,7 @@
             <div class="flex flex-col items-center text-center">
                 <h1 class="text-4xl px-4  dark:text-base-200/80 font-bold max-w-[740px] mb-[72px]">Trusted by <span class="dark:text-secondary text-accent/80">3k+</span> world class companies & design teams</h1>
                 <div class="flex flex-wrap items-center justify-center gap-4 m-2">
-                    <div class="flex flex-col items-center bg-white px-3 py-8 rounded-lg border border-gray-300/80 max-w-[272px] text-sm text-center text-gray-500">
+                    <div class="flex flex-col items-center bg-base-300 dark:bg-base-300/20 px-3 py-8 rounded-lg border border-gray-300/80 max-w-[272px] text-sm text-center text-gray-500">
                         <div class="relative mb-4">
                             <img class="h-16 w-16 rounded-full" src="/img/mbr/m-1.webp" alt="userImage1" width="64" height="64" loading="lazy" decoding="async">
                             <svg class="absolute top-0 -right-2" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -110,11 +110,11 @@
                                 <path d="m11.584 13.872 1.752-3.288 1.104-.288a2.7 2.7 0 0 1-.432.576.76.76 0 0 1-.552.24q-.672 0-1.248-.576t-.576-1.464q0-.936.624-1.584.648-.672 1.584-.672.888 0 1.536.672.672.648.672 1.584 0 .384-.168.912-.144.504-.576 1.296l-1.92 3.552zm-5.4 0 1.752-3.288 1.08-.288a2.2 2.2 0 0 1-.408.576.76.76 0 0 1-.552.24q-.696 0-1.272-.576t-.576-1.464q0-.936.624-1.584.648-.672 1.584-.672.888 0 1.536.672.672.648.672 1.584 0 .384-.144.912-.144.504-.576 1.296L7.96 14.832z" fill="#fff" />
                             </svg>
                         </div>
-                        <p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud aliquip”</p>
-                        <p class="text-lg text-gray-800 font-medium mt-5">Donald Jackman</p>
-                        <p class="text-xs">Customer service</p>
+                        <p class="text-accent/90 dark:text-base-300/60">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud aliquip”</p>
+                        <p class="text-lg text-accent dark:text-base-200/80 font-medium mt-5">Donald Jackman</p>
+                        <p class="text-accent/90 dark:text-base-300/60">Customer service</p>
                     </div>
-                    <div class="flex flex-col items-center bg-white px-3 py-8 rounded-lg border border-gray-300/80 max-w-[272px] text-sm text-center text-gray-500">
+                    <div class="flex flex-col items-center bg-base-300 dark:bg-base-300/20 px-3 py-8 rounded-lg border border-gray-300/80 max-w-[272px] text-sm text-center text-gray-500">
                         <div class="relative mb-4">
                             <img class="h-16 w-16 rounded-full" src="/img/mbr/m-5.webp" alt="userImage2" width="64" height="64" loading="lazy" decoding="async">
                             <svg class="absolute top-0 -right-2" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -122,11 +122,11 @@
                                 <path d="m11.584 13.872 1.752-3.288 1.104-.288a2.7 2.7 0 0 1-.432.576.76.76 0 0 1-.552.24q-.672 0-1.248-.576t-.576-1.464q0-.936.624-1.584.648-.672 1.584-.672.888 0 1.536.672.672.648.672 1.584 0 .384-.168.912-.144.504-.576 1.296l-1.92 3.552zm-5.4 0 1.752-3.288 1.08-.288a2.2 2.2 0 0 1-.408.576.76.76 0 0 1-.552.24q-.696 0-1.272-.576t-.576-1.464q0-.936.624-1.584.648-.672 1.584-.672.888 0 1.536.672.672.648.672 1.584 0 .384-.144.912-.144.504-.576 1.296L7.96 14.832z" fill="#fff" />
                             </svg>
                         </div>
-                        <p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud aliquip”</p>
-                        <p class="text-lg text-gray-800 font-medium mt-5">Richard Nelson</p>
-                        <p class="text-xs">Facilities Management</p>
+                        <p class="text-accent/90 dark:text-base-300/60">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud aliquip”</p>
+                        <p class="text-lg text-accent dark:text-base-200/80 font-medium mt-5">Richard Nelson</p>
+                        <p class="text-accent/90 dark:text-base-300/60">Facilities Management</p>
                     </div>
-                    <div class="flex flex-col items-center bg-white px-3 py-8 rounded-lg border border-gray-300/80 max-w-[272px] text-sm text-center text-gray-500">
+                    <div class="flex flex-col items-center bg-base-300 dark:bg-base-300/20 px-3 py-8 rounded-lg border border-gray-300/80 max-w-[272px] text-sm text-center text-gray-500">
                         <div class="relative mb-4">
                             <img class="h-16 w-16 rounded-full" src="/img/mbr/m-3.webp" alt="userImage3" width="64" height="64" loading="lazy" decoding="async">
                             <svg class="absolute top-0 -right-2" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -134,11 +134,11 @@
                                 <path d="m11.584 13.872 1.752-3.288 1.104-.288a2.7 2.7 0 0 1-.432.576.76.76 0 0 1-.552.24q-.672 0-1.248-.576t-.576-1.464q0-.936.624-1.584.648-.672 1.584-.672.888 0 1.536.672.672.648.672 1.584 0 .384-.168.912-.144.504-.576 1.296l-1.92 3.552zm-5.4 0 1.752-3.288 1.08-.288a2.2 2.2 0 0 1-.408.576.76.76 0 0 1-.552.24q-.696 0-1.272-.576t-.576-1.464q0-.936.624-1.584.648-.672 1.584-.672.888 0 1.536.672.672.648.672 1.584 0 .384-.144.912-.144.504-.576 1.296L7.96 14.832z" fill="#fff" />
                             </svg>
                         </div>
-                        <p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud aliquip”</p>
-                        <p class="text-lg text-gray-800 font-medium mt-5">James Washington</p>
-                        <p class="text-xs">Flight Specialist</p>
+                        <p class="text-accent/90 dark:text-base-300/60">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud aliquip”</p>
+                        <p class="text-lg text-accent dark:text-base-200/80 font-medium mt-5">James Washington</p>
+                        <p class="text-accent/90 dark:text-base-300/60">Flight Specialist</p>
                     </div>
-                    <div class="flex flex-col items-center bg-white px-3 py-8 rounded-lg border border-gray-300/80 max-w-[272px] text-sm text-center text-gray-500">
+                    <div class="flex flex-col items-center bg-base-300 dark:bg-base-300/20 px-3 py-8 rounded-lg border border-gray-300/80 max-w-[272px] text-sm text-center text-gray-500">
                         <div class="relative mb-4">
                             <img class="h-16 w-16 rounded-full" src="/img/mbr/m-4.webp" alt="userImage3" width="64" height="64" loading="lazy" decoding="async">
                             <svg class="absolute top-0 -right-2" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -146,9 +146,9 @@
                                 <path d="m11.584 13.872 1.752-3.288 1.104-.288a2.7 2.7 0 0 1-.432.576.76.76 0 0 1-.552.24q-.672 0-1.248-.576t-.576-1.464q0-.936.624-1.584.648-.672 1.584-.672.888 0 1.536.672.672.648.672 1.584 0 .384-.168.912-.144.504-.576 1.296l-1.92 3.552zm-5.4 0 1.752-3.288 1.08-.288a2.2 2.2 0 0 1-.408.576.76.76 0 0 1-.552.24q-.696 0-1.272-.576t-.576-1.464q0-.936.624-1.584.648-.672 1.584-.672.888 0 1.536.672.672.648.672 1.584 0 .384-.144.912-.144.504-.576 1.296L7.96 14.832z" fill="#fff" />
                             </svg>
                         </div>
-                        <p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud aliquip”</p>
-                        <p class="text-lg text-gray-800 font-medium mt-5">James Washington</p>
-                        <p class="text-xs">flight operations manager</p>
+                        <p class="text-accent/90 dark:text-base-300/60">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud aliquip”</p>
+                        <p class="text-lg text-accent dark:text-base-200/80 font-medium mt-5">James Washington</p>
+                        <p class="text-accent/90 dark:text-base-300/60">flight operations manager</p>
                     </div>
                 </div>
             </div>

@@ -1,5 +1,5 @@
 <footer class="w-full text-accent dark:text-secondary">
-  <hr class="text-base-200 dark:text-accent">
+  <hr class="text-accent/20 dark:text-accent">
   <!-- Bottom light section -->
   <div class="dark:bg-black bg-base-200 z-10   py-10">
     <div class="max-w-7xl mx-auto grid md:grid-cols-5 gap-8  px-6">
@@ -10,7 +10,7 @@
         <p class="text-sm">Stop searching and start flying. FlightFareMart combines cutting-edge tech with radical transparency to bring the horizon closer to your wallet.</p>
       </div>
       <div>
-        <h3 class="font-semibold text-black  dark:text-primary">About Us</h3>
+        <h3 class="font-semibold text-black  dark:text-primary pb-2 font-blod text-xl pb-2 font-blod text-xl">About Us</h3>
         <ul class="space-y-2 text-sm  ">
           <li><a href="#" class="hover:text-accent">Contact</a></li>
           <li><a href="#" class="hover:text-accent">Our Store</a></li>
@@ -19,7 +19,7 @@
       </div>
 
       <div>
-        <h3 class="font-semibold text-black  dark:text-primary">For Customer</h3>
+        <h3 class="font-semibold text-black  dark:text-primary pb-2 font-blod text-xl pb-2 font-blod text-xl">For Customer</h3>
         <ul class="space-y-2 text-sm  ">
           <li><a href="{{ route('faqs') }}" class="hover:text-accent">FAQ</a></li>
           <li><a href="#" class="hover:text-accent">Delivery</a></li>
@@ -28,7 +28,7 @@
       </div>
 
       <div>
-        <h3 class="font-semibold text-black  dark:text-primary">More</h3>
+        <h3 class="font-semibold text-black  dark:text-primary pb-2 font-blod text-xl pb-2 font-blod text-xl">More</h3>
         <ul class="space-y-2 text-sm  ">
           <li><a href="#" class="hover:text-accent">Blog</a></li>
           <li><a href="#" class="hover:text-accent">Upcoming Releases</a></li>
@@ -41,7 +41,7 @@
   <div class="bg-primary dark:bg-black text-dark dark:text-secondary pb-4 pt-10">
     <div class="max-w-7xl mx-auto md:flex justify-between  md:flex-row-reverse gap-2 px-6">
       <div class=" flex-1 space-x-4 mb-10">
-        <h4 class="font-semibold text-black  dark:text-primary">Social Links</h4>
+        <h4 class="font-semibold text-black  dark:text-primary pb-2 font-blod text-xl">Social Links</h4>
         <ul class="flex mt-3 space-x-4">
           <li>
             <a href="#" class=" hover:text-secondary transition">
@@ -81,7 +81,7 @@
 
       <!-- Contact -->
       <div class="md:w-sm space-x-8 mb-10">
-        <h3 class="text-lg   font-semibold text-black dark:text-primary mb-4">Contact Us</h3>
+        <h3 class="font-semibold text-black  dark:text-primary pb-2 font-blod text-xl">Contact Us</h3>
         <p class="text-sm   text-start flex content-center items-center gap-2 py-1">hello@flightfaremart.com<a href="mailto:hello@flightfaremart.com"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-external-link">
               <path stroke="none" d="M0 0h24v24H0z" fill="none" />
               <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6" />
@@ -94,7 +94,7 @@
 
       <!-- Subscribe -->
       <div class="md:w-md lg:space-x-8 mb-10">
-        <h3 class="text-lg font-semibold text-black dark:text-primary mb-2">Subscribe now</h3>
+        <h3 class="font-semibold text-black  dark:text-primary pb-2 font-blod text-xl">Subscribe now</h3>
         <form id="subscribe-form" method="POST" action="{{ route('subscribe') }}">
           @csrf
           <fieldset class="fieldset   rounded-box w-xs ">
