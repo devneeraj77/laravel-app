@@ -15,9 +15,9 @@ class AdminSeeder extends Seeder
     {
         // Create default admin
         Admin::factory()->create([
-            'name' => 'admin',
-            'email' => 'admin@flightfaremart.com',
-            'password' => bcrypt('admin@Ui91CB)+1{8+'),
+            'name' => 'xxxxx xxx',
+            'email' => 'xxxxx@xxx.xxx',
+            'password' => bcrypt('xxx'),
         ]);
 
         // Create random admins
