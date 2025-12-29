@@ -12,8 +12,9 @@
       <div>
         <h3 class="font-semibold text-black  dark:text-primary pb-2 font-blod text-xl pb-2 font-blod text-xl">About Us</h3>
         <ul class="space-y-2 text-sm  ">
-          <li><a href="#" class="hover:text-accent">Contact</a></li>
+          <li><a href="{{ route('contact.create') }}" class="hover:text-accent">Contact</a></li>
           <li><a href="#" class="hover:text-accent">Our Store</a></li>
+          <li><a href="{{ route('about') }}" class="hover:text-accent">About</a></li>
           <li><a href="#" class="hover:text-accent">Careers</a></li>
         </ul>
       </div>
@@ -30,8 +31,8 @@
       <div>
         <h3 class="font-semibold text-black  dark:text-primary pb-2 font-blod text-xl pb-2 font-blod text-xl">More</h3>
         <ul class="space-y-2 text-sm  ">
-          <li><a href="#" class="hover:text-accent">Blog</a></li>
-          <li><a href="#" class="hover:text-accent">Upcoming Releases</a></li>
+          <li><a href="/" class="hover:text-accent">Blog</a></li>
+          <li><a href="#latest" class="hover:text-accent">Upcoming Releases</a></li>
           <li><a href="#" class="hover:text-accent">Weekly Mixtapes</a></li>
         </ul>
       </div>
