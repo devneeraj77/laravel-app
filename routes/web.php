@@ -14,7 +14,7 @@ use App\Http\Controllers\FlightController;
 use App\Http\Controllers\SitemapController;
 use Illuminate\Support\Facades\DB;
 
-Route::get('/sitemap', [SitemapController::class, 'index']);
+Route::get('/sitemap.xml', [SitemapController::class, 'index']);
 
 Route::get('/', function () {
     return view('welcome');

@@ -46,7 +46,7 @@
                             <label for="name" class="block text-sm font-medium text-accent dark:text-base-300">Full Name</label>
                             <input type="text" name="name" id="name" required
                                 value="{{ old('name') }}"
-                                class="mt-1 block w-full rounded-md text-accent/50 dark:text-secondary/50 border-gray-300 shadow-sm focus:border-secondary focus:ring-secondary p-3 border @error('name', 'contact') border-red-500 @enderror"
+                                class="mt-1 block w-full rounded-md text-accent/50 dark:text-secondary border-gray-300 shadow-sm focus:border-secondary focus:ring-secondary p-3 border @error('name', 'contact') border-red-500 @enderror"
                                 placeholder="Type your name">
                             @error('name', 'contact')
                             <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
@@ -57,7 +57,7 @@
                             <label for="email" class="block text-sm font-medium text-accent dark:text-base-300">Email Address</label>
                             <input type="email" name="email" id="email" required
                                 value="{{ old('email') }}"
-                                class="mt-1 block w-full rounded-md text-accent/50 dark:text-secondary/50 text-accent/50 dark:text-secondary/50 border-gray-300 shadow-sm focus:border-secondary focus:ring-secondary p-3 border @error('email', 'contact') border-red-500 @enderror"
+                                class="mt-1 block w-full rounded-md text-accent/50 dark:text-secondary text-accent/50 dark:text-secondary border-gray-300 shadow-sm focus:border-secondary focus:ring-secondary p-3 border @error('email', 'contact') border-red-500 @enderror"
                                 placeholder="you@example.com">
                             @error('email', 'contact')
                             <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
@@ -68,7 +68,7 @@
                             <label for="subject" class="block text-sm font-medium text-accent dark:text-base-300">Subject</label>
                             <input type="text" name="subject" id="subject" required
                                 value="{{ old('subject') }}"
-                                class="mt-1 block w-full rounded-md text-accent/50 dark:text-secondary/50 border-gray-300 shadow-sm focus:border-secondary focus:ring-secondary p-3 border @error('subject', 'contact') border-red-500 @enderror"
+                                class="mt-1 block w-full rounded-md text-accent/50 dark:text-secondary border-gray-300 shadow-sm focus:border-secondary focus:ring-secondary p-3 border @error('subject', 'contact') border-red-500 @enderror"
                                 placeholder="Inquiry about booking">
                             @error('subject', 'contact')
                             <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
@@ -78,7 +78,7 @@
                         <div>
                             <label for="message" class="block text-sm font-medium text-accent dark:text-base-300">Message</label>
                             <textarea name="message" maxlength="260" id="message" rows="4" required
-                                class="mt-1 block w-full rounded-md text-accent/50 dark:text-secondary/50 border-gray-300 shadow-sm focus:border-secondary focus:ring-secondary p-3 border @error('message', 'contact') border-red-500 @enderror"
+                                class="mt-1 block w-full rounded-md text-accent/50 dark:text-secondary border-gray-300 shadow-sm focus:border-secondary focus:ring-secondary p-3 border @error('message', 'contact') border-red-500 @enderror"
                                 placeholder="How can we help you?">{{ old('message') }}</textarea>
                             @error('message', 'contact')
                             <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
