@@ -1,8 +1,8 @@
-<header class="w-full relative z-10 dark:bg-dark-primary text-accent text-sm dark:text-dark-light  top-0 left-0 z-50">
+<header class="w-full relative z-10 dark:bg-dark-primary text-accent text-sm dark:text-dark-light top-0 left-0 z-50">
   <div class="text-center font-medium py-2  bg-gradient-to-r from-base-200 dark:from-base-200/10  to-transparent dark:text-secondary">
     <p>Exclusive Price Drop! Hurry, <span class="underline underline-offset-2">Offer Ends Soon!</span></p>
   </div>
-  <nav class="max-w-7xl  mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+  <nav class="max-w-7xl font-sembold  mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
 
     <!-- Logo -->
     <a href="/" class="flex justify-center items-center p-2 text-2xl p-2 text-accent font-semibold italic">
@@ -32,37 +32,62 @@
         <ul class="hidden md:flex items-center space-x-6 px-4 text-sm">
           <li>
             <a href="/" aria-current="page"
-              class="px-2 py-2 text-accent font-medium hover:text-accent/80 hover:bg-base-200/50 rounded-md transition-colors dark:text-primary">
+              class="relative mx-2 py-2 text-accent font-medium 
+          rounded-md transition-colors dark:text-base-300
+          after:content-[''] after:absolute after:left-0 after:bottom-0 
+          after:w-0 after:h-[2px] after:bg-secondary after:transition-all after:duration-300 
+          hover:after:w-full">
               Home
             </a>
           </li>
           <li>
             <a href="{{ route('about') }}"
-              class="px-2 py-2 text-accent font-medium hover:text-accent/80 hover:bg-base-200/50 rounded-md transition-colors dark:text-secondary">
+              class="relative mx-2 py-2 text-accent font-medium 
+          rounded-md transition-colors dark:text-secondary 
+          after:content-[''] after:absolute after:left-0 after:bottom-0 
+          after:w-0 after:h-[2px] after:bg-secondary after:transition-all after:duration-300 
+          hover:after:w-full">
               About
             </a>
+
           </li>
           <li>
             <a href="{{ route('services') }}"
-              class="px-2 py-2 text-accent font-medium hover:text-accent/80 hover:bg-base-200/50 rounded-md transition-colors dark:text-secondary">
+              class="relative mx-2 py-2 text-accent font-medium 
+          rounded-md transition-colors dark:text-secondary 
+          after:content-[''] after:absolute after:left-0 after:bottom-0 
+          after:w-0 after:h-[2px] after:bg-secondary after:transition-all after:duration-300 
+          hover:after:w-full">
               Services
             </a>
           </li>
           <li>
             <a href="{{ route('blog.index') }}"
-              class="px-2 py-2 text-accent font-medium hover:text-accent/80 hover:bg-base-200/50 rounded-md transition-colors dark:text-secondary">
+              class="relative mx-2 py-2 text-accent font-medium 
+          rounded-md transition-colors dark:text-secondary 
+          after:content-[''] after:absolute after:left-0 after:bottom-0 
+          after:w-0 after:h-[2px] after:bg-secondary after:transition-all after:duration-300 
+          hover:after:w-full">
               Blog
             </a>
           </li>
           <li>
             <a href="{{ route('faqs') }}"
-              class="px-2 py-2 text-accent font-medium hover:text-accent/80 hover:bg-base-200/50 rounded-md transition-colors dark:text-secondary">
+              class="relative mx-2 py-2 text-accent font-medium 
+          rounded-md transition-colors dark:text-secondary 
+          after:content-[''] after:absolute after:left-0 after:bottom-0 
+          after:w-0 after:h-[2px] after:bg-secondary after:transition-all after:duration-300 
+          hover:after:w-full">
               FAQs
             </a>
           </li>
           <li>
             <a href="{{ route('contact.create') }}"
-              class="px-2 py-2 text-accent font-medium hover:text-accent/80 hover:bg-base-200/50 rounded-md transition-colors dark:text-secondary">
+              class="relative mx-2 py-2 text-accent font-medium 
+          rounded-md transition-colors dark:text-secondary 
+          after:content-[''] after:absolute after:left-0 after:bottom-0 
+          after:w-0 after:h-[2px] after:bg-secondary after:transition-all after:duration-300 
+          hover:after:w-full">
               Contact
             </a>
           </li>
