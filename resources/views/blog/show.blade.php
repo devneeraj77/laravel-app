@@ -58,7 +58,7 @@
             <li itemprop="itemListElement" itemscope
                 itemtype="https://schema.org/ListItem">
                 <a itemprop="item" href="{{ route('blog.index') }}">
-                    <span itemprop="name">Books</span></a>
+                    <span itemprop="name">{{ route('blog.index') }}</span></a>
                 <meta itemprop="position" content="1" />
             </li>
             {{-- Item 2: Category --}}
