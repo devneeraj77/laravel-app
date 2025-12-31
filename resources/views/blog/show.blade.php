@@ -58,7 +58,7 @@
             <li itemprop="itemListElement" itemscope
                 itemtype="https://schema.org/ListItem">
                 <a itemprop="item" href="{{ route('blog.index') }}">
-                    <span itemprop="name">{{ route('blog.index') }}</span></a>
+                    <span itemprop="name">Blog</span></a>
                 <meta itemprop="position" content="1" />
             </li>
             {{-- Item 2: Category --}}
@@ -108,18 +108,16 @@
                 </h1>
 
                 {{-- Fix 3: Author URL (Addressing the 'Missing URL' warning) --}}
+                
+            </div>
+
+            <div class="flex items-start justify-between space-x-3 mb-2">
                 <span class="text-base italic text-accent/70 dark:text-base-300/70" itemprop="author" itemscope itemtype="https://schema.org/Person">
                     ~ Written by
                     <a itemprop="url" href="{{ url('/about') }}" class="no-underline">
                         <span itemprop="name">{{ $post->author->name ?? 'Admin' }}</span>
                     </a>
                 </span>
-            </div>
-
-            <div class="flex items-start justify-between space-x-3 mb-2">
-                <div class="badge badge-lg badge-secondary text-accent">
-                    {{ $post->category->name }}
-                </div>
                 <time datetime="{{ $post->published_at->toIso8601String() }}" class="text-sm dark:text-base-200 text-accent/80">
                     Published on {{ $post->published_at->format('F d, Y') }}
                 </time>
